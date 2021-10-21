@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P2K2 : MonoBehaviour
+public class PK3 : MonoBehaviour
 {
-   
-    public GameObject p;
+     public GameObject p;
     public GameObject k;
     public GameObject pk;
 
@@ -26,12 +25,13 @@ public class P2K2 : MonoBehaviour
     public Vector3 pickupPos;
 
     private bool pkBool = false;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Instantiate p1
+        //Instantiate p
         pSpawn = Instantiate(p,startPos,Quaternion.identity);
     }
 
@@ -41,7 +41,7 @@ public class P2K2 : MonoBehaviour
 
         if (pkSpawn != null)
         {
-            //p1 move start
+            //p move start
             if (pSpawn != null && pSpawn.transform.position != pTargets[pCurrent].position)
             {
                 Vector3 pPos = Vector3.MoveTowards(pSpawn.transform.position, pTargets[pCurrent].position, speed);
@@ -50,13 +50,13 @@ public class P2K2 : MonoBehaviour
             else if (pSpawn != null && pCurrent != pTargets.Length - 1)
             {
                 pCurrent = (pCurrent + 1) % pTargets.Length;
-                Debug.Log("D1 Pickup POS: " + pSpawn.transform.position);
+                Debug.Log("D2 Pickup POS: " + pSpawn.transform.position);
             }
-            //p1 move ends
+            //p move ends
             else if (pCurrent == pTargets.Length - 1)
             {
                 //Debug.Log("p1Current: " + pCurrent);
-                //k1 move start when p1 move ends
+                //k move start when p1 move ends
                 if (k != null && k.transform.position != kTargets[kCurrent].position)
                 {
                     Vector3 kPos = Vector3.MoveTowards(k.transform.position, kTargets[kCurrent].position, speed);
@@ -66,21 +66,21 @@ public class P2K2 : MonoBehaviour
                 {
                     kCurrent = (kCurrent + 1) % kTargets.Length;
                 }
-                //k1 move ends
+                //k move ends
                 else if (kCurrent == kTargets.Length - 1)
                 {
-                    //Destroy p1 and k1
+                    //Destroy p and k
                     Destroy(k);
                     Destroy(pSpawn);
 
-                    //At the same pos spawn p1k1
+                    //At the same pos spawn pk
                     if (pkBool == false)
                     {
                         pkSpawn = Instantiate(pk, pickupPos, Quaternion.identity);
                         pkBool = true;
                     }
 
-                    //p1k1 move starts
+                    //pk move starts
                     if (pkSpawn.transform.position != pkTargets[pkCurrent].position)
                     {
                         Vector3 pkPos = Vector3.MoveTowards(pkSpawn.transform.position,
