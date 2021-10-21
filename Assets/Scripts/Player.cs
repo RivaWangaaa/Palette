@@ -38,9 +38,21 @@ public class Player : MonoBehaviour
     private bool p3Hint = false;
     private bool k3Hint = false;
 
-    public static int hintCollect = 0;
-    public static int hintTotal = 6;
+    private GameObject cHintObj = null;
+    private GameObject rrHintObj = null;
+    private GameObject nrHintObj = null;
+    private GameObject pgHintObj = null;
+    private bool cHint = false;
+    private bool rrHint = false;
+    private bool nrHint = false;
+    private bool pgHint = false;
+
+    public static int npcHintCollect = 0;
+    public static int npcHintTotal = 6;
     
+    public static int itemHintCollect = 0;
+    public static int itemHintTotal = 4;
+
 
 
     // Start is called before the first frame update
@@ -52,6 +64,118 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //c hint
+        //assign object
+        if (cHintObj == null)
+        {
+            cHintObj = GameObject.Find("C Hint OBJ");
+            
+        }
+        //if near object can trigger interact
+        if (cHintObj != null && Nearby(cHintObj) == true)
+        {
+            Debug.Log("Near C Hint Obj");
+            //if trigger interact, disable VFX, hint+1
+            if (Input.GetKey(KeyCode.E))
+            {
+                Debug.Log("C Hint Obj Interact");
+                //hint+1
+                if (cHintObj.activeSelf)
+                {
+                    itemHintCollect += 1;
+                    cHint = true;
+                }
+                //disable obj
+                cHintObj.SetActive(false);
+               
+            }
+        }
+        
+        
+        //rr hint
+        //assign object
+        if (rrHintObj == null)
+        {
+            rrHintObj = GameObject.Find("RR Hint OBJ");
+            
+        }
+        //if near object can trigger interact
+        if (rrHintObj != null && Nearby(rrHintObj) == true)
+        {
+            Debug.Log("Near RR Hint Obj");
+            //if trigger interact, disable VFX, hint+1
+            if (Input.GetKey(KeyCode.E))
+            {
+                Debug.Log("RR Hint Obj Interact");
+                //hint+1
+                if (rrHintObj.activeSelf)
+                {
+                    itemHintCollect += 1;
+                    rrHint = true;
+                }
+                //disable obj
+                rrHintObj.SetActive(false);
+               
+            }
+        }
+        
+        
+        //nr hint
+        //assign object
+        if (nrHintObj == null)
+        {
+            nrHintObj = GameObject.Find("NR Hint OBJ");
+            
+        }
+        //if near object can trigger interact
+        if (nrHintObj != null && Nearby(nrHintObj) == true)
+        {
+            Debug.Log("Near NR Hint Obj");
+            //if trigger interact, disable VFX, hint+1
+            if (Input.GetKey(KeyCode.E))
+            {
+                Debug.Log("NR Hint Obj Interact");
+                //hint+1
+                if (nrHintObj.activeSelf)
+                {
+                    itemHintCollect += 1;
+                    nrHint = true;
+                }
+                //disable obj
+                nrHintObj.SetActive(false);
+               
+            }
+        }
+        
+        
+        //pg hint
+        //assign object
+        if (pgHintObj == null)
+        {
+            pgHintObj = GameObject.Find("PG Hint OBJ");
+            
+        }
+        //if near object can trigger interact
+        if (pgHintObj != null && Nearby(pgHintObj) == true)
+        {
+            Debug.Log("Near PG Hint Obj");
+            //if trigger interact, disable VFX, hint+1
+            if (Input.GetKey(KeyCode.E))
+            {
+                Debug.Log("PG Hint Obj Interact");
+                //hint+1
+                if (pgHintObj.activeSelf)
+                {
+                    itemHintCollect += 1;
+                    pgHint = true;
+                }
+                //disable obj
+                pgHintObj.SetActive(false);
+               
+            }
+        }
+        
+        
         //p1
         //assign object and vfx
         if (p1 == null)
@@ -74,7 +198,7 @@ public class Player : MonoBehaviour
                 //hint+1
                 if (p1VFX.activeSelf)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     p1Hint = true;
                 }
                 //disable VFX
@@ -106,7 +230,7 @@ public class Player : MonoBehaviour
                 //hint+1
                 if (k1VFX.activeSelf)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     k1Hint = true;
                 }
                 //disable VFX
@@ -150,13 +274,13 @@ public class Player : MonoBehaviour
                 //hint+1/2
                 if (p1Hint == false)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     pk1VFX1.SetActive(false);
                     p1Hint = true;
                 }
                 if (k1Hint == false)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     pk1VFX2.SetActive(false);
                     k1Hint = true;
                 }
@@ -186,7 +310,7 @@ public class Player : MonoBehaviour
                 //hint+1
                 if (p2VFX.activeSelf)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     p2Hint = true;
                 }
                 //disable VFX
@@ -217,7 +341,7 @@ public class Player : MonoBehaviour
                 //hint+1
                 if (k2VFX.activeSelf)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     k2Hint = true;
                 }
                 //disable VFX
@@ -260,13 +384,13 @@ public class Player : MonoBehaviour
                 //hint+1/2
                 if (p2Hint == false)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     pk2VFX1.SetActive(false);
                     p2Hint = true;
                 }
                 if (k2Hint == false)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     pk2VFX2.SetActive(false);
                     k2Hint = true;
                 }
@@ -296,7 +420,7 @@ public class Player : MonoBehaviour
                 //hint+1
                 if (p3VFX.activeSelf)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     p3Hint = true;
                 }
                 //disable VFX
@@ -326,7 +450,7 @@ public class Player : MonoBehaviour
                 Debug.Log("K3 Interact");
                 if (k3VFX.activeSelf)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     k3Hint = true;
                 }
                 k3VFX.SetActive(false);
@@ -369,13 +493,13 @@ public class Player : MonoBehaviour
                 //hint+1/2
                 if (p3Hint == false)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     pk3VFX1.SetActive(false);
                     p3Hint = true;
                 }
                 if (k3Hint == false)
                 {
-                    hintCollect += 1;
+                    npcHintCollect += 1;
                     pk3VFX2.SetActive(false);
                     k3Hint = true;
                 }
