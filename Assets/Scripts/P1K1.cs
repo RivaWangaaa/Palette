@@ -33,6 +33,8 @@ public class P1K1 : MonoBehaviour
     {
         //Instantiate p1
         p1Spawn = Instantiate(p1,d2StartPos,Quaternion.identity);
+        NPCManager.instance.NPCs.Add(p1Spawn);
+        NPCManager.instance.isHintCollected.Add(false);
     }
 
     // Update is called once per frame
@@ -61,6 +63,8 @@ public class P1K1 : MonoBehaviour
                 {
                     Vector3 k1Pos = Vector3.MoveTowards(k1.transform.position, k1Targets[k1Current].position, speed);
                     k1.GetComponent<Rigidbody>().MovePosition(k1Pos);
+                    //TODO: 替换移动方式为，直接设置P和K的坐标为目标坐标（优化）
+                    //TODO: 加一个Timer，让P和K在目标坐标停留一定时间，留给玩家触发对话（新需求）
                 }
                 else if (k1 != null && k1Current != k1Targets.Length - 1)
                 {
