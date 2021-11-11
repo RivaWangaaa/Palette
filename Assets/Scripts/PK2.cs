@@ -32,7 +32,9 @@ public class PK2 : MonoBehaviour
     void Start()
     {
         //Instantiate p1
-        pSpawn = Instantiate(p,startPos,Quaternion.identity);
+        pSpawn = Instantiate(p, startPos, Quaternion.identity);
+        NPCManager.instance.NPCs.Add(pSpawn);
+        NPCManager.instance.isHintCollected.Add(false);
     }
 
     // Update is called once per frame

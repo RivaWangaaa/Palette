@@ -9785,9 +9785,10 @@ GameObject:
   - component: {fileID: 4567202177828434778}
   - component: {fileID: 4567202177828434777}
   - component: {fileID: 2253384519658162730}
+  - component: {fileID: -1097077268478700952}
   m_Layer: 0
   m_Name: K3 OBJ
-  m_TagString: Untagged
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9885,3 +9886,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1097077268478700952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567202177828434783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a844d631ed95f4a9bf059711d8c601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
