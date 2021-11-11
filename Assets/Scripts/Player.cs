@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public static int itemHintCollect = 0;
     public static int itemHintTotal = 4;
 
+    public Transform chairPosition;
     private Transform cameraTransform;
     private GameObject currentGameobject;
     private RaycastHit hit;
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        currentGameobject.GetComponent<NPC>().OnInteract();
+                        currentGameobject.GetComponent<NPC>().OnInteract(gameObject);
                     }
                 }
 
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<Footsteps>().enabled = false;
         gameObject.GetComponent<AudioSource>().enabled = false;
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.position = chairPosition.position;
     }
     
 }
