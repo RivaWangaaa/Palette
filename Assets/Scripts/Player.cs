@@ -53,7 +53,9 @@ public class Player : MonoBehaviour
     public static int itemHintCollect = 0;
     public static int itemHintTotal = 4;
 
-
+    private Transform cameraTransform;
+    private GameObject currentGameobject;
+    private RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,29 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
+
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        if (Physics.Raycast(ray, out hit, 2f))
+        {
+            if(hit.collider != null)
+            {
+                currentGameobject = hit.collider.gameObject;
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+
+                }
+            }
+            else
+            {
+                currentGameobject = null;
+            }
+            Debug.DrawLine(ray.origin, hit.point);
+        }
+
         //c hint
         //assign object
         if (cHintObj == null)
@@ -195,6 +220,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 Debug.Log("P1 Interact");
+                //TODO: 靠近后按E发生对话，使用Fungus来完成（新需求）
                 //hint+1
                 if (p1VFX.activeSelf)
                 {
