@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * control all the NPCs behavior
+ * 
+ * currently achieved: Navigation(to be optimized), NPCHints, 
+ * TODO: Events
+ * 
+ */
 public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;
 
+    //like hints, should be replaced by scriptable objects or dictionary
     public List<GameObject> NPCs;
     public List<bool> isHintCollected;
 
+    //Navigation system
     public float pk1Time;
     public float pk2Time;
     public float pk3Time;
@@ -76,6 +85,7 @@ public class NPCManager : MonoBehaviour
         }
     }
 
+    //used when player gets a hint from a NPC
     public void UpdateCollectedHints()
     {
         for (int i = 0; i < isHintCollected.Count; i++)
@@ -84,6 +94,7 @@ public class NPCManager : MonoBehaviour
         }
     }
 
+    //new NPC will be generated during a loop, so these two methods are used to update the NPC List
     public void AddNewNPC(GameObject thisNPC)
     {
         NPCs.Add(thisNPC);
