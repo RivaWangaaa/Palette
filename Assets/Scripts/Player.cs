@@ -101,4 +101,8 @@ public class Player : MonoBehaviour
         //Nate: I think the transition now could make player feel a little bit confused perhaps for the camera position
     }
 
+    public void SayHi()
+    {
+        Debug.Log("say hi");
+    }
 }

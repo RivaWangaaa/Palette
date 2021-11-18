@@ -8,6 +8,36 @@ public class NPC : MonoBehaviour
     public bool isCollected;
     public Flowchart flowchat;
 
+    //time NPC stops at each waypoint
+    public float maxStopTime = 2f;
+    public Transform[] wayPoints;
+
+    //used to store how long NPC is standing
+    private float currentStopTime;
+    //used to store where NPC is Standing
+    private int currentWayPointIndex;
+
+    private void Update()
+    {
+        if(wayPoints.Length == 0 || currentWayPointIndex == wayPoints.Length || NPCManager.instance.isHavingConversation)
+        {
+            //NPC stands still
+        }
+        else
+        {
+            //NPC has waypoints remaining, they should keep going
+            currentStopTime += Time.deltaTime;
+            if(currentStopTime >= maxStopTime)
+            {
+                transform.position = wayPoints[currentWayPointIndex].position;
+                currentStopTime = 0;
+                currentWayPointIndex++;
+            }
+        }
+    }
+
+
+
     public void OnInteract(GameObject currentPlayer)
     {
         Debug.Log("character " + gameObject.name + " interacted");
@@ -21,5 +51,7 @@ public class NPC : MonoBehaviour
         //every flowchat for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
         NPCManager.instance.UpdateCollectedHints();
+        //Time.timeScale = 0;
+        //Fungus.CallMethod
     }
 }
