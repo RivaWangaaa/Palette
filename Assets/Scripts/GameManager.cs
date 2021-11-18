@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Text NPCHintUIText;
     public Text ItemHintUIText;
 
+    public GameObject currentControllingPlayer;
+
     public static GameManager instance;
     void Awake()
     {

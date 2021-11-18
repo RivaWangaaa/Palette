@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
         //transport the one you are controlling to their seat
+        GameManager.instance.currentControllingPlayer = targetPlayer;
         gameObject.transform.position = chairPosition.position;
 
         //TODO: make the transition more elegent (add some animation or using the cinemation?)

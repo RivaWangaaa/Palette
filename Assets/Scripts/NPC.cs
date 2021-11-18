@@ -51,7 +51,20 @@ public class NPC : MonoBehaviour
         //every flowchat for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
         NPCManager.instance.UpdateCollectedHints();
-        //Time.timeScale = 0;
-        //Fungus.CallMethod
+        NPCManager.instance.isHavingConversation = true;
+
+        //lock player's camera when having a conversation
+        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+    }
+
+    public void EndInteract()
+    {
+        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+        NPCManager.instance.isHavingConversation = false;
+        Debug.Log("end interaction");
     }
 }
