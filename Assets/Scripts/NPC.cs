@@ -31,12 +31,10 @@ public class NPC : MonoBehaviour
             {
                 transform.position = wayPoints[currentWayPointIndex].position;
                 currentStopTime = 0;
-                currentWayPointIndex++;
+                currentWayPointIndex ++;
             }
         }
     }
-
-
 
     public void OnInteract(GameObject currentPlayer)
     {
