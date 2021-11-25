@@ -68,6 +68,8 @@ public class GameManager : MonoBehaviour
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
             UIManager.instance.pausePanel.SetActive(false);
+            UIManager.instance.drawBookPanel.SetActive(false);
+            UIManager.instance.isDrawBookOpen = false;
         }
     }
 }
