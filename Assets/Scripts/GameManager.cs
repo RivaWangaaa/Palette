@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
             currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
             UIManager.instance.pausePanel.SetActive(true);
         }
         else
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
             currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
             UIManager.instance.pausePanel.SetActive(false);
             UIManager.instance.drawBookPanel.SetActive(false);
             UIManager.instance.isDrawBookOpen = false;

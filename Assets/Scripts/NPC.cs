@@ -17,6 +17,8 @@ public class NPC : MonoBehaviour
     //used to store where NPC is Standing
     private int currentWayPointIndex;
 
+    public List<GameObject> hintsInDrawBook;
+     
     private void Update()
     {
         if(wayPoints.Length == 0 || currentWayPointIndex == wayPoints.Length || NPCManager.instance.isHavingConversation)
@@ -64,5 +66,25 @@ public class NPC : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
         Debug.Log("end interaction");
+    }
+
+    public void GetHintNo1()
+    {
+        hintsInDrawBook[0].SetActive(true);
+    }
+
+    public void GetHintNo2()
+    {
+        hintsInDrawBook[1].SetActive(true);
+    }
+
+    public void GetHintNo3()
+    {
+        hintsInDrawBook[2].SetActive(true);
+    }
+
+    public void GetHintNo4()
+    {
+        hintsInDrawBook[3].SetActive(true);
     }
 }
