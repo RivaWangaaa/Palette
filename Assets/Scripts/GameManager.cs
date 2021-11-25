@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGamePaused;
+
     public Text NPCHintUIText;
     public Text ItemHintUIText;
 
@@ -34,13 +36,38 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NPCHintUIText.text = "NPC Hints Collected" + "\n" + Player.npcHintCollect + " / " + Player.npcHintTotal;
-        ItemHintUIText.text = "Item Hints Collected" + "\n" + Player.itemHintCollect + " / " + Player.itemHintTotal;
+        //NPCHintUIText.text = "NPC Hints Collected" + "\n" + Player.npcHintCollect + " / " + Player.npcHintTotal;
+        //ItemHintUIText.text = "Item Hints Collected" + "\n" + Player.itemHintCollect + " / " + Player.itemHintTotal;
+
+        // unlock when escape is hit
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Pause();
+        }
     }
 
     //this method is used when player is having a conversation with a NPC
     public void InConversation()
     {
 
+    }
+
+    public void Pause()
+    {
+        isGamePaused = !isGamePaused;
+        if (isGamePaused)
+        {
+            currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+            UIManager.instance.pausePanel.SetActive(true);
+        }
+        else
+        {
+            currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
+            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
+            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+            UIManager.instance.pausePanel.SetActive(false);
+        }
     }
 }

@@ -12,11 +12,7 @@ public class LockMouse : MonoBehaviour
 
     void Update()
     {    
-    	// unlock when escape is hit
-        if  ( Input.GetKeyDown(KeyCode.Escape) )
-        {
-        	LockCursor(false);
-        }
+    	
     }
     
     public void LockCursor(bool lockCursor)
@@ -33,4 +29,6 @@ public class LockMouse : MonoBehaviour
         }
 
     }
+
+    
 }
