@@ -95,10 +95,15 @@ public class Player : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
         //transport the one you are controlling to their seat
+        GameManager.instance.currentControllingPlayer = targetPlayer;
         gameObject.transform.position = chairPosition.position;
 
         //TODO: make the transition more elegent (add some animation or using the cinemation?)
         //Nate: I think the transition now could make player feel a little bit confused perhaps for the camera position
     }
 
+    public void SayHi()
+    {
+        Debug.Log("say hi");
+    }
 }

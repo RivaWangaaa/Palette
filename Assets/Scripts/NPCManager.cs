@@ -17,6 +17,8 @@ public class NPCManager : MonoBehaviour
     public List<GameObject> NPCs;
     public List<bool> isHintCollected;
 
+    public bool isHavingConversation;
+
     //Navigation system
     public float pk1Time;
     public float pk2Time;
