@@ -17,8 +17,8 @@ namespace Fungus
     public class CallMethod : Command
     {
         [Tooltip("Target monobehavior which contains the method we want to call")]
-        [SerializeField] protected GameObject targetObject;
-
+        //[SerializeField] protected GameObject targetObject;
+        [SerializeField] protected GameObjectData _targetGameObject;
         [Tooltip("Name of the method to call")]
         [SerializeField] protected string methodName = "";
 
@@ -27,15 +27,16 @@ namespace Fungus
 
         protected virtual void CallTheMethod()
         {
-            targetObject.SendMessage(methodName, SendMessageOptions.DontRequireReceiver);
+            //targetObject.SendMessage(methodName, SendMessageOptions.DontRequireReceiver);
+            _targetGameObject.Value.SendMessage(methodName, SendMessageOptions.DontRequireReceiver);
         }
 
         #region Public members
 
         public override void OnEnter()
         {
-            if (targetObject == null ||
-                methodName.Length == 0)
+            //if (targetObject == null ||methodName.Length == 0)
+            if (_targetGameObject.Value == null || methodName.Length == 0)
             {
                 Continue();
                 return;
@@ -55,7 +56,8 @@ namespace Fungus
 
         public override string GetSummary()
         {
-            if (targetObject == null)
+            //if (targetObject == null)
+            if (_targetGameObject.Value == null)
             {
                 return "Error: No target GameObject specified";
             }
@@ -65,7 +67,8 @@ namespace Fungus
                 return "Error: No named method specified";
             }
 
-            return targetObject.name + " : " + methodName;
+            //return targetObject.name + " : " + methodName;
+            return _targetGameObject.Value.name + " : " + methodName;
         }
         
         public override Color GetButtonColor()

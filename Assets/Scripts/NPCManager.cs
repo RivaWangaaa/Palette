@@ -17,6 +17,8 @@ public class NPCManager : MonoBehaviour
     public List<GameObject> NPCs;
     public List<bool> isHintCollected;
 
+    public bool isHavingConversation;
+
     //Navigation system
     public float pk1Time;
     public float pk2Time;
@@ -48,41 +50,13 @@ public class NPCManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        p1k1Script = p1k1Manager.GetComponent<P1K1>();
-        p1k1Script.enabled = false;
         
-        pk2Script = pk2Manager.GetComponent<PK2>();
-        pk2Script.enabled = false;
-        
-        pk3Script = pk3Manager.GetComponent<PK3>();
-        pk3Script.enabled = false;
-
-        for (int i = 0; i < NPCs.Count; i++)
-        {
-            isHintCollected.Add(false);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //timer
-        timer += Time.deltaTime;
-
-        if (timer >= pk1Time)
-        {
-            p1k1Script.enabled = true;
-        }
         
-        if (timer >= pk2Time)
-        {
-            pk2Script.enabled = true;
-        }
-        
-        if (timer >= pk3Time)
-        {
-            pk3Script.enabled = true;
-        }
     }
 
     //used when player gets a hint from a NPC
