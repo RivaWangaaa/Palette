@@ -19,20 +19,11 @@ public class NPCManager : MonoBehaviour
 
     public bool isHavingConversation;
 
-    //Navigation system
-    public float pk1Time;
-    public float pk2Time;
-    public float pk3Time;
-    
-    private float timer;
+    public List<Transform> Cole_wayPoints;
+    public List<Transform> Vick_wayPoints;
+    public List<Transform> Flore_wayPoints;
+    public List<Transform> Emi_wayPoints;
 
-    public GameObject p1k1Manager;
-    public GameObject pk2Manager;
-    public GameObject pk3Manager;
-
-    private P1K1 p1k1Script;
-    private PK2 pk2Script;
-    private PK3 pk3Script;
     void Awake()
     {
         if (instance == null)
@@ -87,5 +78,20 @@ public class NPCManager : MonoBehaviour
             }
         }
 
+    }
+
+    public void SetWayPointsByEvent(GameObject Event)
+    {
+        int wayPointsNum;
+        for(int j = 0; j < NPCs.Count - 1; j++)
+        {
+            Debug.Log("j = " + j);
+            wayPointsNum = Event.transform.GetChild(j).childCount;
+            Debug.Log("NPC " + NPCs[j].name + " has" + wayPointsNum + " waypoints");
+            for (int i = 0; i < wayPointsNum; i++)
+            {
+                NPCs[j].GetComponent<NPC>().wayPoints.Add(Event.transform.GetChild(j).GetChild(i));
+            }
+        }
     }
 }
