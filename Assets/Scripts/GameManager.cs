@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private float currentLoopTimeFloat;
+    public int currentLoopTimeSecond;
+    public int currentLoopTimeMinute;
+    public int timeModifier;
+
     public bool isGamePaused;
 
     public Text NPCHintUIText;
@@ -44,6 +49,16 @@ public class GameManager : MonoBehaviour
         {
             Pause();
         }
+
+        currentLoopTimeFloat = Time.deltaTime + currentLoopTimeFloat;
+        currentLoopTimeSecond = Mathf.RoundToInt(currentLoopTimeFloat);
+        if(currentLoopTimeSecond >= 60 / timeModifier)
+        {
+            currentLoopTimeMinute ++;
+            currentLoopTimeSecond = 0;
+            currentLoopTimeFloat = 0;
+        }
+
     }
 
     //this method is used when player is having a conversation with a NPC
