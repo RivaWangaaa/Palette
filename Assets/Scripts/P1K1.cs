@@ -50,12 +50,12 @@ public class P1K1 : MonoBehaviour
             else if (p1Spawn != null && p1Current != p1Targets.Length - 1)
             {
                 p1Current = (p1Current + 1) % p1Targets.Length;
-                Debug.Log("D2 Pickup POS: " + p1Spawn.transform.position);
+                //Debug.Log("D2 Pickup POS: " + p1Spawn.transform.position);
             }
             //p1 move ends
             else if (p1Current == p1Targets.Length - 1)
             {
-                Debug.Log("p1Current: " + p1Current);
+                //Debug.Log("p1Current: " + p1Current);
                 //k1 move start when p1 move ends
                 if (k1 != null && k1.transform.position != k1Targets[k1Current].position)
                 {

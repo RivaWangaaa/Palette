@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
 
     //time NPC stops at each waypoint
     public float maxStopTime = 2f;
-    public Transform[] wayPoints;
+    public List<Transform> wayPoints;
 
     //used to store how long NPC is standing
     private float currentStopTime;
@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour
      
     private void Update()
     {
-        if(wayPoints.Length == 0 || currentWayPointIndex == wayPoints.Length || NPCManager.instance.isHavingConversation)
+        if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
         {
             //NPC stands still
         }
@@ -34,6 +34,10 @@ public class NPC : MonoBehaviour
                 transform.position = wayPoints[currentWayPointIndex].position;
                 currentStopTime = 0;
                 currentWayPointIndex ++;
+                if(currentWayPointIndex == wayPoints.Count)
+                {
+                    wayPoints.Clear();
+                }
             }
         }
     }
