@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
             currentLoopTimeMinute ++;
             currentLoopTimeSecond = 0;
             currentLoopTimeFloat = 0;
+            Loop1.instance.oneTimeEventFlag = true;
         }
 
     }

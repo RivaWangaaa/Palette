@@ -64,6 +64,14 @@ public class Player : MonoBehaviour
                         currentGameobject.GetComponent<NPC>().OnInteract(gameObject);
                     }
                 }
+                if(currentGameobject.tag == "classroomDoor")
+                {
+                    //when player tries to open a door
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        ExitClassroomController.instance.playerInteractWithTheClassroomDoor();
+                    }
+                }
             }
             else
             {

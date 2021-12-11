@@ -17,6 +17,8 @@ public class NPC : MonoBehaviour
     //used to store where NPC is Standing
     private int currentWayPointIndex;
 
+    public SpriteRenderer pose;
+
     public List<GameObject> hintsInDrawBook;
      
     private void Update()
@@ -37,9 +39,12 @@ public class NPC : MonoBehaviour
                 if(currentWayPointIndex == wayPoints.Count)
                 {
                     wayPoints.Clear();
+                    currentWayPointIndex = 0;
                 }
             }
         }
+
+        transform.LookAt(GameManager.instance.currentControllingPlayer.transform);
     }
 
     public void OnInteract(GameObject currentPlayer)
