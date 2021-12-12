@@ -8,15 +8,31 @@ public class Loop1 : MonoBehaviour
     public bool oneTimeEventFlag = true;
 
     [Header("Event")]
+    public GameObject Event410;
     public GameObject Event400;
     public GameObject EventStart;
 
-    [Header("Pose")]
+    [Header("Vick Pose")]
+    public Sprite vickStomache;
     public Sprite vickReachingPocketPose;
     public Sprite vickOriginalPose;
+
+    [Header("Vick Pose")]
+    public Sprite floraSmiling;
     public Sprite floraOriginalPose;
+
+    [Header("Emi Pose")]
     public Sprite emiOriginalPose;
+
+    [Header("Cole Pose")]
     public Sprite coleOriginalPose;
+
+    private NPC vick;
+    private NPC flora;
+    private NPC emi;
+    private NPC cole;
+
+    //public int eventDelay;
 
     public static Loop1 instance;
     void Awake()
@@ -33,6 +49,15 @@ public class Loop1 : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        cole = NPCManager.instance.NPCs[0].GetComponent<NPC>();
+        flora = NPCManager.instance.NPCs[1].GetComponent<NPC>();
+        vick = NPCManager.instance.NPCs[2].GetComponent<NPC>();
+        emi = NPCManager.instance.NPCs[3].GetComponent<NPC>();
+
+    }
+
     private void Update()
     {
         if(GameManager.instance.currentLoopTimeMinute == 0 && oneTimeEventFlag)
@@ -47,15 +72,23 @@ public class Loop1 : MonoBehaviour
             oneTimeEventFlag = false;
             Debug.Log("Everyone Back to Their Seat");
         }
-        if (GameManager.instance.currentLoopTimeMinute == 6)
+        if (GameManager.instance.currentLoopTimeMinute == 6 + ExitClassroomController.instance.playerOutTimeLong)
         {
             Debug.Log("Vick check pocket, change character pose");
-            NPCManager.instance.NPCs[2].GetComponent<NPC>().pose.sprite = vickReachingPocketPose;
+            vick.pose.sprite = vickReachingPocketPose;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 7)
+        if (GameManager.instance.currentLoopTimeMinute == 7 + ExitClassroomController.instance.playerOutTimeLong)
         {
-            Debug.Log("Vick back");
-            NPCManager.instance.NPCs[2].GetComponent<NPC>().pose.sprite = vickOriginalPose;
+            Debug.Log("Vick back to normal");
+            vick.pose.sprite = vickOriginalPose;
+        }
+        if(GameManager.instance.currentLoopTimeMinute == 10 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick stomache, Flora smile");
+            NPCManager.instance.SetWayPointsByEvent(Event410);
+            vick.pose.sprite = vickStomache;
+            flora.pose.sprite = floraSmiling;
+            oneTimeEventFlag = false;
         }
     }
 }

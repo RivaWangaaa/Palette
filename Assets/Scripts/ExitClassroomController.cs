@@ -36,6 +36,7 @@ public class ExitClassroomController : MonoBehaviour
 
     [Header("Countdown related")]
     public int timePlayerGoOut;
+    public int playerOutTimeLong;
 
     private void Update()
     {
@@ -103,6 +104,7 @@ public class ExitClassroomController : MonoBehaviour
         GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = true;
         isPlayerOutsideTheClassroom = false;
         isPlayerHasThePermision = false;
+        //playerOutTimeLong = 0;
     }
 
     public void OnInteract()

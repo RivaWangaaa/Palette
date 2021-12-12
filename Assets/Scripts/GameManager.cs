@@ -50,16 +50,22 @@ public class GameManager : MonoBehaviour
             Pause();
         }
 
-        currentLoopTimeFloat = Time.deltaTime + currentLoopTimeFloat;
-        currentLoopTimeSecond = Mathf.RoundToInt(currentLoopTimeFloat);
-        if(currentLoopTimeSecond >= 60 / timeModifier)
+        if(!NPCManager.instance.isHavingConversation)
         {
-            currentLoopTimeMinute ++;
-            currentLoopTimeSecond = 0;
-            currentLoopTimeFloat = 0;
-            Loop1.instance.oneTimeEventFlag = true;
+            currentLoopTimeFloat = Time.deltaTime + currentLoopTimeFloat;
+            currentLoopTimeSecond = Mathf.RoundToInt(currentLoopTimeFloat);
+            if (currentLoopTimeSecond >= 60 / timeModifier)
+            {
+                currentLoopTimeMinute++;
+                currentLoopTimeSecond = 0;
+                currentLoopTimeFloat = 0;
+                Loop1.instance.oneTimeEventFlag = true;
+                if (ExitClassroomController.instance.isPlayerOutsideTheClassroom)
+                {
+                    ExitClassroomController.instance.playerOutTimeLong++;
+                }
+            }
         }
-
     }
 
     //this method is used when player is having a conversation with a NPC

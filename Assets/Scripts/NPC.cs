@@ -27,11 +27,17 @@ public class NPC : MonoBehaviour
         {
             //NPC stands still
         }
-        else
+        else if(wayPoints.Count == 1)
+        {
+            transform.position = wayPoints[0].position;
+            currentWayPointIndex++;
+            wayPoints.Clear();
+            currentWayPointIndex = 0;
+        }
         {
             //NPC has waypoints remaining, they should keep going
             currentStopTime += Time.deltaTime;
-            if(currentStopTime >= maxStopTime)
+            if(currentStopTime >= (60 / GameManager.instance.timeModifier) / wayPoints.Count)
             {
                 transform.position = wayPoints[currentWayPointIndex].position;
                 currentStopTime = 0;
@@ -74,6 +80,7 @@ public class NPC : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
+        flowchat.gameObject.SetActive(false);
         Debug.Log("end interaction");
     }
 
