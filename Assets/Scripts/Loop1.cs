@@ -72,22 +72,34 @@ public class Loop1 : MonoBehaviour
             oneTimeEventFlag = false;
             Debug.Log("Everyone Back to Their Seat");
         }
-        if (GameManager.instance.currentLoopTimeMinute == 6 + ExitClassroomController.instance.playerOutTimeLong)
+        if (GameManager.instance.currentLoopTimeMinute == 6 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
         {
             Debug.Log("Vick check pocket, change character pose");
             vick.pose.sprite = vickReachingPocketPose;
+            vick.flowchat.SetBooleanVariable("IsReachingPocket", true);
+            oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 7 + ExitClassroomController.instance.playerOutTimeLong)
+        if (GameManager.instance.currentLoopTimeMinute == 7 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
         {
             Debug.Log("Vick back to normal");
             vick.pose.sprite = vickOriginalPose;
+            vick.flowchat.SetBooleanVariable("IsReachingPocket", false);
+            oneTimeEventFlag = false;
         }
         if(GameManager.instance.currentLoopTimeMinute == 10 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
         {
             Debug.Log("Vick stomache, Flora smile");
             NPCManager.instance.SetWayPointsByEvent(Event410);
             vick.pose.sprite = vickStomache;
+            vick.flowchat.SetBooleanVariable("IsStomaching", true);
             flora.pose.sprite = floraSmiling;
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 11 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is out, Flora stop smile");
+            flora.pose.sprite = floraOriginalPose;
+            ExitClassroomController.instance.oneKidExitsTheRoom();
             oneTimeEventFlag = false;
         }
     }

@@ -34,11 +34,13 @@ public class NPC : MonoBehaviour
             wayPoints.Clear();
             currentWayPointIndex = 0;
         }
+        else
         {
             //NPC has waypoints remaining, they should keep going
             currentStopTime += Time.deltaTime;
-            if(currentStopTime >= (60 / GameManager.instance.timeModifier) / wayPoints.Count)
+            if(currentStopTime >= (float)(60 / GameManager.instance.timeModifier) / (float)wayPoints.Count)
             {
+                //Debug.Log(60/GameManager.instance.timeModifier + "," + wayPoints.Count + "," + (float)(60 / GameManager.instance.timeModifier) / (float)wayPoints.Count);
                 transform.position = wayPoints[currentWayPointIndex].position;
                 currentStopTime = 0;
                 currentWayPointIndex ++;
