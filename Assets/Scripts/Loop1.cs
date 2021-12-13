@@ -8,11 +8,13 @@ public class Loop1 : MonoBehaviour
     public bool oneTimeEventFlag = true;
 
     [Header("Event")]
+    public GameObject Event413;
     public GameObject Event410;
     public GameObject Event400;
     public GameObject EventStart;
 
     [Header("Vick Pose")]
+    public Sprite vickPlaying;
     public Sprite vickStomache;
     public Sprite vickReachingPocketPose;
     public Sprite vickOriginalPose;
@@ -100,6 +102,20 @@ public class Loop1 : MonoBehaviour
             Debug.Log("Vick is out, Flora stop smile");
             flora.pose.sprite = floraOriginalPose;
             ExitClassroomController.instance.oneKidExitsTheRoom();
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 13 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is back");
+            NPCManager.instance.SetWayPointsByEvent(Event413);
+            vick.pose.sprite = vickOriginalPose;
+            ExitClassroomController.instance.oneKidComesBackTheRoom();
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 14 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is playing in the corner");
+            vick.pose.sprite = vickPlaying;
             oneTimeEventFlag = false;
         }
     }
