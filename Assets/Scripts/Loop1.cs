@@ -116,6 +116,7 @@ public class Loop1 : MonoBehaviour
         {
             Debug.Log("Vick is playing in the corner");
             vick.pose.sprite = vickPlaying;
+            vick.canBeEavesdroped = true;
             oneTimeEventFlag = false;
         }
     }

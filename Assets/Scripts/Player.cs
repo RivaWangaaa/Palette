@@ -146,12 +146,9 @@ public class Player : MonoBehaviour
             eavesdropCharacter = null;
         }
         if(eavesdropCharacter != eavesdropingObject)
-        {   
-            if(eavesdropCharacter != null)
-            {
-                ClearIcon(eavesdropingObject);
-                eavesdropingObject = eavesdropCharacter;
-            }
+        {
+            ClearIcon(eavesdropingObject);
+            eavesdropingObject = eavesdropCharacter;
         }
     }
 
