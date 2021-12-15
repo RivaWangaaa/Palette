@@ -9,6 +9,7 @@ using UnityEngine;
  * TODO: Events
  * 
  */
+
 public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;

@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
                 //define by tag
                 if (currentGameobject.tag == "hint")
                 {
-                    pointingObject = currentGameobject;
+                    //pointingObject = currentGameobject;
                     //when player collect a collectable item
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
                 }
                 if (currentGameobject.tag == "player")
                 {
-                    pointingObject = currentGameobject;
+                    //pointingObject = currentGameobject;
                     //when player try to switch to another player character
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -68,11 +68,11 @@ public class Player : MonoBehaviour
                 if (currentGameobject.tag == "character")
                 {
                     isWithinTalkDistance(currentGameobject);
-                    Debug.Log("detect talkable player");
+                    //Debug.Log("detect talkable player");
                     if(currentGameobject.GetComponent<NPC>().isWithInTalkDistance)
                     {
-                        Debug.Log("can talk");
-                        pointingObject = currentGameobject;
+                        //Debug.Log("can talk");
+                        //pointingObject = currentGameobject;
                         currentGameobject.GetComponent<NPC>().talkIcon.SetActive(true);
                         //when player start a conversation with a NPC
                         if (Input.GetKeyDown(KeyCode.E))
@@ -82,13 +82,23 @@ public class Player : MonoBehaviour
                         }
                     }
                 }
-                if(currentGameobject.tag == "classroomDoor")
+                if (currentGameobject.tag == "classroomDoor")
                 {
-                    pointingObject = currentGameobject;
+                    //pointingObject = currentGameobject;
                     //when player tries to open a door
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         ExitClassroomController.instance.playerInteractWithTheClassroomDoor();
+                    }
+                }
+                if (currentGameobject.tag == "observePoint")
+                {
+                    //pointingObject = currentGameobject;
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.observeIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("Observe");
                     }
                 }
             }
@@ -102,27 +112,31 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("hit nothing");
+            //Debug.Log("hit nothing");
             currentGameobject = null;
             Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
+
         if (currentGameobject != pointingObject)
         {
-            Debug.Log("clear icon");
-            if(pointingObject != null)
+            if (pointingObject == null)
             {
-                ClearIcon(pointingObject);
                 pointingObject = currentGameobject;
             }
+            Debug.Log("clear icon");
+            ClearIcon(pointingObject);
+            pointingObject = currentGameobject;
+            
         }
 
         if(Physics.Raycast(ray, out hit, eavesdropDistance))
         {
             if(hit.collider != null)
             {
-                eavesdropCharacter = hit.collider.gameObject;
-                if (eavesdropCharacter.tag == "character" && eavesdropCharacter.GetComponent<NPC>().canBeEavesdroped)
+
+                if (hit.collider.gameObject.tag == "character" && hit.collider.gameObject.GetComponent<NPC>().canBeEavesdroped)
                 {
+                    eavesdropCharacter = hit.collider.gameObject;
                     isWithinTalkDistance(eavesdropCharacter);
                     if (!eavesdropCharacter.GetComponent<NPC>().isWithInTalkDistance)
                     {
@@ -145,7 +159,7 @@ public class Player : MonoBehaviour
         {
             eavesdropCharacter = null;
         }
-        if(eavesdropCharacter != eavesdropingObject)
+        if(eavesdropCharacter != eavesdropingObject && eavesdropCharacter.GetComponent<NPC>().canBeEavesdroped)
         {
             ClearIcon(eavesdropingObject);
             eavesdropingObject = eavesdropCharacter;
@@ -190,6 +204,11 @@ public class Player : MonoBehaviour
         {
             objectToBeCleared.GetComponent<NPC>().talkIcon.SetActive(false);
             objectToBeCleared.GetComponent<NPC>().eavesdropIcon.SetActive(false);
+        }
+        if(objectToBeCleared.tag == "observePoint")
+        {
+            UIManager.instance.crosshair.SetActive(true);
+            UIManager.instance.observeIcon.SetActive(false);
         }
     }
 
