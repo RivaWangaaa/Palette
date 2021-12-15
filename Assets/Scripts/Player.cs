@@ -133,17 +133,17 @@ public class Player : MonoBehaviour
         {
             if(hit.collider != null)
             {
-
                 if (hit.collider.gameObject.tag == "character" && hit.collider.gameObject.GetComponent<NPC>().canBeEavesdroped)
                 {
                     eavesdropCharacter = hit.collider.gameObject;
                     isWithinTalkDistance(eavesdropCharacter);
                     if (!eavesdropCharacter.GetComponent<NPC>().isWithInTalkDistance)
                     {
-                        eavesdropingObject = eavesdropCharacter;
+                        //eavesdropingObject = eavesdropCharacter;
                         eavesdropCharacter.GetComponent<NPC>().eavesdropIcon.SetActive(true);
                         if (Input.GetKeyDown(KeyCode.E))
                         {
+                            Debug.Log("eavesdrop");
                             isEavesdroping = true;
                             eavesdropCharacter.GetComponent<NPC>().OnInteract(gameObject);
                         }
@@ -159,8 +159,13 @@ public class Player : MonoBehaviour
         {
             eavesdropCharacter = null;
         }
-        if(eavesdropCharacter != eavesdropingObject && eavesdropCharacter.GetComponent<NPC>().canBeEavesdroped)
+
+        if (eavesdropCharacter != eavesdropingObject)
         {
+            if (eavesdropingObject == null)
+            {
+                eavesdropingObject = eavesdropCharacter;
+            }
             ClearIcon(eavesdropingObject);
             eavesdropingObject = eavesdropCharacter;
         }

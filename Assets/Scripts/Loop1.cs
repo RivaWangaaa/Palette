@@ -8,12 +8,14 @@ public class Loop1 : MonoBehaviour
     public bool oneTimeEventFlag = true;
 
     [Header("Event")]
+    public GameObject Event424;
     public GameObject Event413;
     public GameObject Event410;
     public GameObject Event400;
     public GameObject EventStart;
 
     [Header("Vick Pose")]
+    public Sprite vickSad;
     public Sprite vickPlaying;
     public Sprite vickStomache;
     public Sprite vickReachingPocketPose;
@@ -92,8 +94,10 @@ public class Loop1 : MonoBehaviour
         {
             Debug.Log("Vick stomache, Flora smile");
             NPCManager.instance.SetWayPointsByEvent(Event410);
+            //Vick
             vick.pose.sprite = vickStomache;
             vick.flowchat.SetBooleanVariable("IsStomaching", true);
+            //Flora
             flora.pose.sprite = floraSmiling;
             oneTimeEventFlag = false;
         }
@@ -107,6 +111,7 @@ public class Loop1 : MonoBehaviour
         if (GameManager.instance.currentLoopTimeMinute == 13 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
         {
             Debug.Log("Vick is back");
+            vick.flowchat.SetBooleanVariable("IsStomaching", false);
             NPCManager.instance.SetWayPointsByEvent(Event413);
             vick.pose.sprite = vickOriginalPose;
             ExitClassroomController.instance.oneKidComesBackTheRoom();
@@ -114,9 +119,39 @@ public class Loop1 : MonoBehaviour
         }
         if (GameManager.instance.currentLoopTimeMinute == 14 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
         {
-            Debug.Log("Vick is playing in the corner");
+            Debug.Log("Vick is playing in the corner, can be eavesdrop, Vick is happy");
             vick.pose.sprite = vickPlaying;
             vick.canBeEavesdroped = true;
+            vick.flowchat.SetBooleanVariable("IsPlaying", true);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 16 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is sad");
+            vick.pose.sprite = vickSad;
+            vick.canBeEavesdroped = false;
+            vick.flowchat.SetBooleanVariable("IsPlaying", false);
+            vick.flowchat.SetBooleanVariable("BeingSad", true);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 19 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is not sad, playing house");
+            vick.pose.sprite = vickPlaying;
+            vick.flowchat.SetBooleanVariable("IsPlaying", true);
+            vick.flowchat.SetBooleanVariable("BeingSad", false);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 24 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick go to Flora");
+            NPCManager.instance.SetWayPointsByEvent(Event424);
+            vick.pose.sprite = vickOriginalPose;
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 25 + ExitClassroomController.instance.playerOutTimeLong && oneTimeEventFlag)
+        {
+            Debug.Log("Vick ask Flora how to be smarter");
             oneTimeEventFlag = false;
         }
     }

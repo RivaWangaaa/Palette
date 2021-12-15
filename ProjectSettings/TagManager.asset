@@ -8,6 +8,7 @@ TagManager:
   - player
   - character
   - classroomDoor
+  - observePoint
   layers:
   - Default
   - TransparentFX
