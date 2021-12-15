@@ -101,6 +101,16 @@ public class Player : MonoBehaviour
                         Debug.Log("Observe");
                     }
                 }
+                if (currentGameobject.tag == "commonConversationShort")
+                {
+                    //pointingObject = currentGameobject;
+                    currentGameobject.GetComponent<CommonConversation>().chatIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("join");
+                        currentGameobject.GetComponent<CommonConversation>().OnInteract();
+                    }
+                }
             }
             //else
             //{
@@ -214,6 +224,10 @@ public class Player : MonoBehaviour
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.observeIcon.SetActive(false);
+        }
+        if (objectToBeCleared.tag == "commonConversationShort")
+        {
+            objectToBeCleared.GetComponent<CommonConversation>().chatIcon.SetActive(false);
         }
     }
 

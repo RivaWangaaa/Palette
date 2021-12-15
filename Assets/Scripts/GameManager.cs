@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
                 currentLoopTimeSecond = 0;
                 currentLoopTimeFloat = 0;
                 Loop1.instance.oneTimeEventFlag = true;
+                UIManager.instance.txt_Time.text = "Time:" + currentLoopTimeMinute;
                 if (ExitClassroomController.instance.isPlayerOutsideTheClassroom)
                 {
                     ExitClassroomController.instance.playerOutTimeLong++;

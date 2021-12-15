@@ -1,18 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class CommonConversation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject chatIcon;
+    public Flowchart flowchat;
+    public int timeCost;
+
+    public bool needAnEndEvent;
+    public GameObject endEvent;
+    
+    public void OnInteract()
     {
-        
+        flowchat.gameObject.SetActive(true);
+        NPCManager.instance.isHavingConversation = true;
+        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EndInteract()
     {
+        flowchat.gameObject.SetActive(false);
+        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+        NPCManager.instance.isHavingConversation = false;
         
+        //add time
+        GameManager.instance.currentLoopTimeMinute += timeCost;
+        if (needAnEndEvent)
+        {
+            NPCManager.instance.SetWayPointsByEvent(endEvent);
+        }
     }
 }

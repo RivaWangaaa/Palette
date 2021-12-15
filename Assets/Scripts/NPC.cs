@@ -74,7 +74,7 @@ public class NPC : MonoBehaviour
         //every flowchat for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
         NPCManager.instance.UpdateCollectedHints();
-        NPCManager.instance.isHavingConversation = true;
+        
         if(GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
         {
             Debug.Log("start dropping");
@@ -82,6 +82,7 @@ public class NPC : MonoBehaviour
         }
 
         //lock player's camera when having a conversation
+        NPCManager.instance.isHavingConversation = true;
         GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
