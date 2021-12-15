@@ -9,6 +9,7 @@ using UnityEngine;
  * TODO: Events
  * 
  */
+
 public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;
@@ -85,9 +86,9 @@ public class NPCManager : MonoBehaviour
         int wayPointsNum;
         for(int j = 0; j < NPCs.Count - 1; j++)
         {
-            Debug.Log("j = " + j);
+            //Debug.Log("j = " + j);
             wayPointsNum = Event.transform.GetChild(j).childCount;
-            Debug.Log("NPC " + NPCs[j].name + " has" + wayPointsNum + " waypoints");
+            //Debug.Log("NPC " + NPCs[j].name + " has" + wayPointsNum + " waypoints");
             for (int i = 0; i < wayPointsNum; i++)
             {
                 NPCs[j].GetComponent<NPC>().wayPoints.Add(Event.transform.GetChild(j).GetChild(i));

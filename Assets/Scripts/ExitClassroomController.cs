@@ -51,6 +51,7 @@ public class ExitClassroomController : MonoBehaviour
     {
         permitToExitFlowchat.SetBooleanVariable("IsSomeoneOutThere", true);
         forbidToExitFlowchat.SetBooleanVariable("IsSomeoneOutThere", true);
+        NPCManager.instance.NPCs[4].GetComponent<NPC>().flowchat.SetBooleanVariable("IsSomeoneOutThere", true);
         isSomeoneOutThere = true;
         isPlayerHasThePermision = false;
 
@@ -60,6 +61,7 @@ public class ExitClassroomController : MonoBehaviour
     {
         permitToExitFlowchat.SetBooleanVariable("IsSomeoneOutThere", false);
         forbidToExitFlowchat.SetBooleanVariable("IsSomeoneOutThere", false);
+        NPCManager.instance.NPCs[4].GetComponent<NPC>().flowchat.SetBooleanVariable("IsSomeoneOutThere", false);
         isSomeoneOutThere = false;
     }
 

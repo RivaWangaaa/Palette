@@ -19,7 +19,13 @@ public class NPC : MonoBehaviour
 
     public SpriteRenderer pose;
 
+    public GameObject talkIcon;
+    public GameObject eavesdropIcon;
+
     public List<GameObject> hintsInDrawBook;
+
+    public bool canBeEavesdroped;
+    public bool isWithInTalkDistance;
      
     private void Update()
     {
@@ -34,11 +40,13 @@ public class NPC : MonoBehaviour
             wayPoints.Clear();
             currentWayPointIndex = 0;
         }
+        else
         {
             //NPC has waypoints remaining, they should keep going
             currentStopTime += Time.deltaTime;
-            if(currentStopTime >= (60 / GameManager.instance.timeModifier) / wayPoints.Count)
+            if(currentStopTime >= (float)(60 / GameManager.instance.timeModifier) / (float)wayPoints.Count)
             {
+                //Debug.Log(60/GameManager.instance.timeModifier + "," + wayPoints.Count + "," + (float)(60 / GameManager.instance.timeModifier) / (float)wayPoints.Count);
                 transform.position = wayPoints[currentWayPointIndex].position;
                 currentStopTime = 0;
                 currentWayPointIndex ++;
@@ -55,7 +63,7 @@ public class NPC : MonoBehaviour
 
     public void OnInteract(GameObject currentPlayer)
     {
-        Debug.Log("character " + gameObject.name + " interacted");
+        //Debug.Log("character " + gameObject.name + " interacted");
         //this would be written in the flowchat, coz player is not 100% get the hint in the conversation
         isCollected = true;
         //disable the VFX on NPC
@@ -67,6 +75,11 @@ public class NPC : MonoBehaviour
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
         NPCManager.instance.UpdateCollectedHints();
         NPCManager.instance.isHavingConversation = true;
+        if(GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
+        {
+            Debug.Log("start dropping");
+            flowchat.SetBooleanVariable("isEavesdroping", true);
+        }
 
         //lock player's camera when having a conversation
         GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
@@ -81,7 +94,13 @@ public class NPC : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
         flowchat.gameObject.SetActive(false);
-        Debug.Log("end interaction");
+        //Debug.Log("end interaction");
+        if (GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
+        {
+            Debug.Log("end dropping");
+            GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping = false;
+            flowchat.SetBooleanVariable("isEavesdroping", false);
+        }
     }
 
     public void GetHintNo1()

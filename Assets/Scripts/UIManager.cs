@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;
 
+    public GameObject crosshair;
+    public GameObject observeIcon;
+
     void Awake()
     {
         if (instance == null)
