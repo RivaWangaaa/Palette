@@ -163,6 +163,18 @@ public class Player : MonoBehaviour
                         eavesdropCharacter = null;
                     }
                 }
+
+                if (hit.collider.gameObject.tag == "commonConversationLong")
+                {
+                    eavesdropCharacter = hit.collider.gameObject;
+                    eavesdropCharacter.GetComponent<CommonConversation>().chatIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("eavesdrop");
+                        isEavesdroping = true;
+                        eavesdropCharacter.GetComponent<CommonConversation>().OnInteract();
+                    }
+                }
             }
         }
         else
@@ -226,6 +238,10 @@ public class Player : MonoBehaviour
             UIManager.instance.observeIcon.SetActive(false);
         }
         if (objectToBeCleared.tag == "commonConversationShort")
+        {
+            objectToBeCleared.GetComponent<CommonConversation>().chatIcon.SetActive(false);
+        }
+        if (objectToBeCleared.tag == "commonConversationLong")
         {
             objectToBeCleared.GetComponent<CommonConversation>().chatIcon.SetActive(false);
         }

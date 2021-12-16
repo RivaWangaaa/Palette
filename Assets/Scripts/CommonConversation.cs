@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
@@ -11,7 +12,20 @@ public class CommonConversation : MonoBehaviour
 
     public bool needAnEndEvent;
     public GameObject endEvent;
-    
+
+    private void Update()
+    {
+        if (Vector3.Distance(GameManager.instance.currentControllingPlayer.transform.position,
+                gameObject.transform.position) >= 3 && gameObject.CompareTag("commonConversationLong"))
+        {
+            GetComponent<BoxCollider>().enabled = true;
+        }
+        else
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
     public void OnInteract()
     {
         flowchat.gameObject.SetActive(true);

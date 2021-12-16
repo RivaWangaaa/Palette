@@ -7,7 +7,8 @@ public class Loop1 : MonoBehaviour
 
     public bool oneTimeEventFlag = true;
 
-    [Header("Event")]
+    [Header("Event")] 
+    public GameObject event429;
     public GameObject event424;
     public GameObject event413;
     public GameObject event410;
@@ -117,7 +118,7 @@ public class Loop1 : MonoBehaviour
             ExitClassroomController.instance.oneKidComesBackTheRoom();
             oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 14 && oneTimeEventFlag)
+        if (GameManager.instance.currentLoopTimeMinute == 16 && oneTimeEventFlag)
         {
             Debug.Log("Vick is playing in the corner, can be eavesdrop, Vick is happy");
             vick.pose.sprite = vickPlaying;
@@ -125,7 +126,7 @@ public class Loop1 : MonoBehaviour
             vick.flowchat.SetBooleanVariable("IsPlaying", true);
             oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 16 && oneTimeEventFlag)
+        if (GameManager.instance.currentLoopTimeMinute == 19 && oneTimeEventFlag)
         {
             Debug.Log("Vick is sad");
             vick.pose.sprite = vickSad;
@@ -134,7 +135,7 @@ public class Loop1 : MonoBehaviour
             vick.flowchat.SetBooleanVariable("BeingSad", true);
             oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 19 && oneTimeEventFlag)
+        if (GameManager.instance.currentLoopTimeMinute == 21 && oneTimeEventFlag)
         {
             Debug.Log("Vick is not sad, playing house");
             vick.pose.sprite = vickPlaying;
@@ -152,6 +153,15 @@ public class Loop1 : MonoBehaviour
         if (GameManager.instance.currentLoopTimeMinute == 25 && oneTimeEventFlag)
         {
             Debug.Log("Vick ask Flora how to be smarter");
+            //vick and flora conversation set active
+            event424.transform.GetChild(4).gameObject.SetActive(true);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 29 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora goes to toilet");
+            NPCManager.instance.SetWayPointsByEvent(event429);
+            ExitClassroomController.instance.oneKidExitsTheRoom();
             oneTimeEventFlag = false;
         }
     }
