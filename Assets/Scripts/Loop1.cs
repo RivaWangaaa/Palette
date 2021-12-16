@@ -8,6 +8,7 @@ public class Loop1 : MonoBehaviour
     public bool oneTimeEventFlag = true;
 
     [Header("Event")] 
+    public GameObject event436;
     public GameObject event429;
     public GameObject event424;
     public GameObject event413;
@@ -157,11 +158,25 @@ public class Loop1 : MonoBehaviour
             event424.transform.GetChild(4).gameObject.SetActive(true);
             oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 29 && oneTimeEventFlag)
+        if (GameManager.instance.currentLoopTimeMinute == 30 && oneTimeEventFlag)
         {
             Debug.Log("Flora goes to toilet");
             NPCManager.instance.SetWayPointsByEvent(event429);
             ExitClassroomController.instance.oneKidExitsTheRoom();
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 36 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora comes back");
+            NPCManager.instance.SetWayPointsByEvent(event436);
+            ExitClassroomController.instance.oneKidComesBackTheRoom();
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 37 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora confront with teacher");
+            event436.transform.GetChild(4).gameObject.SetActive(true);
+            
             oneTimeEventFlag = false;
         }
     }
