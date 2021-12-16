@@ -171,7 +171,6 @@ public class Player : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Debug.Log("eavesdrop");
-                        isEavesdroping = true;
                         eavesdropCharacter.GetComponent<CommonConversation>().OnInteract();
                     }
                 }
