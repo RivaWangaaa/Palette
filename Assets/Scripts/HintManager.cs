@@ -7,7 +7,7 @@ public class HintManager : MonoBehaviour
     public static HintManager instance;
 
     //this should be replaced with Dictionary in the future
-    public List<GameObject> collectableObjects;
+    public List<GameObject> observableObject;
     public List<bool> isHintCollected;
 
     void Awake()
@@ -28,7 +28,7 @@ public class HintManager : MonoBehaviour
     {
         //auto generate a bool for each item
         //Nate: again this is because I could not use dictionary or scriptable object
-        for (int i = 0; i < collectableObjects.Count; i++)
+        for (int i = 0; i < observableObject.Count; i++)
         {
             isHintCollected.Add(false);
         }
@@ -37,9 +37,49 @@ public class HintManager : MonoBehaviour
     //used when player collect an object or hint stuff
     public void UpdateCollectedHints()
     {
-        for(int i = 0; i < collectableObjects.Count; i++)
+        for(int i = 0; i < observableObject.Count; i++)
         {
-            isHintCollected[i] = collectableObjects[i].GetComponent<Hint>().isCollected;
+            isHintCollected[i] = observableObject[i].GetComponent<Hint>().isCollected;
+        }
+    }
+
+    public void RefreshHintWhenSwitchingPlayer(GameObject player)
+    {
+        for(int i = 0; i < observableObject.Count; i++)
+        {
+            switch (player.GetComponent<Player>().playerIndex)
+            {
+                case 1:
+                    if (observableObject[i].GetComponent<Hint>().canBeSeenByJimie)
+                    {
+                        observableObject[i].SetActive(true);
+                    }
+                    else
+                    {
+                        observableObject[i].SetActive(false);
+                    }
+                    break;
+                case 2:
+                    if (observableObject[i].GetComponent<Hint>().canBeSeenByPlum)
+                    {
+                        observableObject[i].SetActive(true);
+                    }
+                    else
+                    {
+                        observableObject[i].SetActive(false);
+                    }
+                    break;
+                case 3:
+                    if (observableObject[i].GetComponent<Hint>().canBeSeenByChunk)
+                    {
+                        observableObject[i].SetActive(true);
+                    }
+                    else
+                    {
+                        observableObject[i].SetActive(false);
+                    }
+                    break;
+            }
         }
     }
 }

@@ -10,7 +10,12 @@ public class Hint : MonoBehaviour
     public bool isCollected;
     public GameObject iconInDrawBook;
     public Flowchart observationLines;
+    public GameObject popUpImage;
 
+    public bool canBeSeenByJimie;
+    public bool canBeSeenByPlum;
+    public bool canBeSeenByChunk;
+    
     //when player press E to interact with this item
     public void OnObserve()
     {
@@ -20,6 +25,7 @@ public class Hint : MonoBehaviour
         HintManager.instance.UpdateCollectedHints();
         iconInDrawBook.SetActive(true);
         observationLines.gameObject.SetActive(true);
+        popUpImage.SetActive(true);
         
         NPCManager.instance.isHavingConversation = true;
         GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
@@ -30,10 +36,11 @@ public class Hint : MonoBehaviour
     public void EndObserve()
     {
         observationLines.gameObject.SetActive(false);
-        
+        popUpImage.SetActive(false);
         GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
+        
     }
 }

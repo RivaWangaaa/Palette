@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     public GameObject eavesdropingObject;
     public bool isEavesdroping;
 
+    public GameObject playerIcon;
+
+    public int playerIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -200,6 +203,7 @@ public class Player : MonoBehaviour
         targetPlayer.GetComponent<FirstPersonDrifter>().enabled = true;
         targetPlayer.GetComponent<MouseLook>().enabled = true;
         targetPlayer.GetComponent<Player>().enabled = true;
+        targetPlayer.GetComponent<Player>().playerIcon.SetActive(true);
         targetPlayer.GetComponent<Footsteps>().enabled = true;
         targetPlayer.GetComponent<AudioSource>().enabled = true;
         targetPlayer.GetComponent<UncontrolledPlayerFacing>().enabled = false;
@@ -209,6 +213,7 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<FirstPersonDrifter>().enabled = false;
         gameObject.GetComponent<MouseLook>().enabled = false;
         gameObject.GetComponent<Player>().enabled = false;
+        gameObject.GetComponent<Player>().playerIcon.SetActive(false);
         gameObject.GetComponent<Footsteps>().enabled = false;
         gameObject.GetComponent<AudioSource>().enabled = false;
         gameObject.GetComponent<UncontrolledPlayerFacing>().enabled = true;
@@ -217,6 +222,8 @@ public class Player : MonoBehaviour
         //transport the one you are controlling to their seat
         GameManager.instance.currentControllingPlayer = targetPlayer;
         gameObject.transform.position = chairPosition.position;
+        HintManager.instance.RefreshHintWhenSwitchingPlayer(targetPlayer);
+        Debug.Log(targetPlayer.name);
 
         //TODO: make the transition more elegent (add some animation or using the cinemation?)
         //Nate: I think the transition now could make player feel a little bit confused perhaps for the camera position
