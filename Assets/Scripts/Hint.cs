@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class Hint : MonoBehaviour
 {
@@ -8,15 +9,31 @@ public class Hint : MonoBehaviour
     //Nate: I always though it could be written in a more elegent way 
     public bool isCollected;
     public GameObject iconInDrawBook;
+    public Flowchart observationLines;
 
     //when player press E to interact with this item
-    public void OnCollected()
+    public void OnObserve()
     {
         Debug.Log("hint " + gameObject.name + " collected");
         isCollected = true;
         //update the statues of each item in HintManager
         HintManager.instance.UpdateCollectedHints();
         iconInDrawBook.SetActive(true);
-        gameObject.SetActive(false);
+        observationLines.gameObject.SetActive(true);
+        
+        NPCManager.instance.isHavingConversation = true;
+        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+    }
+
+    public void EndObserve()
+    {
+        observationLines.gameObject.SetActive(false);
+        
+        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+        NPCManager.instance.isHavingConversation = false;
     }
 }

@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
                     UIManager.instance.observeIcon.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        currentGameobject.GetComponent<Hint>().OnCollected();
+                        currentGameobject.GetComponent<Hint>().OnObserve();
                     }
                 }
                 if (currentGameobject.tag == "player")
@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
             objectToBeCleared.GetComponent<NPC>().talkIcon.SetActive(false);
             objectToBeCleared.GetComponent<NPC>().eavesdropIcon.SetActive(false);
         }
-        if(objectToBeCleared.tag == "observePoint")
+        if(objectToBeCleared.tag == "hint")
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.observeIcon.SetActive(false);
