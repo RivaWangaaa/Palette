@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
                 {
                     //pointingObject = currentGameobject;
                     //when player collect a collectable item
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.observeIcon.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         currentGameobject.GetComponent<Hint>().OnCollected();
@@ -94,8 +96,7 @@ public class Player : MonoBehaviour
                 if (currentGameobject.tag == "observePoint")
                 {
                     //pointingObject = currentGameobject;
-                    UIManager.instance.crosshair.SetActive(false);
-                    UIManager.instance.observeIcon.SetActive(true);
+
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Debug.Log("Observe");
@@ -201,6 +202,7 @@ public class Player : MonoBehaviour
         targetPlayer.GetComponent<Player>().enabled = true;
         targetPlayer.GetComponent<Footsteps>().enabled = true;
         targetPlayer.GetComponent<AudioSource>().enabled = true;
+        targetPlayer.GetComponent<UncontrolledPlayerFacing>().enabled = false;
         targetPlayer.transform.GetChild(0).gameObject.SetActive(true);
 
         //disable component and camera on the one you are controlling right now
@@ -209,6 +211,7 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<Player>().enabled = false;
         gameObject.GetComponent<Footsteps>().enabled = false;
         gameObject.GetComponent<AudioSource>().enabled = false;
+        gameObject.GetComponent<UncontrolledPlayerFacing>().enabled = true;
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
         //transport the one you are controlling to their seat
@@ -217,11 +220,6 @@ public class Player : MonoBehaviour
 
         //TODO: make the transition more elegent (add some animation or using the cinemation?)
         //Nate: I think the transition now could make player feel a little bit confused perhaps for the camera position
-    }
-
-    public void SayHi()
-    {
-        Debug.Log("say hi");
     }
 
     public void ClearIcon(GameObject objectToBeCleared)

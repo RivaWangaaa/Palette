@@ -45,6 +45,10 @@
       </option>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor &amp; Play" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,7 +60,14 @@
       <updated>1639597000318</updated>
       <workItem from="1639597018365" duration="6306000" />
       <workItem from="1639606082602" duration="11657000" />
-      <workItem from="1639633799782" duration="3048000" />
+      <workItem from="1639633799782" duration="4074000" />
+      <workItem from="1639659835100" duration="507000" />
+      <workItem from="1639660367846" duration="99000" />
+      <workItem from="1639660511958" duration="231000" />
+      <workItem from="1639660770591" duration="13000" />
+      <workItem from="1639661142698" duration="19000" />
+      <workItem from="1639668534366" duration="64000" />
+      <workItem from="1639668626985" duration="922000" />
     </task>
     <servers />
   </component>
