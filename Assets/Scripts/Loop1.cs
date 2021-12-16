@@ -8,6 +8,8 @@ public class Loop1 : MonoBehaviour
     public bool oneTimeEventFlag = true;
 
     [Header("Event")] 
+    public GameObject event455;
+    public GameObject event450;
     public GameObject event446;
     public GameObject event443;
     public GameObject event440;
@@ -31,7 +33,8 @@ public class Loop1 : MonoBehaviour
     public Sprite floraSmiling;
     public Sprite floraOriginalPose;
 
-    [Header("Emi Pose")]
+    [Header("Emi Pose")] 
+    public Sprite vickMom;
     public Sprite emiOriginalPose;
 
     [Header("Cole Pose")]
@@ -208,6 +211,20 @@ public class Loop1 : MonoBehaviour
         {
             Debug.Log("Flora and Vick keep going");
             NPCManager.instance.SetWayPointsByEvent(event446);
+            oneTimeEventFlag = false;
+        }
+
+        if (GameManager.instance.currentLoopTimeMinute == 50 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick mom comes to the classroom, use Emi for temp");
+            NPCManager.instance.SetWayPointsByEvent(event450);
+            emi.pose.sprite = vickMom;
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 55 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick mom leaves the classroom");
+            NPCManager.instance.SetWayPointsByEvent(event455);
             oneTimeEventFlag = false;
         }
     }
