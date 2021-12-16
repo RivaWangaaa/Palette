@@ -15,15 +15,19 @@ public class CommonConversation : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(GameManager.instance.currentControllingPlayer.transform.position,
-                gameObject.transform.position) >= 3 && gameObject.CompareTag("commonConversationLong"))
+        if (gameObject.CompareTag("commonConversationLong"))
         {
-            GetComponent<BoxCollider>().enabled = true;
+            if (Vector3.Distance(GameManager.instance.currentControllingPlayer.transform.position,
+                    gameObject.transform.position) >= 3)
+            {
+                GetComponent<BoxCollider>().enabled = true;
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = false;
+            }
         }
-        else
-        {
-            GetComponent<BoxCollider>().enabled = false;
-        }
+
     }
 
     public void OnInteract()

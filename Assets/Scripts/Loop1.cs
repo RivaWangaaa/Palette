@@ -8,6 +8,9 @@ public class Loop1 : MonoBehaviour
     public bool oneTimeEventFlag = true;
 
     [Header("Event")] 
+    public GameObject event446;
+    public GameObject event443;
+    public GameObject event440;
     public GameObject event436;
     public GameObject event429;
     public GameObject event424;
@@ -23,7 +26,8 @@ public class Loop1 : MonoBehaviour
     public Sprite vickReachingPocketPose;
     public Sprite vickOriginalPose;
 
-    [Header("Vick Pose")]
+    [Header("flora Pose")] 
+    public Sprite floraFreaking;
     public Sprite floraSmiling;
     public Sprite floraOriginalPose;
 
@@ -167,16 +171,43 @@ public class Loop1 : MonoBehaviour
         }
         if (GameManager.instance.currentLoopTimeMinute == 36 && oneTimeEventFlag)
         {
-            Debug.Log("Flora comes back");
+            Debug.Log("Flora comes back, Vick goes and play");
             NPCManager.instance.SetWayPointsByEvent(event436);
             ExitClassroomController.instance.oneKidComesBackTheRoom();
             oneTimeEventFlag = false;
         }
         if (GameManager.instance.currentLoopTimeMinute == 37 && oneTimeEventFlag)
         {
-            Debug.Log("Flora confront with teacher");
+            Debug.Log("Flora confront with teacher, Vick is happy");
             event436.transform.GetChild(4).gameObject.SetActive(true);
-            
+            flora.pose.sprite = floraSmiling;
+            vick.pose.sprite = vickPlaying;
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 40 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora and Vick come back to the seat");
+            NPCManager.instance.SetWayPointsByEvent(event440);
+            flora.pose.sprite = floraOriginalPose;
+            vick.pose.sprite = vickOriginalPose;
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 43 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora and Vick go away");
+            NPCManager.instance.SetWayPointsByEvent(event443);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 44 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora talk to Vick");
+            event443.transform.GetChild(4).gameObject.SetActive(true);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 46 && oneTimeEventFlag)
+        {
+            Debug.Log("Flora and Vick keep going");
+            NPCManager.instance.SetWayPointsByEvent(event446);
             oneTimeEventFlag = false;
         }
     }
