@@ -1614,3 +1614,4 @@ MonoBehaviour:
   enterClassroomPoint: {fileID: 6806066936678540765}
   outClassroomPoint: {fileID: 6806066938264378539}
   timePlayerGoOut: 0
+  playerOutTimeLong: 0

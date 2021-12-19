@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Yanxi: Make the start PC (Jamie) able to see right objects.
+        HintManager.instance.RefreshHintWhenSwitchingPlayer(gameObject);
     }
 
     // Update is called once per frame
