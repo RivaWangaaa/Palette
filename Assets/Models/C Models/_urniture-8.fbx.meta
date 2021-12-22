@@ -3,7 +3,12 @@ guid: ebb47579112273a41812e3fc60a78ec3
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branco_Wdl
+    second: {fileID: 2100000, guid: 1195979054b5b0a4799dfccae64223bd, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

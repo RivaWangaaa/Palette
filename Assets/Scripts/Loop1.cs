@@ -14,6 +14,7 @@ public class Loop1 : MonoBehaviour
     public GameObject event443;
     public GameObject event440;
     public GameObject event436;
+    public GameObject event430;
     public GameObject event429;
     public GameObject event424;
     public GameObject event413;
@@ -75,12 +76,18 @@ public class Loop1 : MonoBehaviour
     {
         if(GameManager.instance.currentLoopTimeMinute == 0 && oneTimeEventFlag)
         {
+            //Yanxi: To start the start event at 4:00
+            eventStart.transform.GetChild(4).gameObject.SetActive(true);
+            
             NPCManager.instance.SetWayPointsByEvent(event400);
             oneTimeEventFlag = false;
             Debug.Log("Cole, Emi, Vick, Flora get together");
         }
-        if (GameManager.instance.currentLoopTimeMinute == 3 && oneTimeEventFlag)
+        if (GameManager.instance.currentLoopTimeMinute == 4 && oneTimeEventFlag)
         {
+            //Yanxi: To end the start event at 4:04
+            eventStart.transform.GetChild(4).gameObject.SetActive(false);
+            
             NPCManager.instance.SetWayPointsByEvent(eventStart);
             oneTimeEventFlag = false;
             Debug.Log("Everyone Back to Their Seat");
@@ -92,7 +99,9 @@ public class Loop1 : MonoBehaviour
             vick.flowchat.SetBooleanVariable("IsReachingPocket", true);
             oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 7 && oneTimeEventFlag)
+        
+        //Yanxi: changed 7 to 8
+        if (GameManager.instance.currentLoopTimeMinute == 8 && oneTimeEventFlag)
         {
             Debug.Log("Vick back to normal");
             vick.pose.sprite = vickOriginalPose;
@@ -126,6 +135,8 @@ public class Loop1 : MonoBehaviour
             ExitClassroomController.instance.oneKidComesBackTheRoom();
             oneTimeEventFlag = false;
         }
+        //Yanxi
+        /*
         if (GameManager.instance.currentLoopTimeMinute == 16 && oneTimeEventFlag)
         {
             Debug.Log("Vick is playing in the corner, can be eavesdrop, Vick is happy");
@@ -134,6 +145,26 @@ public class Loop1 : MonoBehaviour
             vick.flowchat.SetBooleanVariable("IsPlaying", true);
             oneTimeEventFlag = false;
         }
+        */
+        
+        //Yanxi
+        if (GameManager.instance.currentLoopTimeMinute == 14 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick arrives at his seat. Vick is happy");
+            vick.flowchat.SetBooleanVariable("IsHappy", true);
+            oneTimeEventFlag = false;
+        }
+        
+        //Yanxi
+        if (GameManager.instance.currentLoopTimeMinute == 18 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick backs to normal");
+            vick.flowchat.SetBooleanVariable("IsHappy", false);
+            oneTimeEventFlag = false;
+        }
+        
+        //Yanxi
+        /*
         if (GameManager.instance.currentLoopTimeMinute == 19 && oneTimeEventFlag)
         {
             Debug.Log("Vick is sad");
@@ -143,38 +174,79 @@ public class Loop1 : MonoBehaviour
             vick.flowchat.SetBooleanVariable("BeingSad", true);
             oneTimeEventFlag = false;
         }
+        */
+        
+        //Yanxi
+        if (GameManager.instance.currentLoopTimeMinute == 19 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is sad");
+            vick.pose.sprite = vickSad;
+            vick.flowchat.SetBooleanVariable("BeingSad", true);
+            oneTimeEventFlag = false;
+        }
+        
+        //Yanxi
+        /*
         if (GameManager.instance.currentLoopTimeMinute == 21 && oneTimeEventFlag)
         {
-            Debug.Log("Vick is not sad, playing house");
+            Debug.Log("Vick is not sad, Vick playhouse");
             vick.pose.sprite = vickPlaying;
             vick.flowchat.SetBooleanVariable("IsPlaying", true);
             vick.flowchat.SetBooleanVariable("BeingSad", false);
             oneTimeEventFlag = false;
         }
+        */
+       
+        //Yanxi
+        if (GameManager.instance.currentLoopTimeMinute == 23 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick is not sad");
+            vick.pose.sprite = vickOriginalPose;
+            vick.flowchat.SetBooleanVariable("BeingSad", false);
+            oneTimeEventFlag = false;
+        }
+        
         if (GameManager.instance.currentLoopTimeMinute == 24 && oneTimeEventFlag)
         {
             Debug.Log("Vick go to Flora");
             NPCManager.instance.SetWayPointsByEvent(event424);
-            vick.pose.sprite = vickOriginalPose;
+            //(Disabled by Yanxi) vick.pose.sprite = vickOriginalPose;
             oneTimeEventFlag = false;
         }
         if (GameManager.instance.currentLoopTimeMinute == 25 && oneTimeEventFlag)
         {
             Debug.Log("Vick ask Flora how to be smarter");
+            //Yanxi: vick and flora conversation set active
+            //vick.flowchat.SetBooleanVariable("IsEavesdropping", true);
             //vick and flora conversation set active
             event424.transform.GetChild(4).gameObject.SetActive(true);
             oneTimeEventFlag = false;
         }
+        //Yanxi
+        if (GameManager.instance.currentLoopTimeMinute == 28 && oneTimeEventFlag)
+        {
+            Debug.Log("Vick stops asking Flora");
+            event424.transform.GetChild(4).gameObject.SetActive(false);
+            oneTimeEventFlag = false;
+        }
+        
         if (GameManager.instance.currentLoopTimeMinute == 30 && oneTimeEventFlag)
         {
             Debug.Log("Flora goes to toilet");
             NPCManager.instance.SetWayPointsByEvent(event429);
             ExitClassroomController.instance.oneKidExitsTheRoom();
             oneTimeEventFlag = false;
+            
+            //Yanxi: added Vick goes to play house
+            Debug.Log("Vick goes to play house");
+            NPCManager.instance.SetWayPointsByEvent(event430);
+            vick.pose.sprite = vickPlaying;
+            vick.flowchat.SetBooleanVariable("IsPlaying", true);
         }
+        
         if (GameManager.instance.currentLoopTimeMinute == 36 && oneTimeEventFlag)
         {
-            Debug.Log("Flora comes back, Vick goes and play");
+            Debug.Log("Flora comes back");
             NPCManager.instance.SetWayPointsByEvent(event436);
             ExitClassroomController.instance.oneKidComesBackTheRoom();
             oneTimeEventFlag = false;
@@ -183,21 +255,29 @@ public class Loop1 : MonoBehaviour
         {
             Debug.Log("Flora confront with teacher, Vick is happy");
             event436.transform.GetChild(4).gameObject.SetActive(true);
-            flora.pose.sprite = floraSmiling;
-            vick.pose.sprite = vickPlaying;
+            // Yanxi: changed smiling to freaking;
+            flora.pose.sprite = floraFreaking;
+            // (Disabled by Yanxi) vick.pose.sprite = vickPlaying;
             oneTimeEventFlag = false;
         }
+
         if (GameManager.instance.currentLoopTimeMinute == 40 && oneTimeEventFlag)
-        {
+        { 
             Debug.Log("Flora and Vick come back to the seat");
-            NPCManager.instance.SetWayPointsByEvent(event440);
-            flora.pose.sprite = floraOriginalPose;
+            event436.transform.GetChild(4).gameObject.SetActive(false);
+            NPCManager.instance.SetWayPointsByEvent(event440); 
+            //flora.pose.sprite = floraOriginalPose;
+            //Yanxi: don't know why Vick won't change to original pose.  
             vick.pose.sprite = vickOriginalPose;
             oneTimeEventFlag = false;
         }
         if (GameManager.instance.currentLoopTimeMinute == 43 && oneTimeEventFlag)
         {
             Debug.Log("Flora and Vick go away");
+            //Yanxi
+            flora.pose.sprite = floraOriginalPose;
+            vick.pose.sprite = vickOriginalPose;
+            
             NPCManager.instance.SetWayPointsByEvent(event443);
             oneTimeEventFlag = false;
         }
@@ -207,14 +287,20 @@ public class Loop1 : MonoBehaviour
             event443.transform.GetChild(4).gameObject.SetActive(true);
             oneTimeEventFlag = false;
         }
-        if (GameManager.instance.currentLoopTimeMinute == 46 && oneTimeEventFlag)
+        
+        //Yanxi: changed 46 to 47
+        if (GameManager.instance.currentLoopTimeMinute == 47 && oneTimeEventFlag)
         {
             Debug.Log("Flora and Vick keep going");
+            //Yanxi
+            event443.transform.GetChild(4).gameObject.SetActive(false);
+            
             NPCManager.instance.SetWayPointsByEvent(event446);
             oneTimeEventFlag = false;
         }
-
-        if (GameManager.instance.currentLoopTimeMinute == 50 && oneTimeEventFlag)
+        
+        //Yanxi: changed 50 to 53
+        if (GameManager.instance.currentLoopTimeMinute == 53 && oneTimeEventFlag)
         {
             Debug.Log("Vick mom comes to the classroom, use Emi for temp");
             NPCManager.instance.SetWayPointsByEvent(event450);

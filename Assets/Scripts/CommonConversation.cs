@@ -7,11 +7,20 @@ using Fungus;
 public class CommonConversation : MonoBehaviour
 {
     public GameObject chatIcon;
-    public Flowchart flowchat;
+    //Yanxi: Made 'flowchat' static to be used in Loop1; Added flowchartReference to assign static flowchart. 
+    public static Flowchart flowchat;
+    public Flowchart flowchartReference;
+    
     public int timeCost;
 
     public bool needAnEndEvent;
     public GameObject endEvent;
+
+    //Yanxi: Added Start() to assign flowchat onto static flowchat, so it can be used in Loop1 script. 
+    private void Start()
+    {
+        flowchat = flowchartReference;
+    }
 
     private void Update()
     {
@@ -32,11 +41,13 @@ public class CommonConversation : MonoBehaviour
 
     public void OnInteract()
     {
-        flowchat.gameObject.SetActive(true);
-        NPCManager.instance.isHavingConversation = true;
-        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+
+            flowchat.gameObject.SetActive(true);
+            NPCManager.instance.isHavingConversation = true;
+            GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+            GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+            GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+
     }
 
     public void EndInteract()
