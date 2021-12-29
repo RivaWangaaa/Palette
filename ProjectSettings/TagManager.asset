@@ -11,6 +11,8 @@ TagManager:
   - observePoint
   - commonConversationShort
   - commonConversationLong
+  - frontClassroomDoor
+  - backClassroomDoor
   layers:
   - Default
   - TransparentFX

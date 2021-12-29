@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
             currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
             currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
             UIManager.instance.pausePanel.SetActive(true);
+            NPCManager.instance.isHavingConversation = true;
         }
         else
         {
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
             UIManager.instance.pausePanel.SetActive(false);
             UIManager.instance.drawBookPanel.SetActive(false);
             UIManager.instance.isDrawBookOpen = false;
+            NPCManager.instance.isHavingConversation = false;
         }
     }
 }

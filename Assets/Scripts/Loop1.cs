@@ -114,6 +114,7 @@ public class Loop1 : MonoBehaviour
             NPCManager.instance.SetWayPointsByEvent(event410);
             //Vick
             vick.pose.sprite = vickStomache;
+            vick.canBeEavesdroped = true;
             vick.flowchat.SetBooleanVariable("IsStomaching", true);
             //Flora
             flora.pose.sprite = floraSmiling;

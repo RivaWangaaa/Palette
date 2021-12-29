@@ -64,7 +64,7 @@ public class NPC : MonoBehaviour
     public void OnInteract(GameObject currentPlayer)
     {
         //Debug.Log("character " + gameObject.name + " interacted");
-        //this would be written in the flowchat, coz player is not 100% get the hint in the conversation
+        //this would be written in the flowchart, coz player is not 100% get the hint in the conversation
         isCollected = true;
         //disable the VFX on NPC
         gameObject.transform.GetChild(0).gameObject.SetActive(false);

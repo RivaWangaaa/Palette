@@ -63,6 +63,14 @@ public class CommonConversation : MonoBehaviour
         if (needAnEndEvent)
         {
             NPCManager.instance.SetWayPointsByEvent(endEvent);
+            if (GameManager.instance.currentLoopTimeMinute < 10)
+            {
+                UIManager.instance.txt_Time.text = "4:0" + GameManager.instance.currentLoopTimeMinute;
+            }
+            else
+            {
+                UIManager.instance.txt_Time.text = "4:" + GameManager.instance.currentLoopTimeMinute;
+            }
         }
     }
 }
