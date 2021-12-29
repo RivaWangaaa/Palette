@@ -88,13 +88,22 @@ public class Player : MonoBehaviour
                         }
                     }
                 }
-                if (currentGameobject.tag == "classroomDoor")
+                if (currentGameobject.tag == "frontClassroomDoor")
                 {
                     //pointingObject = currentGameobject;
                     //when player tries to open a door
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         ExitClassroomController.instance.playerInteractWithTheClassroomDoor();
+                    }
+                }
+                if (currentGameobject.tag == "backClassroomDoor")
+                {
+                    //pointingObject = currentGameobject;
+                    //when player tries to open a door
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        currentGameobject.GetComponent<OneWayDoor>().playerInteractWithTheClassroomDoor();
                     }
                 }
                 if (currentGameobject.tag == "observePoint")

@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour
 
     public List<GameObject> hintsInDrawBook;
 
-    public bool                                                                                                                                    ;
+    public bool canBeEavesdroped;
     public bool isWithInTalkDistance;
      
     private void Update()

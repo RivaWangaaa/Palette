@@ -7,62 +7,15 @@ public class OneWayDoor : MonoBehaviour
 {
 
     [Header("flowchats")]
-    public Flowchart forbidToExitFlowchat;
     public Flowchart tryToEnterFlowchat;
-    public Flowchart tryToComeOutFlowchat;
 
-    [Header("bools for different chats")]
-    public bool isSomeoneOutThere;
-    public bool isPlayerOutsideTheClassroom;
-    public bool DoestryToComeOut;
-    
     [Header("teleport point")]
     public Transform enterClassroomPoint;
-    public Transform outClassroomPoint;
-
-    [Header("Countdown related")]
-    public int timePlayerGoOut;
-    public int playerOutTimeLong;
-
-    private void Update()
-    {
-        if(isPlayerOutsideTheClassroom && timePlayerGoOut + 3 == GameManager.instance.currentLoopTimeMinute)
-        {
-            onEnterClassroom();
-            tryToEnterFlowchat.gameObject.SetActive(false);
-            //forbidToExitFlowchat.gameObject.SetActive(true);
-        }
-    }
-
 
     public void playerInteractWithTheClassroomDoor()
     {
         OnInteract();
-        if(!isPlayerOutsideTheClassroom)
-        {
- 
-                tryToComeOutFlowchat.gameObject.SetActive(true);
-                
-                forbidToExitFlowchat.gameObject.SetActive(true);
-        }
-        else
-        {
-            tryToEnterFlowchat.gameObject.SetActive(true);
-        }
-    }
-
-    public void playerPermitToExitTheRoom()
-    {
-        DoestryToComeOut = true;
-    }
-
-    public void onExitClassroom()
-    {
-        GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = false;
-        GameManager.instance.currentControllingPlayer.transform.position = outClassroomPoint.position;
-        GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = true;
-        isPlayerOutsideTheClassroom = true;
-        timePlayerGoOut = GameManager.instance.currentLoopTimeMinute;
+        tryToEnterFlowchat.gameObject.SetActive(true);
     }
 
     public void onEnterClassroom()
@@ -70,9 +23,8 @@ public class OneWayDoor : MonoBehaviour
         GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = false;
         GameManager.instance.currentControllingPlayer.transform.position = enterClassroomPoint.position;
         GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = true;
-        isPlayerOutsideTheClassroom = false;
-        DoestryToComeOut = false;
-        //playerOutTimeLong = 0;
+        ExitClassroomController.instance.isPlayerOutsideTheClassroom = false;
+
     }
 
     public void OnInteract()
