@@ -152,6 +152,7 @@ public class Loop1 : MonoBehaviour
         if (GameManager.instance.currentLoopTimeMinute == 14 && oneTimeEventFlag)
         {
             Debug.Log("Vick arrives at his seat. Vick is happy");
+            vick.flowchat.SetBooleanVariable("IsEavesdropping", true);
             vick.flowchat.SetBooleanVariable("IsHappy", true);
             oneTimeEventFlag = false;
         }
