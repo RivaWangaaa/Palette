@@ -132,6 +132,7 @@ public class Loop1 : MonoBehaviour
             Debug.Log("Vick is back");
             vick.flowchat.SetBooleanVariable("IsStomaching", false);
             NPCManager.instance.SetWayPointsByEvent(event413);
+            vick.canBeEavesdroped = false;
             vick.pose.sprite = vickOriginalPose;
             ExitClassroomController.instance.oneKidComesBackTheRoom();
             oneTimeEventFlag = false;
