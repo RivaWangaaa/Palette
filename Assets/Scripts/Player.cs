@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
                     //when player collect a collectable item
                     UIManager.instance.crosshair.SetActive(false);
                     UIManager.instance.observeIcon.SetActive(true);
+                    Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic2_Observe);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         currentGameobject.GetComponent<Hint>().OnObserve();
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         SwitchPlayer(currentGameobject);
+                        Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic7_Switch);
                     }
                 }
                 if (currentGameobject.tag == "character")
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
                         //Debug.Log("can talk");
                         //pointingObject = currentGameobject;
                         currentGameobject.GetComponent<NPC>().talkIcon.SetActive(true);
+                        Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic1_Talk);
                         //when player start a conversation with a NPC
                         if (Input.GetKeyDown(KeyCode.E))
                         {
@@ -123,6 +126,7 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log("join");
                         currentGameobject.GetComponent<CommonConversation>().OnInteract();
+                        Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic4_Listen);
                     }
                 }
             }

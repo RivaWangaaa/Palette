@@ -8,14 +8,25 @@ public class OneWayDoor : MonoBehaviour
 
     [Header("flowchats")]
     public Flowchart tryToEnterFlowchat;
+    public Flowchart tryToExitFlowchat;
 
     [Header("teleport point")]
     public Transform enterClassroomPoint;
 
+    public bool isTryingEnterFromInside;
+
     public void playerInteractWithTheClassroomDoor()
     {
         OnInteract();
-        tryToEnterFlowchat.gameObject.SetActive(true);
+        if (!ExitClassroomController.instance.isPlayerOutsideTheClassroom)
+        {
+            tryToExitFlowchat.gameObject.SetActive(true);
+        }
+        else
+        {
+            tryToEnterFlowchat.gameObject.SetActive(true);
+        }
+
     }
 
     public void onEnterClassroom()
@@ -37,6 +48,7 @@ public class OneWayDoor : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
     }
 
+    
     public void EndInteract()
     {
         NPCManager.instance.isHavingConversation = false;

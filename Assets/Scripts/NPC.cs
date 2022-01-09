@@ -78,7 +78,7 @@ public class NPC : MonoBehaviour
         if(GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
         {
             Debug.Log("start dropping");
-            flowchat.SetBooleanVariable("isEavesdroping", true);
+            flowchat.SetBooleanVariable("IsEavesdropping", true);
         }
 
         //lock player's camera when having a conversation
@@ -100,7 +100,7 @@ public class NPC : MonoBehaviour
         {
             Debug.Log("end dropping");
             GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping = false;
-            flowchat.SetBooleanVariable("isEavesdroping", false);
+            flowchat.SetBooleanVariable("IsEavesdropping", false);
         }
     }
 
