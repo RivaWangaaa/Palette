@@ -26,7 +26,9 @@ public class NPC : MonoBehaviour
 
     public bool canBeEavesdroped;
     public bool isWithInTalkDistance;
-     
+
+    public List<GameObject> observableParts;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -104,14 +106,16 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void GetHintNo1()
+    public void GetHintBarbie()
     {
+        //Flore, Img_Flora_Hint1
         hintsInDrawBook[0].SetActive(true);
     }
 
-    public void GetHintNo2()
+    public void GetHintHair()
     {
-        hintsInDrawBook[1].SetActive(true);
+        //Vick, 
+        hintsInDrawBook[0].SetActive(true);
     }
 
     public void GetHintNo3()

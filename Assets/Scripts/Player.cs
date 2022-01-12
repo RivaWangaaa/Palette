@@ -109,15 +109,6 @@ public class Player : MonoBehaviour
                         currentGameobject.GetComponent<OneWayDoor>().playerInteractWithTheClassroomDoor();
                     }
                 }
-                if (currentGameobject.tag == "observePoint")
-                {
-                    //pointingObject = currentGameobject;
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        Debug.Log("Observe");
-                    }
-                }
                 if (currentGameobject.tag == "commonConversationShort")
                 {
                     //pointingObject = currentGameobject;
