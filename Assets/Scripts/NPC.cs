@@ -118,9 +118,9 @@ public class NPC : MonoBehaviour
         hintsInDrawBook[0].SetActive(true);
     }
 
-    public void GetHintNo3()
+    public void GetHintDrawingBook()
     {
-        hintsInDrawBook[2].SetActive(true);
+        hintsInDrawBook[1].SetActive(true);
     }
 
     public void GetHintNo4()

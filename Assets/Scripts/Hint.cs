@@ -12,6 +12,8 @@ public class Hint : MonoBehaviour
     public Flowchart observationLines;
     public GameObject popUpImage;
 
+    public GameObject secondIconInDrawBook;
+
     public bool canBeSeenByJimie;
     public bool canBeSeenByPlum;
     public bool canBeSeenByChunk;
@@ -55,7 +57,7 @@ public class Hint : MonoBehaviour
 
     public void OnObserveBarbie()
     {
-        //unlock conversation branch with Flora
+        //unlock conversation branch barbie with Flora
         NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isBarbieFound", true);
     }
     
@@ -67,4 +69,30 @@ public class Hint : MonoBehaviour
         NPCManager.instance.NPCs[1].GetComponent<NPC>().observableParts[0].SetActive(true);
     }
 
+    public void OnObserveFloraDrawbook()
+    {
+        //can now observe key
+        HintManager.instance.observableObject[8].GetComponent<BoxCollider>().enabled = true;
+    }
+    
+    public void OnOpenFloraDrawbook()
+    {
+        secondIconInDrawBook.SetActive(true);
+    }
+    
+    public void OnObserveFloraKey()
+    {
+        //can now open the drawing book
+        HintManager.instance.observableObject[7].transform.GetChild(0).gameObject.GetComponent<Flowchart>().SetBooleanVariable("isKeyCollected",true);
+    }
+
+    public void OnSingleStickerCollected()
+    {
+        HintManager.instance.stickerCounts++;
+        if (HintManager.instance.stickerCounts == 3)
+        {
+            //can now observe stack of stickers
+            HintManager.instance.observableObject[9].GetComponent<BoxCollider>().enabled = true;
+        }
+    }
 }
