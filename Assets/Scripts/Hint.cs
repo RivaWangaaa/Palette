@@ -95,4 +95,10 @@ public class Hint : MonoBehaviour
             HintManager.instance.observableObject[9].GetComponent<BoxCollider>().enabled = true;
         }
     }
+
+    public void OnStickersCollected()
+    {
+        //unlock conversation branch sticker with Flora
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isStickersFound", true);
+    }
 }

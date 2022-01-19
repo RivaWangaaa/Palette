@@ -120,11 +120,13 @@ public class NPC : MonoBehaviour
 
     public void GetHintDrawingBook()
     {
+        //Flore, 
         hintsInDrawBook[1].SetActive(true);
     }
 
-    public void GetHintNo4()
+    public void GetHintStickers()
     {
-        hintsInDrawBook[3].SetActive(true);
+        //Flore, 
+        hintsInDrawBook[2].SetActive(true);
     }
 }
