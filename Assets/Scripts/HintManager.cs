@@ -7,6 +7,8 @@ public class HintManager : MonoBehaviour
     public static HintManager instance;
 
     public int stickerCounts;
+
+    public int pitCluesCounts;
     //this should be replaced with Dictionary in the future
     public List<GameObject> observableObject;
     public List<bool> isHintCollected;

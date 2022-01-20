@@ -101,4 +101,22 @@ public class Hint : MonoBehaviour
         //unlock conversation branch sticker with Flora
         NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isStickersFound", true);
     }
+
+    public void OnSinglePitClueGathered()
+    {
+        HintManager.instance.pitCluesCounts++;
+        if (HintManager.instance.pitCluesCounts == 3)
+        {
+            NPCManager.instance.NPCs[0].GetComponent<NPC>().flowchat.SetBooleanVariable("isFoundTheButton",true);
+        }
+    }
+
+    public void OnObserveIanShirt()
+    {
+        HintManager.instance.pitCluesCounts++;
+        if (HintManager.instance.pitCluesCounts == 3)
+        {
+            NPCManager.instance.NPCs[0].GetComponent<NPC>().flowchat.SetBooleanVariable("isFoundTheButton",true);
+        }
+    }
 }
