@@ -117,14 +117,28 @@ public class NPC : MonoBehaviour
         //Vick, 
         hintsInDrawBook[0].SetActive(true);
     }
-
+    
+    public void GetHintNoteSystem()
+    {
+        //Vick, 
+        hintsInDrawBook[1].SetActive(true);
+    }
+    
     public void GetHintDrawingBook()
     {
+        //Flore, 
         hintsInDrawBook[1].SetActive(true);
     }
 
-    public void GetHintNo4()
+    public void GetHintStickers()
     {
-        hintsInDrawBook[3].SetActive(true);
+        //Flore, 
+        hintsInDrawBook[2].SetActive(true);
+    }
+    
+    public void GetHintPit()
+    {
+        //Ian, 
+        hintsInDrawBook[0].SetActive(true);
     }
 }

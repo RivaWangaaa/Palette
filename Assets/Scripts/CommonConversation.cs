@@ -73,4 +73,10 @@ public class CommonConversation : MonoBehaviour
             }
         }
     }
+
+    public void OnHearingNoteSystem()
+    {
+        NPCManager.instance.NPCs[2].GetComponent<NPC>().hintsInDrawBook[2].SetActive(true);
+        NPCManager.instance.NPCs[2].GetComponent<NPC>().flowchat.SetBooleanVariable("isNoteSystemHeard", true);
+    }
 }
