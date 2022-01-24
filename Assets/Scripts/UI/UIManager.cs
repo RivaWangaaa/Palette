@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject pausePanel;
 
     //darwbook related
-    public List<GameObject> drawbookStories;
+    public List<DrawbookStory> drawbookStories;
     public int currentStory;
     public GameObject drawBookPanel;
     public bool isDrawBookOpen = false;

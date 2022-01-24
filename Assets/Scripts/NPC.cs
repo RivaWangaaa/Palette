@@ -141,4 +141,11 @@ public class NPC : MonoBehaviour
         //Ian, 
         hintsInDrawBook[0].SetActive(true);
     }
+
+    public void GetSubHintsJanitor()
+    {
+        //Ask Janitor about the diary
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[0]
+            .GetSubHints();
+    }
 }

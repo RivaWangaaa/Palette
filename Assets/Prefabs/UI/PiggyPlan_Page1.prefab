@@ -2415,6 +2415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisStory: {fileID: 0}
+  hintsInThisPage: []
 --- !u!1 &8192007696394342084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,7 +2759,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup
+      value: HintGroup_diary
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -2860,7 +2861,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (7)
+      value: HintGroup_List
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -2948,11 +2949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4043425601412538726, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4043425601480406144, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4043425601480406145, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2990,7 +2991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (2)
+      value: HintGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3100,7 +3101,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (6)
+      value: HintGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3210,7 +3211,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (4)
+      value: HintGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3320,7 +3321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (3)
+      value: HintGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3430,7 +3431,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (5)
+      value: HintGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3540,7 +3541,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043425600976122558, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Name
-      value: Cluegroup (1)
+      value: HintGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4043425600976122559, guid: d8490a7bedad02343b62a3a1760137c7, type: 3}
       propertyPath: m_Pivot.x
