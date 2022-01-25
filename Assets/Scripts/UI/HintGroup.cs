@@ -11,19 +11,23 @@ public class HintGroup : MonoBehaviour
 
     public void GetSubHints()
     {
-        unrevealedIcon.SetActive(false);
-        subHintsIcon.SetActive(true);
+        if (revrealedIcon.activeSelf == false)
+        {
+            unrevealedIcon.SetActive(false);
+            subHintsIcon.SetActive(true);
+            Debug.Log("show subhint");
+        }
+        else
+        {
+            Debug.Log("you already get the hint");
+        }
+        
     }
 
-    public void RevealWithoutSubHint()
-    {
-        unrevealedIcon.SetActive(false);
-        revrealedIcon.SetActive(true);
-    }
-
-    public void RevealWithSubHint()
+    public void RevealThisHint()
     {
         subHintsIcon.SetActive(false);
+        unrevealedIcon.SetActive(false);
         revrealedIcon.SetActive(true);
     }
 }

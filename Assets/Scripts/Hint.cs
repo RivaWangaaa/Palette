@@ -8,10 +8,12 @@ public class Hint : MonoBehaviour
     //used by HintManager to learn if this item is collected
     //Nate: I always though it could be written in a more elegent way 
     public bool isCollected;
+    //0125:to be replaced by hintgroup method
     public GameObject iconInDrawBook;
     public Flowchart observationLines;
     public GameObject popUpImage;
 
+    public HintGroup hintGroupInDrawBook;
     public GameObject secondIconInDrawBook;
 
     public bool canBeSeenByJimie;
@@ -26,6 +28,13 @@ public class Hint : MonoBehaviour
         //update the statues of each item in HintManager
         HintManager.instance.UpdateCollectedHints();
         iconInDrawBook.SetActive(true);
+        
+        //0125:new hintgroup method
+        if (hintGroupInDrawBook != null)
+        {
+            hintGroupInDrawBook.RevealThisHint();
+        }
+
         observationLines.gameObject.SetActive(true);
         if (popUpImage != null)
         {
@@ -118,5 +127,10 @@ public class Hint : MonoBehaviour
         {
             NPCManager.instance.NPCs[0].GetComponent<NPC>().flowchat.SetBooleanVariable("isFoundTheButton",true);
         }
+    }
+
+    public void OnCollectDiary()
+    {
+        
     }
 }

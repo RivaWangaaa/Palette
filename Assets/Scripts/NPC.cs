@@ -148,4 +148,5 @@ public class NPC : MonoBehaviour
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[0]
             .GetSubHints();
     }
+    
 }
