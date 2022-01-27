@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         //ItemHintUIText.text = "Item Hints Collected" + "\n" + Player.itemHintCollect + " / " + Player.itemHintTotal;
 
         // unlock when escape is hit
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Pause();
         }
@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
                 currentLoopTimeSecond = 0;
                 currentLoopTimeFloat = 0;
                 Loop1.instance.oneTimeEventFlag = true;
+                foreach (var npc in NPCManager.instance.NPCs)
+                {
+                    npc.GetComponent<NPC>().shouldMoveThisEvent = true;
+                }
                 if (currentLoopTimeMinute < 10)
                 {
                     UIManager.instance.txt_Time.text = "4:0" + currentLoopTimeMinute;

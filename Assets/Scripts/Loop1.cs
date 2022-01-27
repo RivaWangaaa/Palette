@@ -21,6 +21,8 @@ public class Loop1 : MonoBehaviour
     public GameObject event410;
     public GameObject event400;
     public GameObject eventStart;
+    public GameObject specialEvent2;
+    public GameObject specialEvent1;
 
     [Header("Vick Pose")]
     public Sprite vickSad;
@@ -316,5 +318,28 @@ public class Loop1 : MonoBehaviour
             NPCManager.instance.SetWayPointsByEvent(event455);
             oneTimeEventFlag = false;
         }
+        
+        //Thursday Showcase
+        if (GameManager.instance.currentLoopTimeMinute == 65 && oneTimeEventFlag)
+        {
+            Debug.Log("Event1: Vick walk to teacher");
+            NPCManager.instance.NPCs[4].GetComponent<NPC>().shouldMoveThisEvent = false;
+            NPCManager.instance.SetWayPointsByEvent(specialEvent1);
+            oneTimeEventFlag = false;
+        }
+        if (GameManager.instance.currentLoopTimeMinute == 67 && oneTimeEventFlag)
+        {
+            Debug.Log("Event1: Vick talk to teacher about note system");
+            specialEvent1.transform.GetChild(4).gameObject.SetActive(true);
+            oneTimeEventFlag = false;
+        }
+
+        if (GameManager.instance.currentLoopTimeMinute == 70 && oneTimeEventFlag)
+        {
+            Debug.Log("Event2: Flora walk to outside");
+            NPCManager.instance.SetWayPointsByEvent(specialEvent2);
+            oneTimeEventFlag = false;
+        }
+        
     }
 }

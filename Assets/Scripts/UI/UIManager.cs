@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     public GameObject observeIcon;
 
     public Text txt_Time;
-
+    
     void Awake()
     {
         if (instance == null)

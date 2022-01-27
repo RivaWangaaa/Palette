@@ -30,6 +30,8 @@ public class NPC : MonoBehaviour
 
     public List<GameObject> observableParts;
 
+    public bool shouldMoveThisEvent;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -121,8 +123,8 @@ public class NPC : MonoBehaviour
     
     public void GetHintNoteSystem()
     {
-        //Vick, 
-        hintsInDrawBook[1].SetActive(true);
+        //Vick tell the note system
+        hintGroupInDrawBook[1].RevealThisHint();
     }
     
     public void GetHintDrawingBook()
@@ -159,6 +161,13 @@ public class NPC : MonoBehaviour
     {
         //Ask Janitor about the List
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[1]
+            .GetSubHints();
+    }
+    
+    public void GetSubHintsOnKey()
+    {
+        //Ask Janitor about the List
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[3]
             .GetSubHints();
     }
 }

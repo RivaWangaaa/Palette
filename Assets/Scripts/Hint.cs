@@ -143,4 +143,10 @@ public class Hint : MonoBehaviour
         //disable the dialog branch with janitor about the list
         NPCManager.instance.NPCs[5].GetComponent<NPC>().flowchat.SetBooleanVariable("isFoundDairyWithoutList",false);
     }
+
+    public void GetSubhintOnDiary()
+    {
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[2]
+            .GetSubHints();
+    }
 }
