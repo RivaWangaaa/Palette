@@ -14,7 +14,7 @@ public class Hint : MonoBehaviour
     public GameObject popUpImage;
 
     public HintGroup hintGroupInDrawBook;
-    public GameObject secondIconInDrawBook;
+    public HintGroup secondHintGroupInDrawBook;
 
     public bool canBeSeenByJimie;
     public bool canBeSeenByPlum;
@@ -86,7 +86,7 @@ public class Hint : MonoBehaviour
     
     public void OnOpenFloraDrawbook()
     {
-        secondIconInDrawBook.SetActive(true);
+        secondHintGroupInDrawBook.RevealThisHint();
     }
     
     public void OnObserveFloraKey()
@@ -131,6 +131,16 @@ public class Hint : MonoBehaviour
 
     public void OnCollectDiary()
     {
-        
+        //if player has not collected vick list, active a new dialog branch with Janitor
+        if (!UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[1].revrealedIcon.activeSelf)
+        {
+            NPCManager.instance.NPCs[5].GetComponent<NPC>().flowchat.SetBooleanVariable("isFoundDairyWithoutList",true);
+        }
+    }
+    
+    public void OnCollectVickList()
+    {
+        //disable the dialog branch with janitor about the list
+        NPCManager.instance.NPCs[5].GetComponent<NPC>().flowchat.SetBooleanVariable("isFoundDairyWithoutList",false);
     }
 }

@@ -23,6 +23,7 @@ public class NPC : MonoBehaviour
     public GameObject eavesdropIcon;
 
     public List<GameObject> hintsInDrawBook;
+    public List<HintGroup> hintGroupInDrawBook;
 
     public bool canBeEavesdroped;
     public bool isWithInTalkDistance;
@@ -132,21 +133,32 @@ public class NPC : MonoBehaviour
 
     public void GetHintStickers()
     {
-        //Flore, 
-        hintsInDrawBook[2].SetActive(true);
+        //Flore tell the pig stuff about Vik
+        hintGroupInDrawBook[0].RevealThisHint();
     }
     
+    public void GetHintButton()
+    {
+        //Ian will tell if you find who bury it
+        hintGroupInDrawBook[0].RevealThisHint();
+    }
     public void GetHintPit()
     {
-        //Ian, 
-        hintsInDrawBook[0].SetActive(true);
+        //Flora lost something she burried
+        hintGroupInDrawBook[1].RevealThisHint();
     }
 
-    public void GetSubHintsJanitor()
+    public void GetSubHintsOnDairy()
     {
         //Ask Janitor about the diary
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[0]
             .GetSubHints();
     }
     
+    public void GetSubHintsOnList()
+    {
+        //Ask Janitor about the List
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[1]
+            .GetSubHints();
+    }
 }
