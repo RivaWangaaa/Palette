@@ -14,6 +14,7 @@ public class Tutorials : MonoBehaviour
     public GameObject pic5_Pause;
     public GameObject pic6_Drawbook;
     public GameObject pic7_Switch;
+    public GameObject pic8_Move;
 
     public GameObject currentPic;
 

@@ -50,7 +50,21 @@ public class Player : MonoBehaviour
             {
                 currentGameobject = hit.collider.gameObject;
                 //three types of interaction: Hints, Characters(Parents, Kids, Teachers), Players
+                //0201: add new type of interaction 'move'
                 //define by tag
+                if (currentGameobject.tag == "move")
+                {
+                    //pointingObject = currentGameobject;
+                    //when player collect a collectable item
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic8_Move);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("move something");
+                        //currentGameobject.GetComponent<Hint>().OnObserve();
+                    }
+                }
                 if (currentGameobject.tag == "hint")
                 {
                     //pointingObject = currentGameobject;

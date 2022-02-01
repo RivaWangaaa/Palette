@@ -17,7 +17,9 @@ public class UIManager : MonoBehaviour
 
     public GameObject crosshair;
     public GameObject observeIcon;
-
+    public GameObject moveIcon;
+    public GameObject messageBox;
+    
     public Text txt_Time;
     
     void Awake()
