@@ -26,9 +26,12 @@ public class HintGroup : MonoBehaviour
 
     public void RevealThisHint()
     {
+        if (revrealedIcon.activeSelf == false)
+        {
+            UIManager.instance.messageBox.GetComponent<Animator>().SetTrigger("ObtainHint");
+        }
         subHintsIcon.SetActive(false);
         unrevealedIcon.SetActive(false);
         revrealedIcon.SetActive(true);
-        UIManager.instance.messageBox.GetComponent<Animator>().SetTrigger("ObtainHint");
     }
 }
