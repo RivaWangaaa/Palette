@@ -170,4 +170,16 @@ public class NPC : MonoBehaviour
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[3]
             .GetSubHints();
     }
+
+    public void GetHintOnSecretPlace()
+    {
+        //Flora Tells about the secret place
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[4]
+            .RevealThisHint();
+    }
+
+    public void GetHintOnMotherleft()
+    {
+        hintGroupInDrawBook[2].RevealThisHint();
+    }
 }

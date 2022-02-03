@@ -21,7 +21,7 @@ public class Hint : MonoBehaviour
     public bool canBeSeenByChunk;
 
     //when player press E to interact with this item
-    public void OnObserve()
+    public void OnObserve(GameObject currentPlayer)
     {
         Debug.Log("hint " + gameObject.name + " collected");
         isCollected = true;
@@ -40,6 +40,7 @@ public class Hint : MonoBehaviour
         {
             popUpImage.SetActive(true);
         }
+        observationLines.SetStringVariable("currentPlayer", currentPlayer.name);
         NPCManager.instance.isHavingConversation = true;
         GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>()
@@ -148,5 +149,45 @@ public class Hint : MonoBehaviour
     {
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[2]
             .GetSubHints();
+    }
+
+    public void OnObserveNapBook()
+    {
+        //unlock conversation branch  with Flora
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isPersonalStuffFound", true);
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[7]
+            .RevealThisHint();
+    }
+    
+    public void OnObserveFloraPersonalStuff()
+    {
+        //unlock conversation branch sticker with Flora
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isNapBookFound", true);
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[8]
+            .RevealThisHint();
+        
+    }
+
+    public void OnObserveOnePage()
+    {
+        //choose 'page' in flora's diary
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[5]
+            .RevealThisHint();
+    }
+
+    public void OnObserveMotherLeft()
+    {
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isMotherLeftFound", true);
+    }
+    
+    public void OnObserveFatherBeat()
+    {
+        HintManager.instance.observableObject[10].GetComponent<Hint>().observationLines.SetBooleanVariable("isFoundFatherBeat", true);
+    }
+
+    public void OnObserveFloraBag()
+    {
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[6]
+            .RevealThisHint();
     }
 }
