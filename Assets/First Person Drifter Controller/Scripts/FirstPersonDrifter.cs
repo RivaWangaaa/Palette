@@ -64,8 +64,10 @@ public class FirstPersonDrifter: MonoBehaviour
     }
  
     void FixedUpdate() {
+        
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
+        
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed)? .7071f : 1.0f;
  

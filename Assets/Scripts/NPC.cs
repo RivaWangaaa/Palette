@@ -62,7 +62,6 @@ public class NPC : MonoBehaviour
                 }
             }
         }
-
         transform.LookAt(GameManager.instance.currentControllingPlayer.transform);
     }
 
