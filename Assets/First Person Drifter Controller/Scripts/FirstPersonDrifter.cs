@@ -121,6 +121,8 @@ public class FirstPersonDrifter: MonoBehaviour
                 moveDirection = new Vector3(inputX * inputModifyFactor, -antiBumpFactor, inputY * inputModifyFactor);
                 moveDirection = myTransform.TransformDirection(moveDirection) * speed;
                 playerControl = true;
+                //Debug.Log(moveDirection.x + "and" + moveDirection.z);
+                //Debug.Log("InputModeifer:" + inputModifyFactor);
             }
  
             // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
@@ -145,7 +147,7 @@ public class FirstPersonDrifter: MonoBehaviour
                 moveDirection = myTransform.TransformDirection(moveDirection);
             }
         }
- 
+
         // Apply gravity
         moveDirection.y -= gravity * Time.deltaTime;
  
