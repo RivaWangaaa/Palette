@@ -62,8 +62,9 @@ public class NPC : MonoBehaviour
                 }
             }
         }
-
-        transform.LookAt(GameManager.instance.currentControllingPlayer.transform);
+        Vector3 targetLookAtPosition = new Vector3(GameManager.instance.currentControllingPlayer.transform.position.x,
+            transform.position.y, GameManager.instance.currentControllingPlayer.transform.position.z);
+        transform.LookAt(targetLookAtPosition);
     }
 
     public void OnInteract(GameObject currentPlayer)

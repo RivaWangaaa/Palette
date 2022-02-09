@@ -64,8 +64,10 @@ public class FirstPersonDrifter: MonoBehaviour
     }
  
     void FixedUpdate() {
+        
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
+        
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed)? .7071f : 1.0f;
  
@@ -119,6 +121,8 @@ public class FirstPersonDrifter: MonoBehaviour
                 moveDirection = new Vector3(inputX * inputModifyFactor, -antiBumpFactor, inputY * inputModifyFactor);
                 moveDirection = myTransform.TransformDirection(moveDirection) * speed;
                 playerControl = true;
+                //Debug.Log(moveDirection.x + "and" + moveDirection.z);
+                //Debug.Log("InputModeifer:" + inputModifyFactor);
             }
  
             // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
@@ -143,7 +147,7 @@ public class FirstPersonDrifter: MonoBehaviour
                 moveDirection = myTransform.TransformDirection(moveDirection);
             }
         }
- 
+
         // Apply gravity
         moveDirection.y -= gravity * Time.deltaTime;
  

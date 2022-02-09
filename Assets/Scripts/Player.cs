@@ -159,7 +159,6 @@ public class Player : MonoBehaviour
             Debug.Log("clear icon");
             ClearIcon(pointingObject);
             pointingObject = currentGameobject;
-            
         }
 
         if(Physics.Raycast(ray, out hit, eavesdropDistance))
