@@ -111,4 +111,17 @@ public class GameManager : MonoBehaviour
             NPCManager.instance.isHavingConversation = false;
         }
     }
+
+    public void IncreaseTime(int timeCost)
+    {
+        currentLoopTimeMinute += timeCost;
+        if (currentLoopTimeMinute < 10)
+        {
+            UIManager.instance.txt_Time.text = "4:0" + currentLoopTimeMinute;
+        }
+        else
+        {
+            UIManager.instance.txt_Time.text = "4:" + currentLoopTimeMinute;
+        }
+    }
 }

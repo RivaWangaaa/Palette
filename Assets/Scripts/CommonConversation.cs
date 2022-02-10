@@ -59,18 +59,11 @@ public class CommonConversation : MonoBehaviour
         NPCManager.instance.isHavingConversation = false;
         
         //add time
-        GameManager.instance.currentLoopTimeMinute += timeCost;
+        GameManager.instance.IncreaseTime(timeCost);
+        
         if (needAnEndEvent)
         {
             NPCManager.instance.SetWayPointsByEvent(endEvent);
-            if (GameManager.instance.currentLoopTimeMinute < 10)
-            {
-                UIManager.instance.txt_Time.text = "4:0" + GameManager.instance.currentLoopTimeMinute;
-            }
-            else
-            {
-                UIManager.instance.txt_Time.text = "4:" + GameManager.instance.currentLoopTimeMinute;
-            }
         }
     }
 

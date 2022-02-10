@@ -54,7 +54,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -95,14 +95,20 @@ TextureImporter:
       name: _lock Icon_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1091
+        x: 29
+        y: 1153
         width: 293
-        height: 331
+        height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 52.5, y: -127.5}
+        - {x: -146.5, y: -133.5}
+        - {x: -146.5, y: 133.5}
+        - {x: 146.5, y: 133.5}
+        - {x: 135.5, y: -1.5}
+        - {x: 100.5, y: -80.5}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -112,7 +118,16 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: -842, y: 316.5}
+      - {x: -891, y: 318.5}
+      - {x: -970, y: 392.5}
+      - {x: -970, y: 506.5}
+      - {x: -919, y: 574.5}
+      - {x: -777, y: 585.5}
+      - {x: -719, y: 535.5}
+      - {x: -699, y: 427.5}
+      - {x: -743, y: 330.5}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000

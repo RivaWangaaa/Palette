@@ -20,6 +20,8 @@ public class Hint : MonoBehaviour
     public bool canBeSeenByPlum;
     public bool canBeSeenByChunk;
 
+    public int observeTimeCost;
+
     //when player press E to interact with this item
     public void OnObserve(GameObject currentPlayer)
     {
@@ -62,6 +64,7 @@ public class Hint : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>()
             .LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
+        GameManager.instance.IncreaseTime(observeTimeCost);
 
     }
 

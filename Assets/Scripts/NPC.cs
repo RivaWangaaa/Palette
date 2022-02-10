@@ -32,6 +32,9 @@ public class NPC : MonoBehaviour
 
     public bool shouldMoveThisEvent;
 
+    public int conversationTimeCost;
+    public int eavesdropTimeCost;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -101,12 +104,18 @@ public class NPC : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
         flowchat.gameObject.SetActive(false);
+
         //Debug.Log("end interaction");
         if (GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
         {
             Debug.Log("end dropping");
             GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping = false;
             flowchat.SetBooleanVariable("IsEavesdropping", false);
+            GameManager.instance.IncreaseTime(eavesdropTimeCost);
+        }
+        else
+        {
+            GameManager.instance.IncreaseTime(conversationTimeCost);
         }
     }
 
