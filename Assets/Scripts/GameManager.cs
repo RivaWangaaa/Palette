@@ -83,6 +83,11 @@ public class GameManager : MonoBehaviour
                     ExitClassroomController.instance.playerOutTimeLong++;
                 }
             }
+
+            if (currentLoopTimeMinute >= 20)
+            {
+                UIManager.instance.test0210GameOverPanel.SetActive(true);
+            }
         }
     }
 

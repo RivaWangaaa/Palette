@@ -111,11 +111,11 @@ public class NPC : MonoBehaviour
             Debug.Log("end dropping");
             GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping = false;
             flowchat.SetBooleanVariable("IsEavesdropping", false);
-            GameManager.instance.IncreaseTime(eavesdropTimeCost);
+            //GameManager.instance.IncreaseTime(eavesdropTimeCost);
         }
         else
         {
-            GameManager.instance.IncreaseTime(conversationTimeCost);
+            //GameManager.instance.IncreaseTime(conversationTimeCost);
         }
     }
 
