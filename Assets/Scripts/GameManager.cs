@@ -66,11 +66,16 @@ public class GameManager : MonoBehaviour
                 }
                 if (currentLoopTimeMinute < 10)
                 {
-                    UIManager.instance.txt_Time.text = "4:0" + currentLoopTimeMinute;
+                    UIManager.instance.txt_Minute1.text = "0";
+                    UIManager.instance.txt_Minute2.text = currentLoopTimeMinute.ToString();
                 }
                 else
                 {
-                    UIManager.instance.txt_Time.text = "4:" + currentLoopTimeMinute;
+                    int minuteTenthDigit = currentLoopTimeMinute / 10;
+                    int minuteOneDigit = currentLoopTimeMinute - 10 * minuteTenthDigit;
+            
+                    UIManager.instance.txt_Minute1.text = minuteTenthDigit.ToString();
+                    UIManager.instance.txt_Minute2.text = minuteOneDigit.ToString();
                 }
 
                 if (ExitClassroomController.instance.isPlayerOutsideTheClassroom)
@@ -118,10 +123,18 @@ public class GameManager : MonoBehaviour
         if (currentLoopTimeMinute < 10)
         {
             UIManager.instance.txt_Time.text = "4:0" + currentLoopTimeMinute;
+            UIManager.instance.txt_Minute1.text = "0";
+            UIManager.instance.txt_Minute2.text = currentLoopTimeMinute.ToString();
         }
         else
         {
             UIManager.instance.txt_Time.text = "4:" + currentLoopTimeMinute;
+
+            int minuteTenthDigit = currentLoopTimeMinute / 10;
+            int minuteOneDigit = currentLoopTimeMinute - 10 * minuteTenthDigit;
+            
+            UIManager.instance.txt_Minute1.text = minuteTenthDigit.ToString();
+            UIManager.instance.txt_Minute2.text = minuteOneDigit.ToString();
         }
     }
 }

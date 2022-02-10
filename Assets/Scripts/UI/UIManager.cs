@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
     public GameObject messageBox;
     
     public Text txt_Time;
+
+    public Text txt_Minute1;
+    public Text txt_Minute2;
     
     void Awake()
     {
