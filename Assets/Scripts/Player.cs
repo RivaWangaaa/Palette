@@ -134,6 +134,16 @@ public class Player : MonoBehaviour
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic4_Listen);
                     }
                 }
+
+                if (currentGameobject.tag == "TeleportDoor")
+                {
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.observeIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        currentGameobject.GetComponent<TransportEnterence>().OnEnter();
+                    }
+                }
             }
             //else
             //{
@@ -254,7 +264,7 @@ public class Player : MonoBehaviour
             objectToBeCleared.GetComponent<NPC>().talkIcon.SetActive(false);
             objectToBeCleared.GetComponent<NPC>().eavesdropIcon.SetActive(false);
         }
-        if(objectToBeCleared.tag == "hint")
+        if(objectToBeCleared.tag == "hint" || objectToBeCleared.tag =="TeleportDoor")
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.observeIcon.SetActive(false);
