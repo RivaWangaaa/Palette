@@ -64,7 +64,7 @@ public class Hint : MonoBehaviour
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>()
             .LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
-        GameManager.instance.IncreaseTime(observeTimeCost);
+        //GameManager.instance.IncreaseTime(observeTimeCost);
 
     }
 
