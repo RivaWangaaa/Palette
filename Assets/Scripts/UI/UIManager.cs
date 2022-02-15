@@ -19,14 +19,14 @@ public class UIManager : MonoBehaviour
     public GameObject observeIcon;
     public GameObject moveIcon;
     public GameObject messageBox;
-    
-    public Text txt_Time;
 
     public Text txt_Minute1;
     public Text txt_Minute2;
 
     public GameObject clueGroupDetail_Left;
     public GameObject cludGroupDetail_Right;
+
+    public Text txt_PlayerCandyCount;
     
     public GameObject test0210GameOverPanel;
     
@@ -57,6 +57,11 @@ public class UIManager : MonoBehaviour
             drawBookPanel.SetActive(false);
         }
 
+    }
+
+    public void UpdateCandyCount()
+    {
+        txt_PlayerCandyCount.text = GameManager.instance.playerCandyCount.ToString();
     }
 
 }

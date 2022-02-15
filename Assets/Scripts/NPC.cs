@@ -35,6 +35,8 @@ public class NPC : MonoBehaviour
     public int conversationTimeCost;
     public int eavesdropTimeCost;
 
+    public bool isAngry;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -191,5 +193,10 @@ public class NPC : MonoBehaviour
     public void GetHintOnMotherleft()
     {
         hintGroupInDrawBook[2].RevealThisHint();
+    }
+
+    public void CallBackToDialog()
+    {
+         
     }
 }
