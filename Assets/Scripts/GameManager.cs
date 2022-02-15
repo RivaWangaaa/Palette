@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        SceneManager.LoadScene("Test_Art", LoadSceneMode.Additive);
     }
 
     // Start is called before the first frame update
@@ -84,7 +87,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            if (currentLoopTimeMinute >= 20)
+            if (currentLoopTimeMinute >= 25)
             {
                 UIManager.instance.test0210GameOverPanel.SetActive(true);
             }
