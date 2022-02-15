@@ -134,6 +134,15 @@ public class Player : MonoBehaviour
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic4_Listen);
                     }
                 }
+                if (currentGameobject.tag == "move")
+                {
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        currentGameobject.GetComponent<TransportEnterence>().OnEnter();
+                    }
+                }
             }
             //else
             //{
@@ -258,6 +267,11 @@ public class Player : MonoBehaviour
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.observeIcon.SetActive(false);
+        }
+        if(objectToBeCleared.tag == "move")
+        {
+            UIManager.instance.crosshair.SetActive(true);
+            UIManager.instance.moveIcon.SetActive(false);
         }
         if (objectToBeCleared.tag == "commonConversationShort")
         {
