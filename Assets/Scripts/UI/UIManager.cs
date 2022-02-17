@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     public GameObject cludGroupDetail_Right;
 
     public Text txt_PlayerCandyCount;
+    public Animator candySetAnimator;
     
     public GameObject test0210GameOverPanel;
     
@@ -62,6 +63,7 @@ public class UIManager : MonoBehaviour
     public void UpdateCandyCount()
     {
         txt_PlayerCandyCount.text = GameManager.instance.playerCandyCount.ToString();
+        candySetAnimator.SetTrigger("CandyIncrease");
     }
 
 }

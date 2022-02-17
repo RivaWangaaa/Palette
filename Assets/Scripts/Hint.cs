@@ -172,6 +172,14 @@ public class Hint : MonoBehaviour
             .RevealThisHint();
         
     }
+    
+    public void OnObserveFloraPicture()
+    {
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isFloraPictureFound", true);
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[10]
+            .RevealThisHint();
+        
+    }
 
     public void OnObserveOnePage()
     {

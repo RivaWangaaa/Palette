@@ -13,6 +13,8 @@ public class HintManager : MonoBehaviour
     public List<GameObject> observableObject;
     public List<bool> isHintCollected;
 
+    public List<GiftItem> giftObjects;
+
     void Awake()
     {
         if (instance == null)
@@ -36,6 +38,7 @@ public class HintManager : MonoBehaviour
             isHintCollected.Add(false);
         }
     }
+    
     public void RefreshHintWhenSwitchingPlayer(GameObject player)
     {
         for(int i = 0; i < observableObject.Count; i++)

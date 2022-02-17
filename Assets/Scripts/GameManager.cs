@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         }
         
         SceneManager.LoadScene("Test_Art", LoadSceneMode.Additive);
+
     }
 
     // Start is called before the first frame update
@@ -124,7 +125,10 @@ public class GameManager : MonoBehaviour
             UIManager.instance.pausePanel.SetActive(false);
             UIManager.instance.drawBookPanel.SetActive(false);
             UIManager.instance.isDrawBookOpen = false;
+            UIManager.instance.clueGroupDetail_Left.SetActive(false);
+            UIManager.instance.cludGroupDetail_Right.SetActive(false);
             NPCManager.instance.isHavingConversation = false;
+            
         }
     }
 

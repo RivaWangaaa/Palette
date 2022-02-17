@@ -72,4 +72,11 @@ public class CommonConversation : MonoBehaviour
         NPCManager.instance.NPCs[2].GetComponent<NPC>().hintGroupInDrawBook[0].RevealThisHint();
         NPCManager.instance.NPCs[2].GetComponent<NPC>().flowchat.SetBooleanVariable("isNoteSystemHeard", true);
     }
+
+    public void OnHearingGoblinMyth()
+    {
+        //unlock storyline by eavesdropping Janitor and Teacher conversation
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[9]
+            .RevealThisHint();
+    }
 }
