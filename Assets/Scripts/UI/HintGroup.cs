@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class HintGroup : MonoBehaviour
+public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject unrevealedIcon;
     public GameObject revrealedIcon;
     public GameObject subHintsIcon;
+
+    public string details;
+    public bool isOnLeft;
 
     public void GetSubHints()
     {
@@ -33,5 +37,34 @@ public class HintGroup : MonoBehaviour
         subHintsIcon.SetActive(false);
         unrevealedIcon.SetActive(false);
         revrealedIcon.SetActive(true);
+    }
+    
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (revrealedIcon.activeSelf)
+        {
+            if (isOnLeft)
+            {
+                UIManager.instance.cludGroupDetail_Right.SetActive(true);
+                UIManager.instance.cludGroupDetail_Right.transform.GetChild(0).GetComponent<Text>().text = details;
+            }
+            else
+            {
+                UIManager.instance.clueGroupDetail_Left.SetActive(true);
+                UIManager.instance.cludGroupDetail_Right.transform.GetChild(0).GetComponent<Text>().text = details;
+            }
+        }
+    }
+    
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (isOnLeft)
+        {
+            UIManager.instance.cludGroupDetail_Right.SetActive(false);
+        }
+        else
+        {
+            UIManager.instance.clueGroupDetail_Left.SetActive(false);
+        }
     }
 }

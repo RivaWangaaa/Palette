@@ -40,7 +40,7 @@ public class ExitClassroomController : MonoBehaviour
 
     private void Update()
     {
-        if(isPlayerOutsideTheClassroom && timePlayerGoOut + 3 == GameManager.instance.currentLoopTimeMinute)
+        if(isPlayerOutsideTheClassroom && timePlayerGoOut + 5 == GameManager.instance.currentLoopTimeMinute)
         {
             onEnterClassroom();
             tryToEnterFlowchat.gameObject.SetActive(false);
