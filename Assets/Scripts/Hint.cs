@@ -25,11 +25,7 @@ public class Hint : MonoBehaviour
         Debug.Log("hint " + gameObject.name + " observe");
         
         //0215: only increase candy first time observe
-        if (!isObserverd)
-        {
-            isObserverd = true;
-            GameManager.instance.IncreaseCandy(1);
-        }
+
 
         //0125:new hintgroup method
         if (hintGroupInDrawBook != null)
@@ -67,6 +63,11 @@ public class Hint : MonoBehaviour
             .LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
         //GameManager.instance.IncreaseTime(observeTimeCost);
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
 
     }
 
