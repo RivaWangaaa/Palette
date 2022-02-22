@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
                 if (currentGameobject.tag == "character")
                 {
                     isWithinTalkDistance(currentGameobject);
-                    //Debug.Log("detect talkable player");
+                    Debug.Log("detect talkable player");
                     if(currentGameobject.GetComponent<NPC>().isWithInTalkDistance)
                     {
                         //Debug.Log("can talk");
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
                         currentGameobject.GetComponent<NPC>().talkIcon.SetActive(true);
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic1_Talk);
                         //when player start a conversation with a NPC
-                        if (Input.GetKeyDown(KeyCode.E))
+                        if (Input.GetKeyDown(KeyCode.E) && Tutorials.instance.pic1_Talk == null)
                         {
                             currentGameobject.GetComponent<NPC>().OnInteract(gameObject);
                             isEavesdroping = false;

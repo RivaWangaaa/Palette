@@ -18,8 +18,8 @@ public class Tutorials : MonoBehaviour
 
     public GameObject currentPic;
 
-    public float eachPicTime = 3f;
-    private float currentPicTime;
+    //public float eachPicTime = 3f;
+    //private float currentPicTime;
     private void Awake()
     {
         if (instance == null)
@@ -36,18 +36,7 @@ public class Tutorials : MonoBehaviour
 
     private void Update()
     {
-        if (currentPic != null && currentPicTime <= 3f)
-        {
-            currentPicTime += Time.deltaTime;
-        }
 
-        if (currentPicTime >= 3f)
-        {
-            currentPic.SetActive(false);
-            Destroy(currentPic);
-            currentPic = null;
-            currentPicTime = 0;
-        }
     }
 
     public void SwitchAnotherPic(GameObject incomingPic)
@@ -55,7 +44,7 @@ public class Tutorials : MonoBehaviour
         if (currentPic == null && incomingPic != null)
         {
             incomingPic.SetActive(true);
-            currentPic = incomingPic;
+            GameManager.instance.EnterConversationMode();
         }
     }
 }
