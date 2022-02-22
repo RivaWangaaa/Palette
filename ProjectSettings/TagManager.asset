@@ -15,6 +15,7 @@ TagManager:
   - backClassroomDoor
   - TeleportDoor
   - move
+  - gift
   layers:
   - Default
   - TransparentFX

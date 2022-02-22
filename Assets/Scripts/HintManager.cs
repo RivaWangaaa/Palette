@@ -13,6 +13,8 @@ public class HintManager : MonoBehaviour
     public List<GameObject> observableObject;
     public List<bool> isHintCollected;
 
+    public List<GiftItem> giftObjects;
+
     void Awake()
     {
         if (instance == null)
@@ -36,16 +38,7 @@ public class HintManager : MonoBehaviour
             isHintCollected.Add(false);
         }
     }
-
-    //used when player collect an object or hint stuff
-    public void UpdateCollectedHints()
-    {
-        for(int i = 0; i < observableObject.Count; i++)
-        {
-            isHintCollected[i] = observableObject[i].GetComponent<Hint>().isCollected;
-        }
-    }
-
+    
     public void RefreshHintWhenSwitchingPlayer(GameObject player)
     {
         for(int i = 0; i < observableObject.Count; i++)
@@ -64,16 +57,6 @@ public class HintManager : MonoBehaviour
                     break;
                 case 2:
                     if (observableObject[i].GetComponent<Hint>().canBeSeenByPlum)
-                    {
-                        observableObject[i].SetActive(true);
-                    }
-                    else
-                    {
-                        observableObject[i].SetActive(false);
-                    }
-                    break;
-                case 3:
-                    if (observableObject[i].GetComponent<Hint>().canBeSeenByChunk)
                     {
                         observableObject[i].SetActive(true);
                     }

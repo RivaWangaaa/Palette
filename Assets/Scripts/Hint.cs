@@ -5,11 +5,9 @@ using Fungus;
 
 public class Hint : MonoBehaviour
 {
-    //used by HintManager to learn if this item is collected
-    //Nate: I always though it could be written in a more elegent way 
-    public bool isCollected;
-    //0125:to be replaced by hintgroup method
-    public GameObject iconInDrawBook;
+    //0215: used to determine if is first time observed
+    public bool isObserverd;
+
     public Flowchart observationLines;
     public GameObject popUpImage;
 
@@ -18,19 +16,17 @@ public class Hint : MonoBehaviour
 
     public bool canBeSeenByJimie;
     public bool canBeSeenByPlum;
-    public bool canBeSeenByChunk;
 
     public int observeTimeCost;
 
     //when player press E to interact with this item
     public void OnObserve(GameObject currentPlayer)
     {
-        Debug.Log("hint " + gameObject.name + " collected");
-        isCollected = true;
-        //update the statues of each item in HintManager
-        HintManager.instance.UpdateCollectedHints();
-        iconInDrawBook.SetActive(true);
+        Debug.Log("hint " + gameObject.name + " observe");
         
+        //0215: only increase candy first time observe
+
+
         //0125:new hintgroup method
         if (hintGroupInDrawBook != null)
         {
@@ -38,11 +34,13 @@ public class Hint : MonoBehaviour
         }
 
         observationLines.gameObject.SetActive(true);
+        observationLines.SetStringVariable("currentPlayer", currentPlayer.name);
+        
         if (popUpImage != null)
         {
             popUpImage.SetActive(true);
         }
-        observationLines.SetStringVariable("currentPlayer", currentPlayer.name);
+
         NPCManager.instance.isHavingConversation = true;
         GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>()
@@ -65,6 +63,11 @@ public class Hint : MonoBehaviour
             .LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
         //GameManager.instance.IncreaseTime(observeTimeCost);
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
 
     }
 
@@ -167,6 +170,14 @@ public class Hint : MonoBehaviour
         //unlock conversation branch sticker with Flora
         NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isNapBookFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[8]
+            .RevealThisHint();
+        
+    }
+    
+    public void OnObserveFloraPicture()
+    {
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isFloraPictureFound", true);
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[10]
             .RevealThisHint();
         
     }

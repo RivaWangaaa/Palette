@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 /*
  * control all the NPCs behavior
@@ -95,5 +96,38 @@ public class NPCManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void NPCIsAngry(GameObject AngryNPC, string VariableForFlowchart)
+    {
+        //ActivatedGiftItem.canBeCollected = true;
+        int temp =  NPCs.IndexOf(AngryNPC);
+        foreach (var NPC in NPCs)
+        {
+            if (NPC != AngryNPC)
+            {
+                NPC.GetComponent<NPC>().flowchat.SetBooleanVariable(VariableForFlowchart,true);
+            }
+        }
+    }
+
+    public void NPCIsNotAngry(GameObject AngryNPC, string VariableForOtherNPCFlowchart, string VariableForAngryNPCFlowchart)
+    {
+        int temp =  NPCs.IndexOf(AngryNPC);
+        foreach (var NPC in NPCs)
+        {
+            if (NPC != AngryNPC)
+            {
+                NPC.GetComponent<NPC>().flowchat.SetBooleanVariable(VariableForOtherNPCFlowchart,false);
+            }
+        }
+        AngryNPC.GetComponent<NPC>().flowchat.SetBooleanVariable(VariableForAngryNPCFlowchart,true);
+    }
+
+    public void SetGiftCollectable(GiftItem ActivatedGiftItem)
+    {
+        ActivatedGiftItem.observationLines.SetBooleanVariable("CanBeCollected",true);
+        ActivatedGiftItem.canBeCollected = true;
+        GameManager.instance.IncreaseCandy(-5);
     }
 }

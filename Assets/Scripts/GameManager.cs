@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentControllingPlayer;
 
+    //0215: increase by observing clues, answering a question right & use for getting gift hints
+    public int playerCandyCount = 20;
+
     public static GameManager instance;
     void Awake()
     {
@@ -33,12 +36,13 @@ public class GameManager : MonoBehaviour
         }
         
         SceneManager.LoadScene("Test_Art", LoadSceneMode.Additive);
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIManager.instance.UpdateCandyCount();
     }
 
     // Update is called once per frame
@@ -121,7 +125,10 @@ public class GameManager : MonoBehaviour
             UIManager.instance.pausePanel.SetActive(false);
             UIManager.instance.drawBookPanel.SetActive(false);
             UIManager.instance.isDrawBookOpen = false;
+            UIManager.instance.clueGroupDetail_Left.SetActive(false);
+            UIManager.instance.cludGroupDetail_Right.SetActive(false);
             NPCManager.instance.isHavingConversation = false;
+            
         }
     }
 
@@ -130,13 +137,13 @@ public class GameManager : MonoBehaviour
         currentLoopTimeMinute += timeCost;
         if (currentLoopTimeMinute < 10)
         {
-            UIManager.instance.txt_Time.text = "4:0" + currentLoopTimeMinute;
+            //UIManager.instance.txt_Time.text = "4:0" + currentLoopTimeMinute;
             UIManager.instance.txt_Minute1.text = "0";
             UIManager.instance.txt_Minute2.text = currentLoopTimeMinute.ToString();
         }
         else
         {
-            UIManager.instance.txt_Time.text = "4:" + currentLoopTimeMinute;
+            //UIManager.instance.txt_Time.text = "4:" + currentLoopTimeMinute;
 
             int minuteTenthDigit = currentLoopTimeMinute / 10;
             int minuteOneDigit = currentLoopTimeMinute - 10 * minuteTenthDigit;
@@ -144,5 +151,11 @@ public class GameManager : MonoBehaviour
             UIManager.instance.txt_Minute1.text = minuteTenthDigit.ToString();
             UIManager.instance.txt_Minute2.text = minuteOneDigit.ToString();
         }
+    }
+
+    public void IncreaseCandy(int candyCount)
+    {
+        playerCandyCount += candyCount;
+        UIManager.instance.UpdateCandyCount();
     }
 }

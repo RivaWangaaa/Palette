@@ -52,6 +52,17 @@ public class Player : MonoBehaviour
                 //three types of interaction: Hints, Characters(Parents, Kids, Teachers), Players
                 //0201: add new type of interaction 'move'
                 //define by tag
+                if (currentGameobject.tag == "gift")
+                {
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic8_Move);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("this is a gift");
+                        currentGameobject.GetComponent<GiftItem>().OnInteract();
+                    }
+                }
                 if (currentGameobject.tag == "move")
                 {
                     //pointingObject = currentGameobject;
@@ -268,7 +279,7 @@ public class Player : MonoBehaviour
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.observeIcon.SetActive(false);
         }
-        if(objectToBeCleared.tag == "move")
+        if(objectToBeCleared.tag == "move" || objectToBeCleared.tag == "gift")
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.moveIcon.SetActive(false);

@@ -35,6 +35,8 @@ public class NPC : MonoBehaviour
     public int conversationTimeCost;
     public int eavesdropTimeCost;
 
+    public bool isAngry;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -82,6 +84,7 @@ public class NPC : MonoBehaviour
         //NPC will react differently based on who they are talking to
         //every flowchat for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
+        flowchat.SetIntegerVariable("CandyCount", GameManager.instance.playerCandyCount);
         NPCManager.instance.UpdateCollectedHints();
         
         if(GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
@@ -154,6 +157,7 @@ public class NPC : MonoBehaviour
         //Ian will tell if you find who bury it
         hintGroupInDrawBook[0].RevealThisHint();
     }
+    
     public void GetHintPit()
     {
         //Flora lost something she burried
@@ -191,5 +195,10 @@ public class NPC : MonoBehaviour
     public void GetHintOnMotherleft()
     {
         hintGroupInDrawBook[2].RevealThisHint();
+    }
+
+    public void CallBackToDialog()
+    {
+         
     }
 }
