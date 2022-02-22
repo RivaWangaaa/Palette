@@ -111,19 +111,11 @@ public class ExitClassroomController : MonoBehaviour
 
     public void OnInteract()
     {
-        NPCManager.instance.isHavingConversation = true;
-
-        //lock player's camera when having a conversation
-        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+        GameManager.instance.EnterConversationMode();
     }
 
     public void EndInteract()
     {
-        NPCManager.instance.isHavingConversation = false;
-        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+        GameManager.instance.ExitConversationMode();
     }
 }

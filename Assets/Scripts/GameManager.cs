@@ -34,8 +34,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-        SceneManager.LoadScene("Test_Art", LoadSceneMode.Additive);
+        #if UNITY_EDITOR
+
+        #else
+            SceneManager.LoadScene("Test_Art", LoadSceneMode.Additive);
+        #endif
 
     }
 
@@ -98,6 +101,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EnterConversationMode()
+    {
+        NPCManager.instance.isHavingConversation = true;
+        currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+        currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+        currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+    }
+
+    public void ExitConversationMode()
+    {
+        currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
+        currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
+        currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+        NPCManager.instance.isHavingConversation = false;
+    }
     //this method is used when player is having a conversation with a NPC
     public void InConversation()
     {

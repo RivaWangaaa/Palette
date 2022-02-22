@@ -41,22 +41,14 @@ public class CommonConversation : MonoBehaviour
 
     public void OnInteract()
     {
-
-            flowchat.gameObject.SetActive(true);
-            NPCManager.instance.isHavingConversation = true;
-            GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
-            GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
-            GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
-
+        flowchat.gameObject.SetActive(true);
+        GameManager.instance.EnterConversationMode();
     }
 
     public void EndInteract()
     {
         flowchat.gameObject.SetActive(false);
-        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
-        NPCManager.instance.isHavingConversation = false;
+        GameManager.instance.ExitConversationMode();
         
         //add time
         GameManager.instance.IncreaseTime(timeCost);
