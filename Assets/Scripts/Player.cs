@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         SwitchPlayer(currentGameobject);
-                        Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic7_Switch);
+                        //Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic7_Switch);
                     }
                 }
                 if (currentGameobject.tag == "character")

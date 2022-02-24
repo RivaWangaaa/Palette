@@ -127,25 +127,19 @@ public class GameManager : MonoBehaviour
         isGamePaused = !isGamePaused;
         if (isGamePaused)
         {
-            currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
-            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
-            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
-            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
+            EnterConversationMode();
             UIManager.instance.pausePanel.SetActive(true);
-            NPCManager.instance.isHavingConversation = true;
+            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
         }
         else
         {
-            currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
-            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
-            currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
-            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
+            ExitConversationMode();
             UIManager.instance.pausePanel.SetActive(false);
             UIManager.instance.drawBookPanel.SetActive(false);
             UIManager.instance.isDrawBookOpen = false;
             UIManager.instance.clueGroupDetail_Left.SetActive(false);
             UIManager.instance.cludGroupDetail_Right.SetActive(false);
-            NPCManager.instance.isHavingConversation = false;
+            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
             
         }
     }

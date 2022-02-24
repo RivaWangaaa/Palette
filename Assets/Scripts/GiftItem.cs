@@ -18,13 +18,7 @@ public class GiftItem : MonoBehaviour
         {
             popUpImage.SetActive(true);
         }
-        
-        NPCManager.instance.isHavingConversation = true;
-        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>()
-            .sensitivityY = 0;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>()
-            .LockCursor(false);
+        GameManager.instance.EnterConversationMode();
     }
 
     public void EndInteract()
@@ -34,18 +28,12 @@ public class GiftItem : MonoBehaviour
         {
             popUpImage.SetActive(false);
         }
-        
-        GameManager.instance.currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>()
-            .sensitivityY = 8;
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>()
-            .LockCursor(true);
-        NPCManager.instance.isHavingConversation = false;
 
         if (canBeCollected)
         {
             OnCollected();
         }
+        GameManager.instance.ExitConversationMode();
     }
 
     public void OnCollected()
