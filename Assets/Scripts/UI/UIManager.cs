@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     public Animator candySetAnimator;
     
     public GameObject test0210GameOverPanel;
+
+    public Animator SayDialog_Common;
     
     void Awake()
     {

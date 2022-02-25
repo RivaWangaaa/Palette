@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Text ItemHintUIText;
 
     public GameObject currentControllingPlayer;
+    public Animator currentControllingPlayerConversationModeCharacter;
 
     //0215: increase by observing clues, answering a question right & use for getting gift hints
     public int playerCandyCount = 20;

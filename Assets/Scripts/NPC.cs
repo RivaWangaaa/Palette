@@ -37,6 +37,8 @@ public class NPC : MonoBehaviour
 
     public bool isAngry;
 
+    public Animator conversationModeCharacter;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -96,9 +98,19 @@ public class NPC : MonoBehaviour
         GameManager.instance.EnterConversationMode();
     }
 
+    public void StartPlayAnimation()
+    {
+        conversationModeCharacter.SetTrigger("StartDialog");
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("StartDialog");
+        UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
+    }
+
     public void EndInteract()
     {
         GameManager.instance.ExitConversationMode();
+        conversationModeCharacter.SetTrigger("EndDialog");
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
+        UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
         flowchat.gameObject.SetActive(false);
 
         //Debug.Log("end interaction");

@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public GameObject playerIcon;
 
     public int playerIndex;
+    public Animator ConversationModeCharacter;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -259,6 +261,7 @@ public class Player : MonoBehaviour
 
         //transport the one you are controlling to their seat
         GameManager.instance.currentControllingPlayer = targetPlayer;
+        GameManager.instance.currentControllingPlayerConversationModeCharacter = targetPlayer.GetComponent<Player>().ConversationModeCharacter;
         gameObject.transform.position = chairPosition.position;
         HintManager.instance.RefreshHintWhenSwitchingPlayer(targetPlayer);
         Debug.Log(targetPlayer.name);
