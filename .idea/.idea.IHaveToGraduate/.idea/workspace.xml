@@ -15,6 +15,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -134,6 +137,7 @@
       <workItem from="1645550311574" duration="1932000" />
       <workItem from="1645564479372" duration="1847000" />
       <workItem from="1645719709462" duration="6455000" />
+      <workItem from="1645806507886" duration="2044000" />
     </task>
     <servers />
   </component>

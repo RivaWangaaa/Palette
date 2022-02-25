@@ -105,8 +105,21 @@ public class NPC : MonoBehaviour
         UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
     }
 
+    public void HideAnimation()
+    {
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.gameObject.SetActive(false);
+        conversationModeCharacter.gameObject.SetActive(false);
+    }
+    
+    public void ShowAnimation()
+    {
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.gameObject.SetActive(true);
+        conversationModeCharacter.gameObject.SetActive(true);
+    }
+
     public void EndInteract()
     {
+        ShowAnimation();
         GameManager.instance.ExitConversationMode();
         conversationModeCharacter.SetTrigger("EndDialog");
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
