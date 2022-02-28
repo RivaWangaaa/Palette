@@ -214,7 +214,8 @@ public class Player : MonoBehaviour
                     eavesdropCharacter.GetComponent<CommonConversation>().chatIcon.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        Debug.Log("eavesdrop");
+                        Debug.Log("eavesdrop Conversation");
+                        Debug.Log(eavesdropCharacter.GetComponent<CommonConversation>().flowchartReference.name);
                         eavesdropCharacter.GetComponent<CommonConversation>().OnInteract();
                     }
                 }

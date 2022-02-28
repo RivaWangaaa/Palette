@@ -19,7 +19,7 @@ public class CommonConversation : MonoBehaviour
     //Yanxi: Added Start() to assign flowchat onto static flowchat, so it can be used in Loop1 script. 
     private void Start()
     {
-        flowchat = flowchartReference;
+        //flowchat = flowchartReference;
     }
 
     private void Update()
@@ -41,13 +41,13 @@ public class CommonConversation : MonoBehaviour
 
     public void OnInteract()
     {
-        flowchat.gameObject.SetActive(true);
+        flowchartReference.gameObject.SetActive(true);
         GameManager.instance.EnterConversationMode();
     }
 
     public void EndInteract()
     {
-        flowchat.gameObject.SetActive(false);
+        flowchartReference.gameObject.SetActive(false);
         GameManager.instance.ExitConversationMode();
         
         //add time
