@@ -11,6 +11,10 @@ public class GiftItem : MonoBehaviour
     public GameObject popUpImage;
     public GameObject GiftIcon;
 
+    public GameObject ComfortingNPC;
+    public string VariableForOtherNPCFlowchart;
+    public string VariableForAngryNPCFlowchart;
+    
     public void OnInteract()
     {
         observationLines.gameObject.SetActive(true);
@@ -40,9 +44,9 @@ public class GiftItem : MonoBehaviour
     {
         gameObject.SetActive(false);
         GiftIcon.SetActive(true);
-        NPCManager.instance.NPCIsNotAngry(NPCManager.instance.NPCs[1],
-            "FloraIsAngry",
-            "isHaveGift");
+        NPCManager.instance.NPCIsNotAngry(ComfortingNPC,
+            VariableForOtherNPCFlowchart,
+            VariableForAngryNPCFlowchart);
     }
     
 }
