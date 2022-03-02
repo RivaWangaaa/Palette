@@ -103,7 +103,10 @@ public class NPC : MonoBehaviour
 
     public void StartPlayAnimation()
     {
-        conversationModeCharacter.SetTrigger("StartDialog");
+        if (conversationModeCharacter != null)
+        {
+            conversationModeCharacter.SetTrigger("StartDialog");
+        }
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("StartDialog");
         UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
     }
@@ -111,13 +114,19 @@ public class NPC : MonoBehaviour
     public void HideAnimation()
     {
         GameManager.instance.currentControllingPlayerConversationModeCharacter.gameObject.SetActive(false);
-        conversationModeCharacter.gameObject.SetActive(false);
+        if (conversationModeCharacter != null)
+        {
+            conversationModeCharacter.gameObject.SetActive(false); 
+        }
     }
     
     public void ShowAnimation()
     {
         GameManager.instance.currentControllingPlayerConversationModeCharacter.gameObject.SetActive(true);
-        conversationModeCharacter.gameObject.SetActive(true);
+        if (conversationModeCharacter != null)
+        {
+            conversationModeCharacter.gameObject.SetActive(true); 
+        }
     }
 
     public void EndInteract()
