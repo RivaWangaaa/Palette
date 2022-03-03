@@ -195,6 +195,7 @@ public class Player : MonoBehaviour
                     {
                         //eavesdropingObject = eavesdropCharacter;
                         eavesdropCharacter.GetComponent<NPC>().eavesdropIcon.SetActive(true);
+                        Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                         if (Input.GetKeyDown(KeyCode.E))
                         {
                             Debug.Log("eavesdrop");
@@ -212,6 +213,7 @@ public class Player : MonoBehaviour
                 {
                     eavesdropCharacter = hit.collider.gameObject;
                     eavesdropCharacter.GetComponent<CommonConversation>().chatIcon.SetActive(true);
+                    Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Debug.Log("eavesdrop Conversation");

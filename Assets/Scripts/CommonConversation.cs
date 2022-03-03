@@ -16,6 +16,9 @@ public class CommonConversation : MonoBehaviour
     public bool needAnEndEvent;
     public GameObject endEvent;
 
+    public Animator eavesdropCharacterLeft;
+    public Animator eavesdropCharacterRight;
+
     //Yanxi: Added Start() to assign flowchat onto static flowchat, so it can be used in Loop1 script. 
     private void Start()
     {
@@ -39,14 +42,38 @@ public class CommonConversation : MonoBehaviour
 
     }
 
+    public void StartPlayAnimation()
+    {
+        eavesdropCharacterLeft.SetTrigger("StartDialog");
+        eavesdropCharacterRight.SetTrigger("StartDialog");
+        UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
+    }
+    
+    public void ShowAnimation()
+    {
+        eavesdropCharacterRight.gameObject.SetActive(true); 
+        eavesdropCharacterLeft.gameObject.SetActive(true); 
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.gameObject.SetActive(true);
+    }
+    
+    public void HideAnimation()
+    {
+        eavesdropCharacterRight.gameObject.SetActive(false); 
+        eavesdropCharacterLeft.gameObject.SetActive(false); 
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.gameObject.SetActive(false);
+    }
+    
     public void OnInteract()
     {
+        ShowAnimation();
+        UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
         flowchartReference.gameObject.SetActive(true);
         GameManager.instance.EnterConversationMode();
     }
 
     public void EndInteract()
     {
+        ShowAnimation();
         flowchartReference.gameObject.SetActive(false);
         GameManager.instance.ExitConversationMode();
         
@@ -57,6 +84,10 @@ public class CommonConversation : MonoBehaviour
         {
             NPCManager.instance.SetWayPointsByEvent(endEvent);
         }
+        
+        eavesdropCharacterLeft.SetTrigger("EndDialog");
+        eavesdropCharacterRight.SetTrigger("EndDialog");
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
     }
 
     public void OnHearingNoteSystem()
