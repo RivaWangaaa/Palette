@@ -124,7 +124,7 @@ AnimationClip:
         inWeight: {x: 0.74516916, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 7.95
+        time: 9.366667
         value: {x: -1.253, y: -180, z: 0}
         inSlope: {x: -27.321657, y: 0, z: 0}
         outSlope: {x: -27.321657, y: 0, z: 0}
@@ -1029,7 +1029,7 @@ AnimationClip:
         inWeight: 0.74516916
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 7.95
+        time: 9.366667
         value: -1.253
         inSlope: -27.321657
         outSlope: -27.321657
@@ -1129,7 +1129,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 7.95
+        time: 9.366667
         value: -180
         inSlope: 0
         outSlope: 0
@@ -1220,7 +1220,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 7.95
+        time: 9.366667
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1564,7 +1564,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Camera
+    path: Door
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1574,17 +1574,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Camera
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Camera
+    path: Door
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1603,8 +1593,18 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Camera
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Door
+    path: Camera
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1614,7 +1614,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Door
+    path: Camera
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

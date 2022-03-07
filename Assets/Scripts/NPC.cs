@@ -39,6 +39,8 @@ public class NPC : MonoBehaviour
 
     public Animator conversationModeCharacter;
 
+    public GameObject tutorialBlock;
+
     private void Update()
     {
         if(wayPoints.Count == 0 || currentWayPointIndex == wayPoints.Count || NPCManager.instance.isHavingConversation)
@@ -131,7 +133,9 @@ public class NPC : MonoBehaviour
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
         UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
         flowchat.gameObject.SetActive(false);
-
+        TriggerTutorial();
+        
+        
         //Debug.Log("end interaction");
         if (GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
         {
@@ -144,6 +148,20 @@ public class NPC : MonoBehaviour
         {
             //GameManager.instance.IncreaseTime(conversationTimeCost);
         }
+    }
+
+    public void TriggerTutorial()
+    {
+        if (tutorialBlock != null)
+        {
+            tutorialBlock.SetActive(true);
+            tutorialBlock = null;
+        }
+    }
+
+    public void SetTutorialBlock(GameObject Block)
+    {
+        tutorialBlock = Block;
     }
 
     public void GetHintBarbie()
