@@ -129,7 +129,10 @@ public class NPC : MonoBehaviour
     {
         ShowAnimation();
         GameManager.instance.ExitConversationMode();
-        conversationModeCharacter.SetTrigger("EndDialog");
+        if (conversationModeCharacter != null)
+        {
+            conversationModeCharacter.SetTrigger("EndDialog");
+        }
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
         UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
         flowchat.gameObject.SetActive(false);

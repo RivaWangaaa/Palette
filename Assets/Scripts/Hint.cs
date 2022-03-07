@@ -19,6 +19,8 @@ public class Hint : MonoBehaviour
 
     public int observeTimeCost;
 
+    public GameObject tutorialBlock;
+    
     //when player press E to interact with this item
     public void OnObserve(GameObject currentPlayer)
     {
@@ -46,7 +48,10 @@ public class Hint : MonoBehaviour
 
     public void EndObserve()
     {
+
         observationLines.gameObject.SetActive(false);
+        TriggerTutorial();
+
         if (popUpImage != null)
         {
             popUpImage.SetActive(false);
@@ -59,6 +64,19 @@ public class Hint : MonoBehaviour
             GameManager.instance.IncreaseCandy(1);
         }
 
+    }
+    public void TriggerTutorial()
+    {
+        if (tutorialBlock != null)
+        {
+            tutorialBlock.SetActive(true);
+            tutorialBlock = null;
+        }
+    }
+
+    public void SetTutorialBlock(GameObject Block)
+    {
+        tutorialBlock = Block;
     }
 
     public void OnObserveBarbie()
