@@ -39,7 +39,7 @@ public class HintManager : MonoBehaviour
         }
     }
     
-    public void RefreshHintWhenSwitchingPlayer(GameObject player)
+    /*public void RefreshHintWhenSwitchingPlayer(GameObject player)
     {
         for(int i = 0; i < observableObject.Count; i++)
         {
@@ -67,5 +67,5 @@ public class HintManager : MonoBehaviour
                     break;
             }
         }
-    }
+    }*/
 }

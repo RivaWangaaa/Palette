@@ -48,8 +48,6 @@ public class Hint : MonoBehaviour
 
     public void EndObserve()
     {
-
-        observationLines.gameObject.SetActive(false);
         TriggerTutorial();
 
         if (popUpImage != null)
@@ -63,6 +61,7 @@ public class Hint : MonoBehaviour
             isObserverd = true;
             GameManager.instance.IncreaseCandy(1);
         }
+        observationLines.gameObject.SetActive(false);
 
     }
     public void TriggerTutorial()

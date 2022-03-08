@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
 
             if (currentLoopTimeMinute >= 25)
             {
-                UIManager.instance.test0210GameOverPanel.SetActive(true);
+                //UIManager.instance.test0210GameOverPanel.SetActive(true);
             }
         }
     }

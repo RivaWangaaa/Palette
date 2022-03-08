@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         //Yanxi: Make the start PC (Jamie) able to see right objects.
-        HintManager.instance.RefreshHintWhenSwitchingPlayer(gameObject);
+        //HintManager.instance.RefreshHintWhenSwitchingPlayer(gameObject);
     }
 
     // Update is called once per frame
@@ -122,6 +122,9 @@ public class Player : MonoBehaviour
                 {
                     //pointingObject = currentGameobject;
                     //when player tries to open a door
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic8_Move);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         ExitClassroomController.instance.playerInteractWithTheClassroomDoor();
@@ -129,6 +132,9 @@ public class Player : MonoBehaviour
                 }
                 if (currentGameobject.tag == "backClassroomDoor")
                 {
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic8_Move);
                     //pointingObject = currentGameobject;
                     //when player tries to open a door
                     if (Input.GetKeyDown(KeyCode.E))
@@ -145,6 +151,15 @@ public class Player : MonoBehaviour
                         Debug.Log("join");
                         currentGameobject.GetComponent<CommonConversation>().OnInteract();
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic4_Listen);
+                    }
+                }
+                if (currentGameobject.tag == "JumpScare")
+                {
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        currentGameobject.GetComponent<Loop0SleepPerformanceController>().Loop0EndJumpScare();
                     }
                 }
                 if (currentGameobject.tag == "move")
@@ -266,7 +281,7 @@ public class Player : MonoBehaviour
         GameManager.instance.currentControllingPlayer = targetPlayer;
         GameManager.instance.currentControllingPlayerConversationModeCharacter = targetPlayer.GetComponent<Player>().ConversationModeCharacter;
         gameObject.transform.position = chairPosition.position;
-        HintManager.instance.RefreshHintWhenSwitchingPlayer(targetPlayer);
+        //HintManager.instance.RefreshHintWhenSwitchingPlayer(targetPlayer);
         Debug.Log(targetPlayer.name);
 
         //TODO: make the transition more elegent (add some animation or using the cinemation?)
@@ -285,7 +300,11 @@ public class Player : MonoBehaviour
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.observeIcon.SetActive(false);
         }
-        if(objectToBeCleared.tag == "move" || objectToBeCleared.tag == "gift")
+        if(objectToBeCleared.tag == "move" 
+           || objectToBeCleared.tag == "gift" 
+           || objectToBeCleared.tag == "frontClassroomDoor" 
+           || objectToBeCleared.tag == "backClassroomDoor"
+           || objectToBeCleared.tag == "JumpScare")
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.moveIcon.SetActive(false);
