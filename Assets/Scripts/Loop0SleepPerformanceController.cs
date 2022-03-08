@@ -36,4 +36,9 @@ public class Loop0SleepPerformanceController : MonoBehaviour
             = GameManager.instance.currentControllingPlayer.GetComponent<Player>().chairPosition.position;
         GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = true;
     }
+
+    public void Loop0EedJumpScareSetUp()
+    {
+        JumpScareCutScene.GetComponent<BoxCollider>().enabled = true;
+    }
 }

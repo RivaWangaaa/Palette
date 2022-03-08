@@ -138,8 +138,6 @@ public class GameManager : MonoBehaviour
             UIManager.instance.pausePanel.SetActive(false);
             UIManager.instance.drawBookPanel.SetActive(false);
             UIManager.instance.isDrawBookOpen = false;
-            UIManager.instance.clueGroupDetail_Left.SetActive(false);
-            UIManager.instance.cludGroupDetail_Right.SetActive(false);
             currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
             
         }

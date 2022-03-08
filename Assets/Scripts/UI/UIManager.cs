@@ -23,16 +23,15 @@ public class UIManager : MonoBehaviour
     public Text txt_Minute1;
     public Text txt_Minute2;
 
-    public GameObject clueGroupDetail_Left;
-    public GameObject cludGroupDetail_Right;
-
     public Text txt_PlayerCandyCount;
     public Animator candySetAnimator;
     
     public GameObject test0210GameOverPanel;
 
     public Animator SayDialog_Common;
-    
+
+    public GameObject currentShowingClueGroupDetail;
+
     void Awake()
     {
         if (instance == null)

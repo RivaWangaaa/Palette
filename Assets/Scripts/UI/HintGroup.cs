@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public GameObject unrevealedIcon;
     public GameObject revrealedIcon;
@@ -12,6 +12,8 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public string details;
     public bool isOnLeft;
+
+    public GameObject clueGroupDetail;
 
     public void GetSubHints()
     {
@@ -41,30 +43,22 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (revrealedIcon.activeSelf)
-        {
-            if (isOnLeft)
-            {
-                UIManager.instance.cludGroupDetail_Right.SetActive(true);
-                UIManager.instance.cludGroupDetail_Right.transform.GetChild(0).GetComponent<Text>().text = details;
-            }
-            else
-            {
-                UIManager.instance.clueGroupDetail_Left.SetActive(true);
-                UIManager.instance.cludGroupDetail_Right.transform.GetChild(0).GetComponent<Text>().text = details;
-            }
-        }
+        
     }
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isOnLeft)
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log(gameObject.name);
+        if (revrealedIcon.activeSelf)
         {
-            UIManager.instance.cludGroupDetail_Right.SetActive(false);
-        }
-        else
-        {
-            UIManager.instance.clueGroupDetail_Left.SetActive(false);
+            UIManager.instance.currentShowingClueGroupDetail.SetActive(false);
+            clueGroupDetail.SetActive(true);
+            clueGroupDetail = UIManager.instance.currentShowingClueGroupDetail;
         }
     }
 }
