@@ -22,19 +22,19 @@ MonoBehaviour:
     showEyeDropper: 1
   center:
     m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.5}
+    m_Value: {x: 0.5, y: 0.35}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 0.26
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.77
     min: 0.01
     max: 1
   rounded:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-7258944444878928490
 MonoBehaviour:
@@ -119,6 +119,30 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 5
     min: 0
+--- !u!114 &-59815208717384435
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  temperature:
+    m_OverrideState: 1
+    m_Value: -23.5
+    min: -100
+    max: 100
+  tint:
+    m_OverrideState: 1
+    m_Value: 5.2
+    min: -100
+    max: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +168,7 @@ MonoBehaviour:
   - {fileID: 1771898766044348093}
   - {fileID: -8267931833035473667}
   - {fileID: 3939604414204907222}
+  - {fileID: -59815208717384435}
 --- !u!114 &566083769114034568
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -160,13 +185,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.13953504}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.019294553}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.0629113}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.11744944}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.19622076}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.015860012}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -337,13 +362,40 @@ MonoBehaviour:
   hueVsSat:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 3
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.005469465
+          value: 0.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.69371
+          value: 0.7232324
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.98997253
+          value: 0.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -389,19 +441,19 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.08798197, g: 0, b: 0.122641504, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.68708026, b: 0.63584906, a: 1}
+    m_Value: {r: 0.9022076, g: 0.8627451, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   balance:
     m_OverrideState: 1
-    m_Value: 36
+    m_Value: 34.6
     min: -100
     max: 100
 --- !u!114 &2543214960135701457
@@ -416,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -506,15 +558,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.4
+    m_Value: -0.3
   contrast:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 0
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.9811321, g: 0.9015308, b: 0.9015308, a: 1}
+    m_Value: {r: 0.7228195, g: 0.73101807, b: 0.8867924, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -525,7 +577,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: -20
+    m_Value: -7.44
     min: -100
     max: 100
 --- !u!114 &7686420817029181253
