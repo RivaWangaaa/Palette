@@ -509,7 +509,7 @@ MonoBehaviour:
     m_Value: 1.4
   contrast:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 0
     min: -100
     max: 100
   colorFilter:

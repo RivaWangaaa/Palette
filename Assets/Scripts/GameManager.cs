@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public int playerCandyCount = 20;
 
     public static GameManager instance;
+
+    public List<GameObject> loop1UnlockDoors;
+    public List<GameObject> loop1ResetGifts;
     void Awake()
     {
         if (instance == null)
