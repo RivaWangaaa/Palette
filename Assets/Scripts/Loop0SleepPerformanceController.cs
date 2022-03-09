@@ -22,6 +22,7 @@ public class Loop0SleepPerformanceController : MonoBehaviour
     {
         FallAsleepCam.SetActive(false);
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
+        gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
     public void Loop0EndJumpScare()
@@ -39,6 +40,6 @@ public class Loop0SleepPerformanceController : MonoBehaviour
 
     public void Loop0EedJumpScareSetUp()
     {
-        JumpScareCutScene.GetComponent<BoxCollider>().enabled = true;
+        
     }
 }
