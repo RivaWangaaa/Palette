@@ -246,4 +246,5 @@ public class NPC : MonoBehaviour
     {
          
     }
+    
 }

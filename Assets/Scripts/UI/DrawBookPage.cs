@@ -9,6 +9,7 @@ public class DrawBookPage : MonoBehaviour
     public DrawbookStory thisStory;
 
     public List<HintGroup> hintsInThisPage;
+    
     public void Start()
     {
         thisStory = gameObject.transform.parent.gameObject.GetComponent<DrawbookStory>();

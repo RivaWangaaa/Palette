@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
 
     public Animator SayDialog_Common;
 
-    public GameObject currentShowingClueGroupDetail;
+    public GameObject currentShowingHintGroupDetail;
 
     void Awake()
     {
@@ -65,6 +65,11 @@ public class UIManager : MonoBehaviour
     {
         txt_PlayerCandyCount.text = GameManager.instance.playerCandyCount.ToString();
         candySetAnimator.SetTrigger("CandyIncrease");
+    }
+
+    public void BackToDrawbookMain()
+    {
+        currentShowingHintGroupDetail.SetActive(false);
     }
 
 }

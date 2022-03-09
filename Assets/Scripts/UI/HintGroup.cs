@@ -11,9 +11,8 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public GameObject subHintsIcon;
 
     public string details;
-    public bool isOnLeft;
-
-    public GameObject clueGroupDetail;
+    
+    public GameObject hintGroupDetail;
 
     public void GetSubHints()
     {
@@ -39,6 +38,8 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         subHintsIcon.SetActive(false);
         unrevealedIcon.SetActive(false);
         revrealedIcon.SetActive(true);
+        //after reveal a hint group, check if the whole clue group is clear
+        transform.parent.gameObject.GetComponent<ClueGroup>().CheckIfClueClear();
     }
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -56,9 +57,12 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         Debug.Log(gameObject.name);
         if (revrealedIcon.activeSelf)
         {
-            UIManager.instance.currentShowingClueGroupDetail.SetActive(false);
-            clueGroupDetail.SetActive(true);
-            clueGroupDetail = UIManager.instance.currentShowingClueGroupDetail;
+            if (UIManager.instance.currentShowingHintGroupDetail != null)
+            {
+                UIManager.instance.currentShowingHintGroupDetail.SetActive(false);
+            }
+            hintGroupDetail.SetActive(true);
+            UIManager.instance.currentShowingHintGroupDetail = hintGroupDetail;
         }
     }
 }

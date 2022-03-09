@@ -102,4 +102,9 @@ public class CommonConversation : MonoBehaviour
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[9]
             .RevealThisHint();
     }
+    
+    public void OnHearingFloraBullyVick()
+    {
+        
+    }
 }
