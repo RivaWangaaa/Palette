@@ -56,11 +56,7 @@ public class Hint : MonoBehaviour
         }
         GameManager.instance.ExitConversationMode();
         //GameManager.instance.IncreaseTime(observeTimeCost);
-        if (!isObserverd)
-        {
-            isObserverd = true;
-            GameManager.instance.IncreaseCandy(1);
-        }
+        
         observationLines.gameObject.SetActive(false);
 
     }
@@ -164,29 +160,44 @@ public class Hint : MonoBehaviour
             .GetSubHints();
     }
 
+    //loop1_Midterm_MissingNapBook
     public void OnObserveNapBook()
     {
         //unlock conversation branch  with Flora
         NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isPersonalStuffFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[7]
             .RevealThisHint();
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
     }
-    
+    //loop1_Midterm_Hairpin
     public void OnObserveFloraPersonalStuff()
     {
         //unlock conversation branch sticker with Flora
         NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isNapBookFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[8]
             .RevealThisHint();
-        
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
     }
     
+    //loop1_Midterm_FloraPic
     public void OnObserveFloraPicture()
     {
         NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isFloraPictureFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[10]
             .RevealThisHint();
-        
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
     }
 
     public void OnObserveOnePage()

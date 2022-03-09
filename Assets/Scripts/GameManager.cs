@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         isGamePaused = !isGamePaused;
-        if (isGamePaused)
+        if (isGamePaused && !NPCManager.instance.isHavingConversation)
         {
             EnterConversationMode();
             UIManager.instance.pausePanel.SetActive(true);
