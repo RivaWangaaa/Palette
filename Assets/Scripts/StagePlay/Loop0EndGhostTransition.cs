@@ -14,4 +14,10 @@ public class Loop0EndGhostTransition : MonoBehaviour
         mainCameraCanvas.SetActive(true);
         ghostTransitionCamera.SetActive(false);
     }
+
+    public void Loop1Reset()
+    {
+        GameManager.instance.LoopReset();
+        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
+    }
 }

@@ -200,6 +200,15 @@ public class Hint : MonoBehaviour
         }
     }
 
+    //Loop0_midterm_PencialBox
+    public void OnObservePencilBox()
+    {
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
+    }
     public void OnObserveOnePage()
     {
         //choose 'page' in flora's diary

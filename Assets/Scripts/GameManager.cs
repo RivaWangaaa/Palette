@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> loop1UnlockDoors;
     public List<GameObject> loop1ResetGifts;
+    
     void Awake()
     {
         if (instance == null)
@@ -171,5 +172,18 @@ public class GameManager : MonoBehaviour
     {
         playerCandyCount += candyCount;
         UIManager.instance.UpdateCandyCount();
+    }
+
+    public void LoopReset()
+    {
+        foreach (var door in loop1UnlockDoors)
+        {
+            door.SetActive(false);
+        }
+
+        foreach (var gift in loop1ResetGifts)
+        {
+            gift.SetActive(true);
+        }
     }
 }
