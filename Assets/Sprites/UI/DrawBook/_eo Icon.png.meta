@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -9191615121622480079
     second: _eo Icon_0
+  - first:
+      213: 5177679677146295553
+    second: _eo Icon_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,10 +98,10 @@ TextureImporter:
       name: _eo Icon_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 315
-        width: 310
-        height: 312
+        x: 2
+        y: 319
+        width: 344
+        height: 306
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,8 +109,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13b45930fb2d07080800000000000000
-      internalID: -9191615121622480079
+      spriteID: 10d601ddb30dad740800000000000000
+      internalID: 5177679677146295553
       vertices: []
       indices: 
       edges: []
