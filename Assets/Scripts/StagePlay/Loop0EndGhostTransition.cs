@@ -9,6 +9,7 @@ public class Loop0EndGhostTransition : MonoBehaviour
     public GameObject ghostTransitionCamera;
     public GameObject loop1Toturial;
     public GameObject levelDoor;
+    public GameObject Plum;
     
     public void Loop0GhostTransitionSetUp()
     {
@@ -22,7 +23,8 @@ public class Loop0EndGhostTransition : MonoBehaviour
         GameManager.instance.LoopReset();
         GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
         loop1Toturial.SetActive(true);
-        gameObject.SetActive(false);
         levelDoor.SetActive(true);
+        Plum.GetComponent<CharacterController>().enabled = true;
+        gameObject.SetActive(false);
     }
 }
