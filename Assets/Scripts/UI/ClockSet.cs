@@ -9,4 +9,10 @@ public class ClockSet : MonoBehaviour
         int costTime = 58 - GameManager.instance.currentLoopTimeMinute;
         GameManager.instance.IncreaseTime(costTime);
     }
+
+    public void ResetTime()
+    {
+        int costTime = -GameManager.instance.currentLoopTimeMinute;
+        GameManager.instance.IncreaseTime(costTime);
+    }
 }

@@ -185,5 +185,13 @@ public class GameManager : MonoBehaviour
         {
             gift.SetActive(true);
         }
+
+        foreach (var child in NPCManager.instance.NPCs)
+        {
+            if (child.GetComponent<NPC>().childSeat != null)
+            {
+                child.transform.position = child.GetComponent<NPC>().childSeat.position;
+            }
+        }
     }
 }

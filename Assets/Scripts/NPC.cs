@@ -40,6 +40,7 @@ public class NPC : MonoBehaviour
     public Animator conversationModeCharacter;
 
     public GameObject tutorialBlock;
+    public Transform childSeat;
 
     private void Update()
     {
