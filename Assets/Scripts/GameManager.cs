@@ -184,6 +184,7 @@ public class GameManager : MonoBehaviour
         foreach (var gift in loop1ResetGifts)
         {
             gift.SetActive(true);
+            gift.GetComponent<GiftItem>().observationLines.SetBooleanVariable("CanBeCollected",false);
         }
 
         foreach (var child in NPCManager.instance.NPCs)
