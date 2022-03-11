@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         #if UNITY_EDITOR
 
         #else
-            SceneManager.LoadScene("Test_Art", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Test_Art_OnlyLevel", LoadSceneMode.Additive);
         #endif
 
     }

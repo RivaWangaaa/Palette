@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Test_Level.unity
     guid: 67a450a27793c5345a1893a9aa82bf44
   - enabled: 1
-    path: Assets/Scenes/Test_Art.unity
-    guid: f5f6c6f7ef336cc429a7686822a0f88c
+    path: Assets/Scenes/Test_Art_OnlyLevel.unity
+    guid: 5703fd37d943cc24e82ed5a57c1804f9
   m_configObjects: {}
