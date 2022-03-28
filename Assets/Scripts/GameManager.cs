@@ -185,6 +185,7 @@ public class GameManager : MonoBehaviour
         {
             gift.SetActive(true);
             gift.GetComponent<GiftItem>().observationLines.SetBooleanVariable("CanBeCollected",false);
+            gift.GetComponent<GiftItem>().canBeCollected = false;
         }
 
         foreach (var child in NPCManager.instance.NPCs)
@@ -194,5 +195,10 @@ public class GameManager : MonoBehaviour
                 child.transform.position = child.GetComponent<NPC>().childSeat.position;
             }
         }
+        
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].
+            GetComponent<DrawBookPage>().clueGroupsInThisPage[1].titleRevealed.SetActive(true);
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].
+            GetComponent<DrawBookPage>().clueGroupsInThisPage[1].titleUnRevealed.SetActive(false);
     }
 }
