@@ -130,20 +130,41 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         isGamePaused = !isGamePaused;
-        if (isGamePaused && !NPCManager.instance.isHavingConversation)
+        if (NPCManager.instance.isHavingConversation)
         {
-            EnterConversationMode();
-            UIManager.instance.pausePanel.SetActive(true);
-            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
+            if (isGamePaused)
+            {
+                UIManager.instance.pausePanel.SetActive(true);
+            }
+            else
+            {
+                UIManager.instance.pausePanel.SetActive(false);
+                UIManager.instance.drawBookPanel.SetActive(false);
+                UIManager.instance.isDrawBookOpen = false;
+            }
         }
         else
         {
-            ExitConversationMode();
-            UIManager.instance.pausePanel.SetActive(false);
-            UIManager.instance.drawBookPanel.SetActive(false);
-            UIManager.instance.isDrawBookOpen = false;
-            currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
-            
+            if (isGamePaused)
+            {
+                //EnterConversationMode();
+                currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
+                currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
+                currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
+                UIManager.instance.pausePanel.SetActive(true);
+                currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
+            }
+            else
+            {
+                //ExitConversationMode();
+                currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
+                currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
+                currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
+                UIManager.instance.pausePanel.SetActive(false);
+                UIManager.instance.drawBookPanel.SetActive(false);
+                UIManager.instance.isDrawBookOpen = false;
+                currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
+            }
         }
     }
 
