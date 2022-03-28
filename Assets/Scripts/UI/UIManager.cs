@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     public GameObject crosshair;
     public GameObject observeIcon;
     public GameObject moveIcon;
+    public GameObject talkIcon;
+    public GameObject eavesdropIcon;
     public GameObject messageBox;
 
     public Text txt_Minute1;

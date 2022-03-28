@@ -107,8 +107,9 @@ public class Player : MonoBehaviour
                     if(currentGameobject.GetComponent<NPC>().isWithInTalkDistance)
                     {
                         //Debug.Log("can talk");
-                        //pointingObject = currentGameobject;
-                        currentGameobject.GetComponent<NPC>().talkIcon.SetActive(true);
+                        //pointingObject = currentGameobject;s
+                        UIManager.instance.crosshair.SetActive(false);
+                        UIManager.instance.talkIcon.SetActive(true);
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic1_Talk);
                         //when player start a conversation with a NPC
                         if (Input.GetKeyDown(KeyCode.E) && Tutorials.instance.pic1_Talk == null)
@@ -145,7 +146,8 @@ public class Player : MonoBehaviour
                 if (currentGameobject.tag == "commonConversationShort")
                 {
                     //pointingObject = currentGameobject;
-                    currentGameobject.GetComponent<CommonConversation>().chatIcon.SetActive(true);
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.eavesdropIcon.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Debug.Log("join");
@@ -227,7 +229,8 @@ public class Player : MonoBehaviour
                 if (hit.collider.gameObject.tag == "commonConversationLong")
                 {
                     eavesdropCharacter = hit.collider.gameObject;
-                    eavesdropCharacter.GetComponent<CommonConversation>().chatIcon.SetActive(true);
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
                     Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -292,8 +295,8 @@ public class Player : MonoBehaviour
     {
         if(objectToBeCleared.tag == "character")
         {
-            objectToBeCleared.GetComponent<NPC>().talkIcon.SetActive(false);
-            objectToBeCleared.GetComponent<NPC>().eavesdropIcon.SetActive(false);
+            UIManager.instance.crosshair.SetActive(true);
+            UIManager.instance.talkIcon.SetActive(false);
         }
         if(objectToBeCleared.tag == "hint")
         {
@@ -311,11 +314,13 @@ public class Player : MonoBehaviour
         }
         if (objectToBeCleared.tag == "commonConversationShort")
         {
-            objectToBeCleared.GetComponent<CommonConversation>().chatIcon.SetActive(false);
+            UIManager.instance.crosshair.SetActive(true);
+            UIManager.instance.eavesdropIcon.SetActive(false);
         }
         if (objectToBeCleared.tag == "commonConversationLong")
         {
-            objectToBeCleared.GetComponent<CommonConversation>().chatIcon.SetActive(false);
+            UIManager.instance.crosshair.SetActive(true);
+            UIManager.instance.eavesdropIcon.SetActive(false);
         }
     }
 
