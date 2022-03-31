@@ -1,46 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 
-public class GiftItem : MonoBehaviour
+public class GiftItem : Item
 {
     public bool canBeCollected;
-
-    public Flowchart observationLines;
-    public GameObject popUpImage;
+    
     public GameObject GiftIcon;
 
     public GameObject ComfortingNPC;
     public string VariableForOtherNPCFlowchart;
     public string VariableForAngryNPCFlowchart;
-    
-    public void OnInteract()
-    {
-        observationLines.gameObject.SetActive(true);
-        if (popUpImage != null)
-        {
-            popUpImage.SetActive(true);
-        }
-        GameManager.instance.EnterConversationMode();
-    }
 
-    public void EndInteract()
+    public override void EndInteract()
     {
-        observationLines.gameObject.SetActive(false);
-        if (popUpImage != null)
-        {
-            popUpImage.SetActive(false);
-        }
-
+        base.EndInteract();
         if (canBeCollected)
         {
             OnCollected();
         }
-        GameManager.instance.ExitConversationMode();
     }
 
-    public void OnCollected()
+    public override void OnCollected()
     {
         gameObject.SetActive(false);
         GiftIcon.SetActive(true);
@@ -48,5 +31,4 @@ public class GiftItem : MonoBehaviour
             VariableForOtherNPCFlowchart,
             VariableForAngryNPCFlowchart);
     }
-    
 }

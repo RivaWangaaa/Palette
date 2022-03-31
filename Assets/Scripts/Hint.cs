@@ -3,63 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 
-public class Hint : MonoBehaviour
+public class Hint : Item
 {
     //0215: used to determine if is first time observed
     public bool isObserverd;
 
-    public Flowchart observationLines;
-    public GameObject popUpImage;
-
     public HintGroup hintGroupInDrawBook;
     public HintGroup secondHintGroupInDrawBook;
-
-    public bool canBeSeenByJimie;
-    public bool canBeSeenByPlum;
-
-    public int observeTimeCost;
 
     public GameObject tutorialBlock;
     
     //when player press E to interact with this item
-    public void OnObserve(GameObject currentPlayer)
+    public override void OnInteract()
     {
-        Debug.Log("hint " + gameObject.name + " observe");
-        
-        //0215: only increase candy first time observe
-
-
+        base.OnInteract();
         //0125:new hintgroup method
         if (hintGroupInDrawBook != null)
         {
             hintGroupInDrawBook.RevealThisHint();
         }
-
-        observationLines.gameObject.SetActive(true);
-        observationLines.SetStringVariable("currentPlayer", currentPlayer.name);
-        
-        if (popUpImage != null)
-        {
-            popUpImage.SetActive(true);
-        }
-
-        GameManager.instance.EnterConversationMode();
     }
 
-    public void EndObserve()
+    public override void EndInteract()
     {
+        base.EndInteract();
         TriggerTutorial();
-
-        if (popUpImage != null)
-        {
-            popUpImage.SetActive(false);
-        }
-        GameManager.instance.ExitConversationMode();
-        //GameManager.instance.IncreaseTime(observeTimeCost);
-        
-        observationLines.gameObject.SetActive(false);
-
     }
+    
     public void TriggerTutorial()
     {
         if (tutorialBlock != null)

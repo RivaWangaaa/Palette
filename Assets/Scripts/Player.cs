@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
                     Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic2_Observe);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        currentGameobject.GetComponent<Hint>().OnObserve(gameObject);
+                        currentGameobject.GetComponent<Hint>().OnInteract();
                     }
                 }
                 if (currentGameobject.tag == "player")
