@@ -5,19 +5,24 @@ using Fungus;
 
 public class Item : MonoBehaviour
 {
+    //scripts shown on interact
     public Flowchart observationLines;
+    //image shown on screen on interact
     public GameObject popUpImage;
     
     public virtual void OnInteract()
     {
         observationLines.gameObject.SetActive(true);
-        Debug.Log("interact");
+        //show popup image
         if (popUpImage != null)
         {
             popUpImage.SetActive(true);
         }
+        //freeze player camera, disable wasd input
         GameManager.instance.EnterConversationMode();
-        observationLines.SetStringVariable("currentPlayer", GameManager.instance.currentControllingPlayer.name);
+        //set variable in flowchart
+        observationLines.SetStringVariable("currentPlayer", 
+            GameManager.instance.currentControllingPlayer.name);
     }
     
     public virtual void EndInteract()

@@ -84,7 +84,7 @@ public class NPC : MonoBehaviour
         flowchat.gameObject.SetActive(true);
         UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
         StartPlayAnimation();
-        //every flowchat for NPC has a string variable to help NPC know who they are talking to
+        //every flowchart for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
         flowchat.SetIntegerVariable("CandyCount", GameManager.instance.playerCandyCount);
 

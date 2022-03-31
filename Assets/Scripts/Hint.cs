@@ -8,16 +8,17 @@ public class Hint : Item
     //0215: used to determine if is first time observed
     public bool isObserverd;
 
+    //Hints can be seen in Clue Book
     public HintGroup hintGroupInDrawBook;
     public HintGroup secondHintGroupInDrawBook;
 
+    //first time interact with will trigger
     public GameObject tutorialBlock;
     
-    //when player press E to interact with this item
     public override void OnInteract()
     {
         base.OnInteract();
-        //0125:new hintgroup method
+        //0125: if not reveal, it should be revealed
         if (hintGroupInDrawBook != null)
         {
             hintGroupInDrawBook.RevealThisHint();

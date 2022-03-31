@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public GameObject moveIcon;
     public GameObject talkIcon;
     public GameObject eavesdropIcon;
+    public GameObject giftIcon;
     public GameObject messageBox;
 
     public Text txt_Minute1;

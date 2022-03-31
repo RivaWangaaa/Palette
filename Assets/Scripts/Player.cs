@@ -57,7 +57,15 @@ public class Player : MonoBehaviour
                 if (currentGameobject.tag == "gift")
                 {
                     UIManager.instance.crosshair.SetActive(false);
-                    UIManager.instance.moveIcon.SetActive(true);
+                    if (currentGameobject.GetComponent<GiftItem>().canBeCollected)
+                    {
+                        UIManager.instance.giftIcon.SetActive(true);
+                    }
+                    else
+                    {
+                        UIManager.instance.moveIcon.SetActive(true);
+                    }
+
                     Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic8_Move);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -311,6 +319,7 @@ public class Player : MonoBehaviour
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.moveIcon.SetActive(false);
+            UIManager.instance.giftIcon.SetActive(false);
         }
         if (objectToBeCleared.tag == "commonConversationShort")
         {
