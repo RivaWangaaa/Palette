@@ -39,34 +39,4 @@ public class HintManager : MonoBehaviour
             isHintCollected.Add(false);
         }
     }
-
-    /*public void RefreshHintWhenSwitchingPlayer(GameObject player)
-    {
-        for(int i = 0; i < observableObject.Count; i++)
-        {
-            switch (player.GetComponent<Player>().playerIndex)
-            {
-                case 1:
-                    if (observableObject[i].GetComponent<Hint>().canBeSeenByJimie)
-                    {
-                        observableObject[i].SetActive(true);
-                    }
-                    else
-                    {
-                        observableObject[i].SetActive(false);
-                    }
-                    break;
-                case 2:
-                    if (observableObject[i].GetComponent<Hint>().canBeSeenByPlum)
-                    {
-                        observableObject[i].SetActive(true);
-                    }
-                    else
-                    {
-                        observableObject[i].SetActive(false);
-                    }
-                    break;
-            }
-        }
-    }*/
 }
