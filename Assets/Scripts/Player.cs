@@ -181,6 +181,15 @@ public class Player : MonoBehaviour
                         currentGameobject.GetComponent<TransportEnterence>().OnEnter();
                     }
                 }
+                if (currentGameobject.tag == "SmartTree")
+                {
+                    UIManager.instance.crosshair.SetActive(false);
+                    UIManager.instance.moveIcon.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        currentGameobject.GetComponent<SmartTree>().OnInteractWithTree();
+                    }
+                }
             }
             //else
             //{
@@ -315,7 +324,8 @@ public class Player : MonoBehaviour
            || objectToBeCleared.tag == "gift" 
            || objectToBeCleared.tag == "frontClassroomDoor" 
            || objectToBeCleared.tag == "backClassroomDoor"
-           || objectToBeCleared.tag == "JumpScare")
+           || objectToBeCleared.tag == "JumpScare"
+           || objectToBeCleared.tag == "SmartTree")
         {
             UIManager.instance.crosshair.SetActive(true);
             UIManager.instance.moveIcon.SetActive(false);

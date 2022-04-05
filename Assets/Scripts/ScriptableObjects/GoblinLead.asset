@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: GoblinLead
   m_EditorClassIdentifier: 
   positionInLeadsPool: {x: 0, y: 0}
-  leadContent: Go and Eavesdrop Janitor
+  leadContent: Goblin_Go and Eavesdrop Janitor
+  isBought: 0
+  isHintCollected: 0

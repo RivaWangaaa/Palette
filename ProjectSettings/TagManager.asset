@@ -17,6 +17,7 @@ TagManager:
   - move
   - gift
   - JumpScare
+  - SmartTree
   layers:
   - Default
   - TransparentFX

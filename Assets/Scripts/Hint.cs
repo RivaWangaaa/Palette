@@ -150,6 +150,9 @@ public class Hint : Item
             isObserverd = true;
             GameManager.instance.IncreaseCandy(1);
         }
+        //update lead in smart tree
+        leadInSmartTree.isHintCollected = true;
+        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
     //loop1_Midterm_Hairpin
     public void OnObserveFloraPersonalStuff()
@@ -163,6 +166,9 @@ public class Hint : Item
             isObserverd = true;
             GameManager.instance.IncreaseCandy(1);
         }
+        //update lead in smart tree
+        leadInSmartTree.isHintCollected = true;
+        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
     
     //loop1_Midterm_FloraPic
@@ -176,6 +182,9 @@ public class Hint : Item
             isObserverd = true;
             GameManager.instance.IncreaseCandy(1);
         }
+        //update lead in smart tree
+        leadInSmartTree.isHintCollected = true;
+        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
 
     //Loop0_Midterm_PencilBox

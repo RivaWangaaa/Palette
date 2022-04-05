@@ -48,7 +48,6 @@ public class SmartTree : MonoBehaviour
             lead.isHintCollected = false;
             //Debug.LogFormat("LeadsPoolInOrder[{0},{1}] =" + leadsPoolInOrder[lead.positionInLeadsPool.x, lead.positionInLeadsPool.y].name,lead.positionInLeadsPool.x,lead.positionInLeadsPool.y);
         }
-        BuyHelp();
     }
 
     public void BuyHelp()
@@ -56,9 +55,9 @@ public class SmartTree : MonoBehaviour
         //there is enough help to provide -> with enough candy-> Buy Succeed(consume candy, show help)
         //there is enough help to provide -> not enough candy -> Buy Fail(not consume candy, not show help)
         //not enough help (player already buy) -> Show Help
-        
+
         int playerCandy = GameManager.instance.playerCandyCount;
- 
+        
         //Debug.Log("horizontalindex = " + currentLeadsPoolHorizontalIndex);
         
         for (int i = 0; i < currentLeadsPoolHorizontalIndex; i++)
@@ -70,9 +69,10 @@ public class SmartTree : MonoBehaviour
                 {
                     Debug.Log("buy success");
                     //buy success, show content, break the loop and lose candy
-                    GameManager.instance.playerCandyCount -= leadPrice;
+                    GameManager.instance.IncreaseCandy(-leadPrice);
                     flowchart.SetStringVariable("currentShownHelp",currentLead.leadContent);
                     flowchart.SetBooleanVariable("BuySuccess",true);
+                    currentLead.isBought = true;
                     break;
                 }
                 else
@@ -92,14 +92,17 @@ public class SmartTree : MonoBehaviour
         }
     }
 
-    public void UpdateIndexInLeadsPoolInOrder()
+    public void UpdateIndexOfLeadsPoolInOrder()
     {
         //called when player collected a hint
         //hint collected in this row +1
         currentCollectedHintInRow++;
         if (currentCollectedHintInRow >= currentLeadsPoolHorizontalIndex)
         {
+            //switch to next row, reset horizontal index and hint collected in this row
             currentLeadsPoolVerticalIndex++;
+            currentLeadsPoolHorizontalIndex = 0;
+            currentCollectedHintInRow = 0;
             while (leadsPoolInOrder[currentLeadsPoolVerticalIndex,currentLeadsPoolHorizontalIndex] != null)
             {
                 currentLeadsPoolHorizontalIndex++;
@@ -107,11 +110,17 @@ public class SmartTree : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void EndInteractWithTree()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            BuyHelp();
-        }
+        GameManager.instance.ExitConversationMode();
+        flowchart.gameObject.SetActive(false);
+        flowchart.SetBooleanVariable("AlreadyBuy", false);
+        flowchart.SetBooleanVariable("NotEnoughCandy",false);
+        flowchart.SetBooleanVariable("BuySuccess",false);
+    }
+
+    public void OnInteractWithTree()
+    {
+        flowchart.gameObject.SetActive(true);
     }
 }

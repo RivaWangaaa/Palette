@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: FloraLead
   m_EditorClassIdentifier: 
   positionInLeadsPool: {x: 2, y: 0}
-  leadContent: talk with flora
+  leadContent: Flora_talk with flora
+  isBought: 0
+  isHintCollected: 0

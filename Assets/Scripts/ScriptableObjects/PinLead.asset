@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PinLead
   m_EditorClassIdentifier: 
   positionInLeadsPool: {x: 1, y: 0}
-  leadContent: go to nap room
+  leadContent: HairPin_go to nap room
+  isBought: 0
+  isHintCollected: 0

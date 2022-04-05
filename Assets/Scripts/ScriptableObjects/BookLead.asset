@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: BookLead
   m_EditorClassIdentifier: 
   positionInLeadsPool: {x: 1, y: 1}
-  leadContent: Go to naproom
+  leadContent: MissingBook_Go to naproom
+  isBought: 0
+  isHintCollected: 0

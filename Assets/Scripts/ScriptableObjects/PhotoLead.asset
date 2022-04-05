@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PhotoLead
   m_EditorClassIdentifier: 
   positionInLeadsPool: {x: 1, y: 2}
-  leadContent: in the hallway
+  leadContent: FloraPhoto_in the hallway
+  isBought: 0
+  isHintCollected: 0

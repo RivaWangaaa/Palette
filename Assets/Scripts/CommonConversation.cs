@@ -88,14 +88,16 @@ public class CommonConversation : MonoBehaviour
             NPCManager.instance.SetWayPointsByEvent(endEvent);
         }
 
+        eavesdropCharacterLeft.SetTrigger("EndDialog");
+        eavesdropCharacterRight.SetTrigger("EndDialog");
+        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
+        
+        //update lead in smart tree
         if (leadInSmartTree != null)
         {
             leadInSmartTree.isHintCollected = true;
         }
-        
-        eavesdropCharacterLeft.SetTrigger("EndDialog");
-        eavesdropCharacterRight.SetTrigger("EndDialog");
-        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
+        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
 
     public void OnHearingNoteSystem()
