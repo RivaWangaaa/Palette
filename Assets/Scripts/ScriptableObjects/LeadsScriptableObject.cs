@@ -9,6 +9,12 @@ public class LeadsScriptableObject : ScriptableObject
 {
     public Vector2Int positionInLeadsPool;
     public string leadContent;
-
     
+    //if player already bought this lead
+    public bool isBought;
+    
+    //if player already collect the hint
+    public bool isHintCollected;
+
+
 }

@@ -19,6 +19,9 @@ public class CommonConversation : MonoBehaviour
     public Animator eavesdropCharacterLeft;
     public Animator eavesdropCharacterRight;
 
+    //lead in Smart Tree
+    public LeadsScriptableObject leadInSmartTree;
+    
     //Yanxi: Added Start() to assign flowchat onto static flowchat, so it can be used in Loop1 script. 
     private void Start()
     {
@@ -83,6 +86,11 @@ public class CommonConversation : MonoBehaviour
         if (needAnEndEvent)
         {
             NPCManager.instance.SetWayPointsByEvent(endEvent);
+        }
+
+        if (leadInSmartTree != null)
+        {
+            leadInSmartTree.isHintCollected = true;
         }
         
         eavesdropCharacterLeft.SetTrigger("EndDialog");

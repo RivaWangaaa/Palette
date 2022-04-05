@@ -15,6 +15,9 @@ public class Hint : Item
     //first time interact with will trigger
     public GameObject tutorialBlock;
     
+    //lead in smartTree
+    public LeadsScriptableObject leadInSmartTree;
+    
     public override void OnInteract()
     {
         base.OnInteract();
@@ -28,6 +31,10 @@ public class Hint : Item
     public override void EndInteract()
     {
         base.EndInteract();
+        if (leadInSmartTree != null)
+        {
+            leadInSmartTree.isHintCollected = true;
+        }
         TriggerTutorial();
     }
     
