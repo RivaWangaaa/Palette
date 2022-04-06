@@ -193,6 +193,7 @@ public class GameManager : MonoBehaviour
     {
         playerCandyCount += candyCount;
         UIManager.instance.UpdateCandyCount();
+        VFXManager.instance.vfx_CandyGet.Play();
     }
 
     public void LoopReset()

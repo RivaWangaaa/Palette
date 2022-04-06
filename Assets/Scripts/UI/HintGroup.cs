@@ -34,6 +34,7 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         if (revrealedIcon.activeSelf == false)
         {
             UIManager.instance.messageBox.GetComponent<Animator>().SetTrigger("ObtainHint");
+            //VFXManager.instance.vfx_ClueFound.Play();
         }
         subHintsIcon.SetActive(false);
         unrevealedIcon.SetActive(false);
