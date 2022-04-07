@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager.instance.UpdateCandyCount();
+        UIManager.instance.UIInitialize();
     }
 
     // Update is called once per frame
@@ -143,13 +143,23 @@ public class GameManager : MonoBehaviour
         {
             if (isGamePaused)
             {
-                UIManager.instance.pausePanel.SetActive(true);
+                //UIManager.instance.pausePanel.SetActive(true);
+                UIManager.instance.MainSceneUI.SetActive(false);
+                UIManager.instance.ViewPausePanel3D.SetActive(true);
+                UIManager.instance.Dialog_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
+                UIManager.instance.Function_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
+                UIManager.instance.Menu_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
             }
             else
             {
-                UIManager.instance.pausePanel.SetActive(false);
-                UIManager.instance.drawBookPanel.SetActive(false);
-                UIManager.instance.isDrawBookOpen = false;
+                //UIManager.instance.pausePanel.SetActive(false);
+                //UIManager.instance.drawBookPanel.SetActive(false);
+                //UIManager.instance.isDrawBookOpen = false;
+                UIManager.instance.MainSceneUI.SetActive(true);
+                UIManager.instance.ViewPausePanel3D.SetActive(false);
+                UIManager.instance.Dialog_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
+                UIManager.instance.Function_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
+                UIManager.instance.Menu_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
             }
         }
         else
@@ -160,7 +170,9 @@ public class GameManager : MonoBehaviour
                 currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 0;
                 currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 0;
                 currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
-                UIManager.instance.pausePanel.SetActive(true);
+                //UIManager.instance.pausePanel.SetActive(true);
+                UIManager.instance.MainSceneUI.SetActive(false);
+                UIManager.instance.ViewPausePanel3D.SetActive(true);
                 currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
             }
             else
@@ -169,9 +181,11 @@ public class GameManager : MonoBehaviour
                 currentControllingPlayer.GetComponent<MouseLook>().sensitivityX = 8;
                 currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
                 currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
-                UIManager.instance.pausePanel.SetActive(false);
-                UIManager.instance.drawBookPanel.SetActive(false);
-                UIManager.instance.isDrawBookOpen = false;
+                //UIManager.instance.pausePanel.SetActive(false);
+                //UIManager.instance.drawBookPanel.SetActive(false);
+                //UIManager.instance.isDrawBookOpen = false;
+                UIManager.instance.MainSceneUI.SetActive(true);
+                UIManager.instance.ViewPausePanel3D.SetActive(false);
                 currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
             }
         }

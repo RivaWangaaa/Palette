@@ -7,9 +7,7 @@ public class VFXManager : MonoBehaviour
     public static VFXManager instance;
     
     //Sounds Effect
-    public AudioSource vfx_BookPage1;
-    public AudioSource vfx_BookPage2;
-    public AudioSource vfx_BookPage3;
+    public AudioSource[] vfx_BookPages;
 
     public AudioSource vfx_CandyGet;
     public AudioSource vfx_ClueFound;
@@ -26,5 +24,11 @@ public class VFXManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PlayRandomBookPageVFX()
+    {
+        int index = Random.Range(0, vfx_BookPages.Length);
+        vfx_BookPages[index].Play();
     }
 }

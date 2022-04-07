@@ -35,6 +35,15 @@ public class UIManager : MonoBehaviour
 
     public GameObject currentShowingHintGroupDetail;
 
+    [Header("Fungus")] 
+    [SerializeField] public GameObject Dialog_SayDialog;
+    [SerializeField] public GameObject Function_SayDialog;
+    [SerializeField] public GameObject Menu_SayDialog;
+
+    [Header("Pause Panel Related")] 
+    public GameObject MainSceneUI;
+    public GameObject ViewPausePanel3D;
+
     void Awake()
     {
         if (instance == null)
@@ -73,6 +82,14 @@ public class UIManager : MonoBehaviour
     public void BackToDrawbookMain()
     {
         currentShowingHintGroupDetail.SetActive(false);
+    }
+
+    public void UIInitialize()
+    {
+        UIManager.instance.UpdateCandyCount();
+        Dialog_SayDialog.SetActive(true);
+        Function_SayDialog.SetActive(true);
+        Menu_SayDialog.SetActive(true);
     }
 
 }

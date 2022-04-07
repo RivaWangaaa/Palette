@@ -55,6 +55,7 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //VFXManager.instance.PlayRandomBookPageVFX();
         Debug.Log(gameObject.name);
         if (revrealedIcon.activeSelf)
         {
