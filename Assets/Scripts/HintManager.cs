@@ -39,4 +39,6 @@ public class HintManager : MonoBehaviour
             isHintCollected.Add(false);
         }
     }
+
+
 }

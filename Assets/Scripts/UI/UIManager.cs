@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
     [Header("Pause Panel Related")] 
     public GameObject MainSceneUI;
     public GameObject ViewPausePanel3D;
+    public GameObject Stage;
 
     void Awake()
     {
@@ -92,4 +94,25 @@ public class UIManager : MonoBehaviour
         Menu_SayDialog.SetActive(true);
     }
 
+    public void DisableFungusDialogInPausePanel3D()
+    {
+        //hide Saydialog and character animations
+        Dialog_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
+        Function_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
+        Menu_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
+        Stage.GetComponent<Canvas>().targetDisplay = 1;
+        //disable dialog click
+        Dialog_SayDialog.GetComponent<DialogInput>().clickMode = ClickMode.Disabled;
+        Function_SayDialog.GetComponent<DialogInput>().clickMode = ClickMode.Disabled;
+    }
+
+    public void EnableFungusDialogInPausePanel3D()
+    {
+        Dialog_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
+        Function_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
+        Menu_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
+        Stage.GetComponent<Canvas>().targetDisplay = 0;
+        Dialog_SayDialog.GetComponent<DialogInput>().clickMode = ClickMode.ClickAnywhere;
+        Function_SayDialog.GetComponent<DialogInput>().clickMode = ClickMode.ClickAnywhere;
+    }
 }

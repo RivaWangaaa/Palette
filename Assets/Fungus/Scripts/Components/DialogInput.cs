@@ -27,7 +27,7 @@ namespace Fungus
     public class DialogInput : MonoBehaviour
     {
         [Tooltip("Click to advance story")]
-        [SerializeField] protected ClickMode clickMode;
+        [SerializeField] public ClickMode clickMode;
 
         [Tooltip("Delay between consecutive clicks. Useful to prevent accidentally clicking through story.")]
         [SerializeField] protected float nextClickDelay = 0f;

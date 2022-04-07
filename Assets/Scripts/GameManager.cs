@@ -146,9 +146,8 @@ public class GameManager : MonoBehaviour
                 //UIManager.instance.pausePanel.SetActive(true);
                 UIManager.instance.MainSceneUI.SetActive(false);
                 UIManager.instance.ViewPausePanel3D.SetActive(true);
-                UIManager.instance.Dialog_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
-                UIManager.instance.Function_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
-                UIManager.instance.Menu_SayDialog.GetComponent<Canvas>().targetDisplay = 1;
+                UIManager.instance.DisableFungusDialogInPausePanel3D();
+                currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
             }
             else
             {
@@ -157,9 +156,7 @@ public class GameManager : MonoBehaviour
                 //UIManager.instance.isDrawBookOpen = false;
                 UIManager.instance.MainSceneUI.SetActive(true);
                 UIManager.instance.ViewPausePanel3D.SetActive(false);
-                UIManager.instance.Dialog_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
-                UIManager.instance.Function_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
-                UIManager.instance.Menu_SayDialog.GetComponent<Canvas>().targetDisplay = 0;
+                UIManager.instance.EnableFungusDialogInPausePanel3D();
             }
         }
         else
