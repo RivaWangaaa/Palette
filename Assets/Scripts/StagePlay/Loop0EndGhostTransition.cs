@@ -22,18 +22,6 @@ public class Loop0EndGhostTransition : MonoBehaviour
     public void Loop1Reset()
     {
         GameManager.instance.LoopReset();
-        GameManager.instance.currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
-        loop1Toturial.SetActive(true);
-        levelDoor.SetActive(true);
-        Plum.GetComponent<CharacterController>().enabled = true;
         gameObject.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Loop1Reset();
-        }
     }
 }

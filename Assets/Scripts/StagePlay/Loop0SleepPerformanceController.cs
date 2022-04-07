@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,8 +39,11 @@ public class Loop0SleepPerformanceController : MonoBehaviour
         GameManager.instance.currentControllingPlayer.GetComponent<CharacterController>().enabled = true;
     }
 
-    public void Loop0EedJumpScareSetUp()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            JumpScareCutScene.GetComponent<Loop0EndGhostTransition>().Loop1Reset();
+        }
     }
 }

@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> loop1UnlockDoors;
     public List<GameObject> loop1ResetGifts;
+
+    public GameObject loop1Tutorial;
+    public GameObject classroomDoor;
+    public GameObject plum;
     
     void Awake()
     {
@@ -63,6 +67,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Pause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            LoopReset();
         }
 
         if(!NPCManager.instance.isHavingConversation)
@@ -218,9 +227,24 @@ public class GameManager : MonoBehaviour
             }
         }
         
+        //unlock storyline title in drawbook
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].
             GetComponent<DrawBookPage>().clueGroupsInThisPage[1].titleRevealed.SetActive(true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].
             GetComponent<DrawBookPage>().clueGroupsInThisPage[1].titleUnRevealed.SetActive(false);
+        
+        //debug use only
+        //disable loop0 flora dialog branch for loop1
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isSecondTimeAskLove",false);
+        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isFirstTimeAskLove",false);
+        
+        //something other reset unsorted
+        currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
+        loop1Tutorial.SetActive(true);
+        plum.GetComponent<CharacterController>().enabled = true;
+        classroomDoor.SetActive(true);
+        
+        Debug.Log("Loop Reset!");
+
     }
 }
