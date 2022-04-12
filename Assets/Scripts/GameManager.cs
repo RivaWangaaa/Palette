@@ -69,16 +69,6 @@ public class GameManager : MonoBehaviour
             Pause();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            LoopReset();
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DisableClassroomDoor();
-        }
-
         if(!NPCManager.instance.isHavingConversation)
         {
             currentLoopTimeFloat = Time.deltaTime + currentLoopTimeFloat;
@@ -262,10 +252,5 @@ public class GameManager : MonoBehaviour
         
         Debug.Log("Loop Reset!");
 
-    }
-    
-    public void DisableClassroomDoor()
-    {
-    
     }
 }
