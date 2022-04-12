@@ -142,7 +142,7 @@ public class Hint : Item
     public void OnObserveNapBook()
     {
         //unlock conversation branch  with Flora
-        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isPersonalStuffFound", true);
+        FlowchartVariablesManager.instance.variableManager.SetBooleanVariable("Loop1isMissingBookFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[7]
             .RevealThisHint();
         if (!isObserverd)
@@ -158,7 +158,7 @@ public class Hint : Item
     public void OnObserveFloraPersonalStuff()
     {
         //unlock conversation branch sticker with Flora
-        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isNapBookFound", true);
+        FlowchartVariablesManager.instance.variableManager.SetBooleanVariable("Loop1isJewelFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[8]
             .RevealThisHint();
         if (!isObserverd)
@@ -174,7 +174,7 @@ public class Hint : Item
     //loop1_Midterm_FloraPic
     public void OnObserveFloraPicture()
     {
-        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isFloraPictureFound", true);
+        FlowchartVariablesManager.instance.variableManager.SetBooleanVariable("Loop1isJewelBelongFloraFound", true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[10]
             .RevealThisHint();
         if (!isObserverd)

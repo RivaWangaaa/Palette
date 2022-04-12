@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         //ItemHintUIText.text = "Item Hints Collected" + "\n" + Player.itemHintCollect + " / " + Player.itemHintTotal;
 
         // unlock when escape is hit
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             Pause();
         }
@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             LoopReset();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            DisableClassroomDoor();
         }
 
         if(!NPCManager.instance.isHavingConversation)
@@ -257,5 +262,10 @@ public class GameManager : MonoBehaviour
         
         Debug.Log("Loop Reset!");
 
+    }
+    
+    public void DisableClassroomDoor()
+    {
+    
     }
 }
