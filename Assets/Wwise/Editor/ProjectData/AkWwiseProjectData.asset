@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: f843510c1cffbe41828ae778ace0c626
     GuidInternal: 
-    m_lastTime: -8585517832574775808
-    List: []
+    m_lastTime: -8585517429044775808
+    List:
+    - name: Main
+      guid: c04006e288df2d47b141cde15c227076
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f843510c1cffbe41828ae778ace0c626
+      - ElementName: Main
+        ObjectType: 7
+        guid: c04006e288df2d47b141cde15c227076
+      Path: SoundBanks/Default Work Unit/Main
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ebc53adf5ab9e847b6ab50d1ba9ddc89
     GuidInternal: 
-    m_lastTime: -8585517832574775808
-    List: []
+    m_lastTime: -8585517467944775808
+    List:
+    - name: Hallway_Music
+      guid: e82935d81e8dd54fa7902353a859ac49
+      id: 2119481237
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ebc53adf5ab9e847b6ab50d1ba9ddc89
+      - ElementName: Hallway_Music
+        ObjectType: 3
+        guid: e82935d81e8dd54fa7902353a859ac49
+      Path: Events/Default Work Unit/Hallway_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MeetingSnowie_Music
+      guid: 3463ec7b575d0d45b49076e514e772e9
+      id: 355241347
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ebc53adf5ab9e847b6ab50d1ba9ddc89
+      - ElementName: MeetingSnowie_Music
+        ObjectType: 3
+        guid: 3463ec7b575d0d45b49076e514e772e9
+      Path: Events/Default Work Unit/MeetingSnowie_Music
+      maxAttenuation: 0
+      maxDuration: 66.89533
+      minDuration: 66.89533
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +187,7 @@ MonoBehaviour:
     m_lastTime: -8585517832574775808
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 010000000500000006000000070000000b0000000c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

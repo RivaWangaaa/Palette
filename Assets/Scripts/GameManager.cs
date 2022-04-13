@@ -141,6 +141,7 @@ public class GameManager : MonoBehaviour
                 //UIManager.instance.pausePanel.SetActive(true);
                 UIManager.instance.MainSceneUI.SetActive(false);
                 UIManager.instance.ViewPausePanel3D.SetActive(true);
+                UIManager.instance.isDrawBookOpen = false;
                 UIManager.instance.DisableFungusDialogInPausePanel3D();
                 currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(false);
             }
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
                 //UIManager.instance.isDrawBookOpen = false;
                 UIManager.instance.MainSceneUI.SetActive(true);
                 UIManager.instance.ViewPausePanel3D.SetActive(false);
+                UIManager.instance.drawBookPanel.SetActive(false);
                 UIManager.instance.EnableFungusDialogInPausePanel3D();
             }
         }
@@ -165,6 +167,7 @@ public class GameManager : MonoBehaviour
                 //UIManager.instance.pausePanel.SetActive(true);
                 UIManager.instance.MainSceneUI.SetActive(false);
                 UIManager.instance.ViewPausePanel3D.SetActive(true);
+                UIManager.instance.isDrawBookOpen = false;
                 currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 0;
             }
             else
@@ -178,6 +181,7 @@ public class GameManager : MonoBehaviour
                 //UIManager.instance.isDrawBookOpen = false;
                 UIManager.instance.MainSceneUI.SetActive(true);
                 UIManager.instance.ViewPausePanel3D.SetActive(false);
+                UIManager.instance.drawBookPanel.SetActive(false);
                 currentControllingPlayer.GetComponent<FirstPersonDrifter>().speed = 6;
             }
         }

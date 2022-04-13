@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>/Users/nate/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Palette/IHaveToGraduate_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/nate/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Palette/IHaveToGraduate_WwiseProject/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/nate/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Palette/IHaveToGraduate_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/nate/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Palette/IHaveToGraduate_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="106962990">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2119481237" Name="Hallway_Music" ObjectPath="\Events\Default Work Unit\Hallway_Music" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="148172670" Language="SFX">
+							<ShortName>Palette_Hallway_96bpm_TEST.wav</ShortName>
+							<Path>SFX/Palette_Hallway_96bpm_TEST_9BDDE7C5.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="355241347" Name="MeetingSnowie_Music" ObjectPath="\Events\Default Work Unit\MeetingSnowie_Music" DurationType="OneShot" DurationMin="66.895332" DurationMax="66.895332">
+					<IncludedMemoryFiles>
+						<File Id="366634700" Language="SFX">
+							<ShortName>Palette_Meeting Snowy_70bpm_TEST.wav</ShortName>
+							<Path>SFX/Palette_Meeting Snowy_70bpm_TEST_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class VFXManager : MonoBehaviour
 {
@@ -11,7 +13,13 @@ public class VFXManager : MonoBehaviour
 
     public AudioSource vfx_CandyGet;
     public AudioSource vfx_ClueFound;
-    
+
+    public AudioSource music_Hallway;
+    public AudioSource music_MeetSnowie;
+
+    public bool isInHallway;
+    public float hallwayMusicDeltaSpeed;
+
     void Awake()
     {
         if (instance == null)
@@ -30,5 +38,23 @@ public class VFXManager : MonoBehaviour
     {
         int index = Random.Range(0, vfx_BookPages.Length);
         vfx_BookPages[index].Play();
+    }
+
+    private void Update()
+    {
+        if (isInHallway)
+        {
+            if (music_Hallway.volume <= 1)
+            {
+                music_Hallway.volume += hallwayMusicDeltaSpeed * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (music_Hallway.volume >= 0)
+            {
+                music_Hallway.volume -= hallwayMusicDeltaSpeed * Time.deltaTime;
+            }
+        }
     }
 }

@@ -9,6 +9,7 @@ public class PausePanel3DInteractableObjects : MonoBehaviour
     public UnityEvent onMouseDownMethod;
     private SpriteRenderer spriteRenderer;
     private Sprite originalSprite;
+    
     [SerializeField] private Sprite changeSprite;
 
     private void Start()

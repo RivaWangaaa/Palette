@@ -46,6 +46,11 @@ public class UIManager : MonoBehaviour
     public GameObject ViewPausePanel3D;
     public GameObject Stage;
 
+    [Header("Profile Book")]
+    public GameObject[] profileBookPages;
+    public GameObject whiteboard;
+    
+    
     void Awake()
     {
         if (instance == null)
@@ -88,7 +93,7 @@ public class UIManager : MonoBehaviour
 
     public void UIInitialize()
     {
-        UIManager.instance.UpdateCandyCount();
+        UpdateCandyCount();
         Dialog_SayDialog.SetActive(true);
         Function_SayDialog.SetActive(true);
         Menu_SayDialog.SetActive(true);
@@ -114,5 +119,22 @@ public class UIManager : MonoBehaviour
         Stage.GetComponent<Canvas>().targetDisplay = 0;
         Dialog_SayDialog.GetComponent<DialogInput>().clickMode = ClickMode.ClickAnywhere;
         Function_SayDialog.GetComponent<DialogInput>().clickMode = ClickMode.ClickAnywhere;
+    }
+
+    //called when open profile book
+    public void OpenProfilePage(int profileBookIndex)
+    {
+        whiteboard.SetActive(true);
+        for(int i = 0; i <= profileBookPages.Length; i++)
+        {
+            if (i == profileBookIndex)
+            {
+                profileBookPages[i].SetActive(true);
+            }
+            else
+            {
+                profileBookPages[i].SetActive(false);
+            }
+        }
     }
 }

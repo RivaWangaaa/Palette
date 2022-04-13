@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	355241347	MeetingSnowie_Music			\Default Work Unit\MeetingSnowie_Music	
+	2119481237	Hallway_Music			\Default Work Unit\Hallway_Music	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	148172670	Palette_Hallway_96bpm_TEST	Y:\Palette\IHaveToGraduate_WwiseProject\.cache\Mac\SFX\Palette_Hallway_96bpm_TEST_9BDDE7C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Palette_Hallway_96bpm_TEST		12319808
+	366634700	Palette_Meeting Snowy_70bpm_TEST	Y:\Palette\IHaveToGraduate_WwiseProject\.cache\Mac\SFX\Palette_Meeting Snowy_70bpm_TEST_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Palette_Meeting Snowy_70bpm_TEST		12844048
+

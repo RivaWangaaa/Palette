@@ -5,7 +5,7 @@
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\States\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1649863981" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Queries\Factory Queries.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Presets\Factory Spatial Audio.wwu" DateLow="1649823628" DateHigh="0"/>
@@ -16,8 +16,9 @@
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\IHaveToGraduate_WwiseProject.wproj" DateLow="1649823628" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\IHaveToGraduate_WwiseProject.crossover.wsettings" DateLow="1649865475" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Events\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Events\Default Work Unit.wwu" DateLow="1649860091" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Effects\Factory Effects.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
@@ -26,5 +27,5 @@
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1649823628" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Palette\IHaveToGraduate_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1649860126" DateHigh="0"/>
 </ValidationCache>

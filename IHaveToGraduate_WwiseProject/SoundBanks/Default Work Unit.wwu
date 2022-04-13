@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{0C5143F8-FF1C-41BE-828A-E778ACE0C626}" SchemaVersion="103">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{0C5143F8-FF1C-41BE-828A-E778ACE0C626}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{0C5143F8-FF1C-41BE-828A-E778ACE0C626}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{E20640C0-DF88-472D-B141-CDE15C227076}">
+					<ObjectInclusionList>
+						<ObjectRef Name="MeetingSnowie_Music" ID="{7BEC6334-5D57-450D-B490-76E514E772E9}" WorkUnitID="{DF3AC5EB-B95A-47E8-B6AB-50D1BA9DDC89}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Hallway_Music" ID="{D83529E8-8D1E-4FD5-A790-2353A859AC49}" WorkUnitID="{DF3AC5EB-B95A-47E8-B6AB-50D1BA9DDC89}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>
