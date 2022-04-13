@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeveloperCheatingController : MonoBehaviour
 {
     public GameObject classroomDoorCollider;
+    public GameObject classroomDoorBackCollider;
     private bool isClassroomDoorColliderEnabled;
     public Transform toyroomTP;
     public Transform classroomTP;
@@ -47,10 +48,12 @@ public class DeveloperCheatingController : MonoBehaviour
         {
             classroomDoorCollider.SetActive(false);
             isClassroomDoorColliderEnabled = false;
+            classroomDoorBackCollider.SetActive(false);
             Debug.Log("doors collider disabled!");
         }
         else
         {
+            classroomDoorBackCollider.SetActive(true);
             classroomDoorCollider.SetActive(true);
             isClassroomDoorColliderEnabled = true;
             Debug.Log("doors collider enabled!");
