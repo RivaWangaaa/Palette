@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class PausePanel3DInteractableObjects : MonoBehaviour
 {
     public UnityEvent onMouseDownMethod;
+    public GameObject artPotrait;
     private SpriteRenderer spriteRenderer;
     private Sprite originalSprite;
     
@@ -14,8 +15,8 @@ public class PausePanel3DInteractableObjects : MonoBehaviour
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        originalSprite = GetComponent<SpriteRenderer>().sprite;
+        spriteRenderer = artPotrait.GetComponent<SpriteRenderer>();
+        originalSprite = artPotrait.GetComponent<SpriteRenderer>().sprite;
     }
 
     private void OnMouseEnter()

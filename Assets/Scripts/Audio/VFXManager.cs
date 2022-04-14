@@ -19,6 +19,9 @@ public class VFXManager : MonoBehaviour
 
     public bool isInHallway;
     public float hallwayMusicDeltaSpeed;
+    
+    //wwise
+    public GameObject[] hallwaySoundCubes;
 
     void Awake()
     {
@@ -55,6 +58,15 @@ public class VFXManager : MonoBehaviour
             {
                 music_Hallway.volume -= hallwayMusicDeltaSpeed * Time.deltaTime;
             }
+        }
+    }
+
+    void UpdateSoundCube()
+    {
+        foreach (var cube in hallwaySoundCubes)
+        {
+            cube.GetComponent<AkTriggerEnter>().triggerObject = GameManager.instance.currentControllingPlayer;
+            cube.GetComponent<AkTriggerExit>().triggerObject = GameManager.instance.currentControllingPlayer;
         }
     }
 }

@@ -125,7 +125,7 @@ public class UIManager : MonoBehaviour
     public void OpenProfilePage(int profileBookIndex)
     {
         whiteboard.SetActive(true);
-        for(int i = 0; i <= profileBookPages.Length; i++)
+        for(int i = 0; i < profileBookPages.Length; i++)
         {
             if (i == profileBookIndex)
             {

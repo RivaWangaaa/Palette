@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
                 {
                     eavesdropCharacter = hit.collider.gameObject;
                     UIManager.instance.crosshair.SetActive(false);
-                    UIManager.instance.moveIcon.SetActive(true);
+                    UIManager.instance.eavesdropIcon.SetActive(true);
                     Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                     if (Input.GetKeyDown(KeyCode.E))
                     {

@@ -3,9 +3,12 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{DF3AC5EB-B95A-47E8-B6AB-50D1BA9DDC89}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Hallway_Music" ID="{D83529E8-8D1E-4FD5-A790-2353A859AC49}">
+				<Event Name="Play_Hallway_Music" ID="{D83529E8-8D1E-4FD5-A790-2353A859AC49}">
 					<ChildrenList>
 						<Action Name="" ID="{9FBC9B2A-F213-4E13-8329-79A7862818F5}" ShortID="442135126">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Palette_Hallway_96bpm_TEST" ID="{C8D7729E-FB08-41EE-8F64-1C1FE7B744CF}" WorkUnitID="{29532259-49F9-494F-BB2D-433B001F3E82}"/>
@@ -20,6 +23,21 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Palette_Meeting Snowy_70bpm_TEST" ID="{96B2BA47-945B-49E4-8CA5-A6CBC0D9F6E0}" WorkUnitID="{29532259-49F9-494F-BB2D-433B001F3E82}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Hallway_Music" ID="{CA03F059-3CE7-41D2-8502-F4286C59C8BB}">
+					<ChildrenList>
+						<Action Name="" ID="{97F5331A-37D3-4D60-BE62-773DC20EF7FA}" ShortID="377130313">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Palette_Hallway_96bpm_TEST" ID="{C8D7729E-FB08-41EE-8F64-1C1FE7B744CF}" WorkUnitID="{29532259-49F9-494F-BB2D-433B001F3E82}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

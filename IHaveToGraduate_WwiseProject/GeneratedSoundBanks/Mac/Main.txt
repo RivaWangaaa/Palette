@@ -1,6 +1,19 @@
 Event	ID	Name			Wwise Object Path	Notes
 	355241347	MeetingSnowie_Music			\Default Work Unit\MeetingSnowie_Music	
-	2119481237	Hallway_Music			\Default Work Unit\Hallway_Music	
+	742170406	Stop_Hallway_Music			\Default Work Unit\Stop_Hallway_Music	
+	2804017732	Play_Hallway_Music			\Default Work Unit\Play_Hallway_Music	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	2402114254	BackgroudMusic			\Default Work Unit\BackgroudMusic	
+
+State	ID	Name	State Group			Notes
+	748895195	None	BackgroudMusic			
+	2198133169	Hallway	BackgroudMusic			
+	2957683562	Classroom	BackgroudMusic			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	325963181	Classroom	BackgroudMusic	\Actor-Mixer Hierarchy\Default Work Unit\Palette_Hallway_96bpm_TEST		
+	670903374	Hallway	BackgroudMusic	\Actor-Mixer Hierarchy\Default Work Unit\Palette_Meeting Snowy_70bpm_TEST		
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	148172670	Palette_Hallway_96bpm_TEST	Y:\Palette\IHaveToGraduate_WwiseProject\.cache\Mac\SFX\Palette_Hallway_96bpm_TEST_9BDDE7C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Palette_Hallway_96bpm_TEST		12319808

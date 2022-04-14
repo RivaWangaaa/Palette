@@ -11,24 +11,16 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1923316312">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="106962990">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2306770852">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2119481237" Name="Hallway_Music" ObjectPath="\Events\Default Work Unit\Hallway_Music" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="148172670" Language="SFX">
-							<ShortName>Palette_Hallway_96bpm_TEST.wav</ShortName>
-							<Path>SFX/Palette_Hallway_96bpm_TEST_9BDDE7C5.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
 				<Event Id="355241347" Name="MeetingSnowie_Music" ObjectPath="\Events\Default Work Unit\MeetingSnowie_Music" DurationType="OneShot" DurationMin="66.895332" DurationMax="66.895332">
 					<IncludedMemoryFiles>
 						<File Id="366634700" Language="SFX">
@@ -37,6 +29,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2804017732" Name="Play_Hallway_Music" ObjectPath="\Events\Default Work Unit\Play_Hallway_Music" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="148172670" Language="SFX">
+							<ShortName>Palette_Hallway_96bpm_TEST.wav</ShortName>
+							<Path>SFX/Palette_Hallway_96bpm_TEST_9BDDE7C5.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="742170406" Name="Stop_Hallway_Music" ObjectPath="\Events\Default Work Unit\Stop_Hallway_Music" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>

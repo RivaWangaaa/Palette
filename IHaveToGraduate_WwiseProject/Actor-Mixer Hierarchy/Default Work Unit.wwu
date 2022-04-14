@@ -5,7 +5,6 @@
 			<ChildrenList>
 				<Sound Name="Palette_Hallway_96bpm_TEST" ID="{C8D7729E-FB08-41EE-8F64-1C1FE7B744CF}" ShortID="859470748">
 					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -34,6 +33,27 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="BackgroudMusic" ID="{72DA9BB0-C137-4A4B-9CAF-AF88E355E758}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Classroom" ID="{500E735E-1053-439A-A43A-F2DE273C2A08}"/>
+								<CustomState Name="" ID="{E22EC85E-6FFC-4FA4-903E-B0EE2F770731}" ShortID="325963181">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Hallway" ID="{93B24244-F267-4640-A7AB-6C023E683428}"/>
+								<CustomState Name="" ID="{C864E730-FF6C-4806-B63C-53D4A173D260}" ShortID="974673801"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="Palette_Hallway_96bpm_TEST" ID="{1F678431-D750-4D11-9233-7A9B7398D6F2}" Platform="Linked"/>
@@ -57,6 +77,27 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="BackgroudMusic" ID="{72DA9BB0-C137-4A4B-9CAF-AF88E355E758}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Classroom" ID="{500E735E-1053-439A-A43A-F2DE273C2A08}"/>
+								<CustomState Name="" ID="{E10AD877-C69D-457A-870D-C95A4B87A350}" ShortID="132909395"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Hallway" ID="{93B24244-F267-4640-A7AB-6C023E683428}"/>
+								<CustomState Name="" ID="{18568E94-DDC9-47A3-BF6F-2F5C8FA8C10A}" ShortID="670903374">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="Palette_Meeting Snowy_70bpm_TEST" ID="{ACA1567A-4B97-4E8D-A1C0-BDDE508A4901}" Platform="Linked"/>

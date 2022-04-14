@@ -1,3 +1,11 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	2402114254	BackgroudMusic			\Default Work Unit\BackgroudMusic	
+
+State	ID	Name	State Group			Notes
+	748895195	None	BackgroudMusic			
+	2198133169	Hallway	BackgroudMusic			
+	2957683562	Classroom	BackgroudMusic			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
