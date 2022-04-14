@@ -290,7 +290,7 @@ public class Player : MonoBehaviour
         GameManager.instance.currentControllingPlayerConversationModeCharacter = targetPlayer.GetComponent<Player>().ConversationModeCharacter;
         gameObject.transform.position = chairPosition.position;
         //HintManager.instance.RefreshHintWhenSwitchingPlayer(targetPlayer);
-        Debug.Log(targetPlayer.name);
+        VFXManager.instance.UpdateSoundCube();
 
         //TODO: make the transition more elegent (add some animation or using the cinemation?)
         //Nate: I think the transition now could make player feel a little bit confused perhaps for the camera position

@@ -61,7 +61,7 @@ public class VFXManager : MonoBehaviour
         }
     }
 
-    void UpdateSoundCube()
+    public void UpdateSoundCube()
     {
         foreach (var cube in hallwaySoundCubes)
         {
