@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeveloperCheatingController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DeveloperCheatingController : MonoBehaviour
     public Transform toyroomTP;
     public Transform classroomTP;
     public Transform naproomTP;
+    public Transform hallwayTP;
+    
     // Update is called once per frame
     void Update()
     {
@@ -29,9 +32,18 @@ public class DeveloperCheatingController : MonoBehaviour
         {
             Transport(naproomTP.position);
         }
+        if(Input.GetKeyDown((KeyCode.H)))
+        {
+            Transport(hallwayTP.position);
+        }
         if (Input.GetKeyDown(KeyCode.F))
         {
             DisableEnableClassroomDoor();
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

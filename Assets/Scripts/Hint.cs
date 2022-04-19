@@ -14,10 +14,15 @@ public class Hint : Item
 
     //first time interact with will trigger
     public GameObject tutorialBlock;
-    
+
     //lead in smartTree
     public LeadsScriptableObject leadInSmartTree;
     
+    [Header("collectable hint")]
+    //some hints can be collected
+    public GameObject hintIcon;
+    public bool isCollectable;
+
     public override void OnInteract()
     {
         base.OnInteract();
@@ -36,6 +41,21 @@ public class Hint : Item
             leadInSmartTree.isHintCollected = true;
         }
         TriggerTutorial();
+        if(isCollectable)
+        {
+            OnCollected();
+        }
+    }
+
+    public override void OnCollected()
+    {
+        gameObject.SetActive(false);
+        hintIcon.SetActive(true);
+    }
+
+    public void SetCollectable()
+    {
+        isCollectable = true;
     }
     
     public void TriggerTutorial()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -340,6 +341,14 @@ public class Player : MonoBehaviour
         else
         {
             NPC.GetComponent<NPC>().isWithInTalkDistance = false;
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.gameObject.CompareTag("EavesdropBoundary"))
+        {
+            
         }
     }
 }

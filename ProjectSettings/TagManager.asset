@@ -18,6 +18,7 @@ TagManager:
   - gift
   - JumpScare
   - SmartTree
+  - EavesdropBoundary
   layers:
   - Default
   - TransparentFX
