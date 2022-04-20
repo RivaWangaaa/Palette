@@ -207,6 +207,31 @@ public class Hint : Item
         SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
 
+    //loop1_EOY_SecretEntrance
+    public void OnObserveSecretEntrance()
+    {
+        Debug.Log("enter secret place");
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[11]
+            .RevealThisHint();
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
+    }
+    
+    //loop1_EOY_SecretKey
+    public void OnObserveSecretKey()
+    {
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[12]
+            .RevealThisHint();
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
+    }
+
     //Loop0_Midterm_PencilBox
     public void OnObservePencilBox()
     {
@@ -220,6 +245,18 @@ public class Hint : Item
     //Loop0_Midterm_Notebook
     public void OnObserveLostNotebook()
     {
+        if (!isObserverd)
+        {
+            isObserverd = true;
+            GameManager.instance.IncreaseCandy(1);
+        }
+    }
+    
+    //Loop0_Final_Flower
+    public void OnObserveFlower()
+    {
+        UIManager.instance.drawbookStories[0].drawbookStoryPages[0].GetComponent<DrawBookPage>().hintsInThisPage[13]
+            .RevealThisHint();
         if (!isObserverd)
         {
             isObserverd = true;
