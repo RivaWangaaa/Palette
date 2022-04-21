@@ -50,6 +50,8 @@ public class UIManager : MonoBehaviour
     public GameObject[] profileBookPages;
     public GameObject whiteboard;
     
+    public 
+    
     
     void Awake()
     {
