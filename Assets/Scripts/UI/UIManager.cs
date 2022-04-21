@@ -50,8 +50,7 @@ public class UIManager : MonoBehaviour
     public GameObject[] profileBookPages;
     public GameObject whiteboard;
     
-    public 
-    
+    public BoxCollider drawbookCollider;
     
     void Awake()
     {
@@ -74,12 +73,13 @@ public class UIManager : MonoBehaviour
         if (isDrawBookOpen)
         {
             drawBookPanel.SetActive(true);
+            drawbookCollider.enabled = false;
         }
         else
         {
             drawBookPanel.SetActive(false);
+            drawbookCollider.enabled = true;
         }
-
     }
 
     public void UpdateCandyCount()
