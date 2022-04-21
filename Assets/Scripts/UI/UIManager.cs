@@ -73,12 +73,10 @@ public class UIManager : MonoBehaviour
         if (isDrawBookOpen)
         {
             drawBookPanel.SetActive(true);
-            drawbookCollider.enabled = false;
         }
         else
         {
             drawBookPanel.SetActive(false);
-            drawbookCollider.enabled = true;
         }
     }
 
