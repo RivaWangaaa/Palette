@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class DeveloperCheatingController : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class DeveloperCheatingController : MonoBehaviour
     public Transform classroomTP;
     public Transform naproomTP;
     public Transform hallwayTP;
-    
+
+    public Flowchart floraFlowchart;
+
     // Update is called once per frame
     void Update()
     {
@@ -40,10 +43,18 @@ public class DeveloperCheatingController : MonoBehaviour
         {
             DisableEnableClassroomDoor();
         }
-
-        if (Input.GetKeyDown(KeyCode.G))
+        
+        //审问flora
+        if(Input.GetKeyDown(KeyCode.Y))
         {
-            SceneManager.LoadScene(0);
+            FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop1isJewelBelongFloraFound",true);
+        }
+        //获得礼物
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            NPCManager.instance.NPCIsNotAngry(NPCManager.instance.NPCs[1].gameObject,
+                "FloraIsAngry","isHaveGift");
+            Debug.Log(NPCManager.instance.NPCs[1].gameObject.name);
         }
     }
 

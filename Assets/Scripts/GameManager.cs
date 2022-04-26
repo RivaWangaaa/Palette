@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         //ItemHintUIText.text = "Item Hints Collected" + "\n" + Player.itemHintCollect + " / " + Player.itemHintTotal;
 
         // unlock when escape is hit
-        if (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             Pause();
         }
