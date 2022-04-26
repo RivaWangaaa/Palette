@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8A4B9A1F-6BB6-48DD-9252-E274223806EF}" SchemaVersion="103">
+	<States>
+		<WorkUnit Name="MusicStates" ID="{8A4B9A1F-6BB6-48DD-9252-E274223806EF}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Music_Reigons" ID="{2EDDFED2-B12D-4213-8C65-F6D9432B509F}">
+					<ChildrenList>
+						<State Name="None" ID="{EBA5448C-FCAC-46B7-8007-C8354A8D6BDA}"/>
+						<State Name="Classroom" ID="{B0B76009-1431-4171-A465-F6CACF80BDCB}"/>
+						<State Name="Hallway" ID="{22DFFF0E-9CF1-4D9E-BF63-872C933C76BB}"/>
+						<State Name="Naproom" ID="{1FB303E9-3F5E-4F71-8F29-3C21E1A106DA}"/>
+						<State Name="Toyroom" ID="{6A9A5072-696D-484D-B5FA-6F6B5DE71ED0}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

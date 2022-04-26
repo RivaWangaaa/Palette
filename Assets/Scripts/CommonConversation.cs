@@ -33,7 +33,7 @@ public class CommonConversation : MonoBehaviour
         if (gameObject.CompareTag("commonConversationLong"))
         {
             if (Vector3.Distance(GameManager.instance.currentControllingPlayer.transform.position,
-                    gameObject.transform.position) >= 3)
+                    gameObject.transform.position) >= 3 && GameManager.instance.currentControllingPlayer.name == "Player1")
             {
                 GetComponent<BoxCollider>().enabled = true;
             }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{500F9AAA-5470-46E0-AC10-C2EF2D4BE597}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Music" ID="{500F9AAA-5470-46E0-AC10-C2EF2D4BE597}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="General" ID="{C34AE24A-82A1-4A57-B646-EC3D6648A4DD}" ShortID="927890633">
+					<ChildrenList>
+						<Event Name="Music_Reigon" ID="{21932FE3-B732-472C-93FF-728E5FFE8D8B}">
+							<ChildrenList>
+								<Action Name="" ID="{2818BAD4-F85C-49E9-A210-AD4070C01A94}" ShortID="153401226">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Reigons" ID="{3F76EF7D-B92C-4893-80D6-5725C8D4BEC9}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

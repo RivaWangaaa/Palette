@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{7D94BC3C-60D0-499B-AB64-379E275500A5}" SchemaVersion="103">
+<WwiseDocument Type="WorkUnit" ID="{AD5F8272-59AA-4C8B-8AC7-1289BF3CFAE4}" SchemaVersion="103">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{7D94BC3C-60D0-499B-AB64-379E275500A5}" PersistMode="Standalone">
-			<ChildrenList>
-				<StateGroup Name="BackgroudMusic" ID="{72DA9BB0-C137-4A4B-9CAF-AF88E355E758}">
-					<PropertyList>
-						<Property Name="DefaultTransitionTime" Type="Real64" Value="3"/>
-					</PropertyList>
-					<ChildrenList>
-						<State Name="None" ID="{0D5B9992-02EE-4BA0-B77B-790B012236A2}"/>
-						<State Name="Hallway" ID="{93B24244-F267-4640-A7AB-6C023E683428}"/>
-						<State Name="Classroom" ID="{500E735E-1053-439A-A43A-F2DE273C2A08}"/>
-					</ChildrenList>
-					<TransitionList>
-						<Transition>
-							<StartState Name="Hallway" ID="{93B24244-F267-4640-A7AB-6C023E683428}"/>
-							<EndState Name="Classroom" ID="{500E735E-1053-439A-A43A-F2DE273C2A08}"/>
-							<Time>3</Time>
-							<IsShared>false</IsShared>
-						</Transition>
-						<Transition>
-							<StartState Name="Classroom" ID="{500E735E-1053-439A-A43A-F2DE273C2A08}"/>
-							<EndState Name="Hallway" ID="{93B24244-F267-4640-A7AB-6C023E683428}"/>
-							<Time>3</Time>
-							<IsShared>false</IsShared>
-						</Transition>
-					</TransitionList>
-				</StateGroup>
-			</ChildrenList>
-		</WorkUnit>
+		<WorkUnit Name="Default Work Unit" ID="{AD5F8272-59AA-4C8B-8AC7-1289BF3CFAE4}" PersistMode="Standalone"/>
 	</States>
 </WwiseDocument>

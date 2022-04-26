@@ -1,0 +1,1678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" SchemaVersion="103">
+	<InteractiveMusic>
+		<WorkUnit Name="Music" ID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="1"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<MusicSwitchContainer Name="Music Reigons" ID="{3F76EF7D-B92C-4893-80D6-5725C8D4BEC9}" ShortID="50263793">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="Tempo" Type="Real64" Value="96"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Classroom_Leo" ID="{FE68BFE1-AEAC-4136-A472-81A95165C00C}" ShortID="379125142">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{A08B0A83-5580-4978-8D8F-66EB5ABBF64B}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{78700679-B723-4976-B2A3-5A287F66D68A}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{49565347-995D-4CD9-9F20-0354B200C969}" ShortID="154549472"/>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Hallway_Leo" ID="{35CACFB5-6A68-4521-BF34-A90C3426E388}" ShortID="244550549">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="96"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Palette_Hallway_Leo_96bpm_Empt" ID="{AC86C4C7-0C85-4A23-9628-CB1CDD3ABE6D}" ShortID="126640270">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="77818"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Hallway_Leo_96bpm_Empt" ID="{4BC493D6-483E-4C7F-8886-97D6ADECD850}" ShortID="516884309">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Hallway_Leo_96bpm_Empt" ID="{6AE8BDBF-B0FF-47A5-B39C-8FDAF801476B}">
+													<PropertyList>
+														<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Palette_Hallway_Leo_96bpm_Empt.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="974633439"/>
+													</MediaIDList>
+													<PluginInnerObjectList>
+														<List Name="Markers">
+															<PluginInnerObject Name="" ID="{78645C74-7DE0-4420-B2FD-02DBFB47B9A9}" PluginName="Marker" CompanyID="0" PluginID="993">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="Tempo: 96.0"/>
+																	<Property Name="Time" Type="Real64" Value="34.3582397660819"/>
+																</PropertyList>
+															</PluginInnerObject>
+														</List>
+													</PluginInnerObjectList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{51BE355C-656D-4A82-BF5A-898B8C85C514}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{3D57185D-1485-4E0C-AA4A-3B6C2C95F29A}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Hallway_Leo_96bpm_Empt" ID="{3A87535E-7FE0-4E04-99F1-63AC8A25D44D}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="77818"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Hallway_Leo_96bpm_Empt" ID="{6AE8BDBF-B0FF-47A5-B39C-8FDAF801476B}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{79EE6EFC-D458-404F-9A60-E8A03817F2D3}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{738C9672-EDAB-41F9-BDEE-D8B100AE7E5C}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="75000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Hallway_Leo_96bpm_Trump" ID="{FD794919-01FF-4AFB-86D4-3C8868A880F7}" ShortID="1054895982">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="62799.3333333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Hallway_Leo_96bpm_Trump" ID="{9BEA161B-5AD1-4CCA-8C16-65B3D993AEC7}" ShortID="987811069">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Hallway_Leo_96bpm_Trump" ID="{BA0601AE-8C4F-4DE9-B64F-9F4A2BFE2CED}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Hallway_Leo_96bpm_Trump.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="931257134"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{671EFA14-049B-49D8-94BD-DC793353F1F0}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{B536E92A-2E9C-4E29-B7FE-E5484CB8789B}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Hallway_Leo_96bpm_Trump" ID="{EDF7B04D-4540-4322-8714-DA37AFC5708B}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="62799.3333333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Hallway_Leo_96bpm_Trump" ID="{BA0601AE-8C4F-4DE9-B64F-9F4A2BFE2CED}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{F8AFFD85-2827-474C-B397-A875B72AC24C}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{F24D8490-299A-443C-92F2-4B4057C1637E}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="60000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{7DE14D60-F32A-4747-9DE0-F43A39F7576B}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{D89E306F-1C8F-4F17-A1D1-D72820EB7407}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{5DE957F0-CAA7-4550-9545-38CF33B2C73A}" ShortID="344834401">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{5071179E-B878-4331-8F16-0ACD57A277EE}" ShortID="430182427">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Hallway_Leo_96bpm_Empt" ID="{AC86C4C7-0C85-4A23-9628-CB1CDD3ABE6D}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{82C2D103-0BB3-4D27-B177-3D70DE141CD5}" ShortID="111896038">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{77145E40-5CE5-4D6C-9F12-628D688E7C13}" ShortID="376756023">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Palette_Hallway_Leo_96bpm_Trump" ID="{FD794919-01FF-4AFB-86D4-3C8868A880F7}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Naproom_Leo" ID="{C951399A-457B-44E4-83E6-A2F3E32297DC}" ShortID="531299966">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="80"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Palette_Naproom_Leo_80bpm_Empt" ID="{B794400F-9444-4375-9F49-9A7F5EB10BE6}" ShortID="436835791">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="50511.3333333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Leo_80bpm_Empt" ID="{79CE073D-F11F-476B-A806-624CFD754C22}" ShortID="1000179511">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Leo_80bpm_Empt" ID="{5D2898B2-7EF8-403A-B4C9-8980602978C2}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Leo_80bpm_Empt.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1023053332"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{4843DCD7-2C64-4CB3-96BD-A04225C523D2}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{59599DAC-FE4D-4B97-B82C-5B2EB301D986}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Leo_80bpm_Empt" ID="{CC427D42-F27E-46C6-8482-01780FFE719D}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="50511.3333333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Leo_80bpm_Empt" ID="{5D2898B2-7EF8-403A-B4C9-8980602978C2}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{6035D788-984B-4EB4-8F82-6459E141A4EA}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{DD79FF22-9CAC-4CEC-86DA-02E2F5AF2500}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Naproom_Leo_80bpm_Full" ID="{A147BC6E-660B-4F68-89A4-A4A88F661F98}" ShortID="122114480">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="51876.6666666667"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Leo_80bpm_Full" ID="{0ADDF465-9C0A-4B47-A964-2FFD331F4DAE}" ShortID="504800110">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Leo_80bpm_Full" ID="{F96E6647-8676-4F51-B9B8-A4DB0A84DC47}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Leo_80bpm_Full.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290251322"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{6C66B1FD-C69E-4304-968F-9A79D08BAC96}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{916BF9C8-23B3-49AF-B190-5310DE0DB9D2}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Leo_80bpm_Full" ID="{BB9B4A24-E39A-443F-86F3-7B87E5186938}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="51876.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Leo_80bpm_Full" ID="{F96E6647-8676-4F51-B9B8-A4DB0A84DC47}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{32437834-47D2-4C08-A2A3-EA9372E274E9}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{3DC2C6B9-4C35-48B1-99DA-18B59854C256}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Naproom_Leo_80bpm_Piano" ID="{0A5116CE-B925-46E7-9D5A-54EB6222A0FC}" ShortID="526723162">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="51876.6666666667"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Leo_80bpm_Piano" ID="{6F73EA31-C386-4B35-81B2-39EC02046931}" ShortID="793990302">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Leo_80bpm_Piano" ID="{4C38989B-0770-456C-AD7C-D4E08AA5C085}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Leo_80bpm_Piano.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="957783861"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{B3B5505F-2E0F-4589-94DB-0F8F41831846}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{34DE6FC8-47EC-41F8-ABD6-148297A8838C}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Leo_80bpm_Piano" ID="{D8359355-3AB2-404E-879D-8378B9E57239}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="51876.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Leo_80bpm_Piano" ID="{4C38989B-0770-456C-AD7C-D4E08AA5C085}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{96DFFA74-84E8-468D-A06B-8FBAA7C48BD3}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{D6D51E80-3526-4449-A4BA-4DEE0EA58167}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Naproom_Leo_80bpm_Trump" ID="{FCA57883-3243-4B4B-9FD9-DE3A385D7189}" ShortID="725506405">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="52500"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Leo_80bpm_Trump" ID="{1B17A53F-0184-4DE2-B93E-2EFA162F3293}" ShortID="790051275">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Leo_80bpm_Trump" ID="{FF5791D2-2F7F-4199-9A40-00868D987FD3}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Leo_80bpm_Trump.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="996503121"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{E691EA01-2445-4C41-885C-D404D784A4E0}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{E91EB7E0-7219-420F-8B90-691573D287F9}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Leo_80bpm_Trump" ID="{65E20E8F-2B24-4679-85F5-8865A0D80EC9}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="51876.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Leo_80bpm_Trump" ID="{FF5791D2-2F7F-4199-9A40-00868D987FD3}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{4FC9CD47-0909-46CE-BF19-7715739F2A62}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{CB35EF38-B6AC-4A8A-AFC4-EA307D620CD3}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{480D8CA5-5AF1-4813-8F62-85A727627BFB}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{AFA2C624-CFD5-4E6C-8525-D91E31D1B112}">
+											<TransitionInfo/>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{DBF17796-9585-42B6-8FFC-B3F31631713E}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="Palette_Naproom_Leo_80bpm_Piano" ID="{0A5116CE-B925-46E7-9D5A-54EB6222A0FC}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="Palette_Naproom_Leo_80bpm_Trump" ID="{FCA57883-3243-4B4B-9FD9-DE3A385D7189}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{AED98073-3989-4B88-A004-B8A82395A0D0}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="3"/>
+															<Property Name="FadeOffset" Type="Real64" Value="1.5"/>
+															<Property Name="FadeTime" Type="Real64" Value="3"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+												<DestinationFadeIn>
+													<MusicFade Name="Destination Fade-in" ID="{AD87D0CB-E818-494D-9C38-1D9750C889BB}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="1"/>
+															<Property Name="FadeOffset" Type="Real64" Value="-4"/>
+															<Property Name="FadeTime" Type="Real64" Value="5"/>
+														</PropertyList>
+													</MusicFade>
+												</DestinationFadeIn>
+											</TransitionInfo>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{848C2E8A-8F5D-4783-AAB5-2E32E2BBB07F}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="Palette_Naproom_Leo_80bpm_Full" ID="{A147BC6E-660B-4F68-89A4-A4A88F661F98}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="Palette_Naproom_Leo_80bpm_Piano" ID="{0A5116CE-B925-46E7-9D5A-54EB6222A0FC}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{D5416CCC-4ED4-4983-B5E3-20D282F3768A}">
+														<PropertyList>
+															<Property Name="FadeOffset" Type="Real64" Value="1.5"/>
+															<Property Name="FadeTime" Type="Real64" Value="3"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+												<DestinationFadeIn>
+													<MusicFade Name="Destination Fade-in" ID="{DE4E75AD-9FFC-49FF-A6BE-A80C9C32C27F}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="1"/>
+															<Property Name="FadeOffset" Type="Real64" Value="-4"/>
+															<Property Name="FadeTime" Type="Real64" Value="5"/>
+														</PropertyList>
+													</MusicFade>
+												</DestinationFadeIn>
+											</TransitionInfo>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{F00DC25E-4045-4E9E-AFD5-87F692A36F9E}" ShortID="684146296">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{CBCD5184-EDB5-4A09-A5FF-1CF726974BC1}" ShortID="582997742">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Naproom_Leo_80bpm_Empt" ID="{B794400F-9444-4375-9F49-9A7F5EB10BE6}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{9EA5EA39-1A5B-411B-A713-372977336DAD}" ShortID="693514011">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Naproom_Leo_80bpm_Trump" ID="{FCA57883-3243-4B4B-9FD9-DE3A385D7189}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{9F3D2543-E84F-4076-830E-E98C9B950BBC}" ShortID="480067938">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Naproom_Leo_80bpm_Piano" ID="{0A5116CE-B925-46E7-9D5A-54EB6222A0FC}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{187F88FC-B3DA-4B5A-AC52-791B8AF13B70}" ShortID="536663839">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{3D3F781A-CEFA-4626-B793-5A6E9231958B}" ShortID="692897787">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Palette_Naproom_Leo_80bpm_Full" ID="{A147BC6E-660B-4F68-89A4-A4A88F661F98}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Toyroom_Leo" ID="{E1FA18A8-6D5B-4DA4-9ECE-BF1F3D9B811B}" ShortID="836504780">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{521332ED-EF46-4B28-B8A8-EE5959A10F63}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{A10DC804-3C64-4F67-96A9-C1AF4164DC29}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{CD876409-8CDA-46A8-A160-67CA4E5DBEF9}" ShortID="473313021"/>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Classroom_Plum" ID="{C506E8B4-2A81-4E22-B72C-9320A94A7271}" ShortID="390571381">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{EDBA4DF1-4573-477C-9277-62AF4EF61778}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{11662EF1-2ADC-485E-9535-3D9C55CA2797}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{775747CF-9F1D-41C1-80B2-3CC3417F5E1B}" ShortID="305264118"/>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Hallway_Plum" ID="{1CE6C0BA-14B2-4E33-B4AF-D40BF143F199}" ShortID="867139502">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="96"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Palette_Hallway_Plum_96bpm_Uke" ID="{F3895406-0D6D-4950-8763-0C72BDA4F6F3}" ShortID="386632504">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="62799.3333333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Hallway_Plum_96bpm_Uke" ID="{F0611F90-B482-4FDE-B022-D065BFFE9791}" ShortID="173435933">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Hallway_Plum_96bpm_Uke" ID="{8B41D8AF-4472-4050-BC5A-27614B04F2BF}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Hallway_Plum_96bpm_Uke.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1048661083"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{D86D1EA5-745A-4208-9380-E5723A618DAC}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{0F543A00-B825-4909-B250-1BE289D8E2BD}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Hallway_Plum_96bpm_Uke" ID="{5DB415CA-738D-4627-A234-466C9D99EF41}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="62799.3333333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Hallway_Plum_96bpm_Uke" ID="{8B41D8AF-4472-4050-BC5A-27614B04F2BF}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{13FFBCFC-D651-4004-A776-5A8EBE6B865F}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{D0CC026C-18A4-4FA5-86FD-BC920258F450}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="60000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Hallway_Plum_96bpm_Empt" ID="{F20A97BE-71D7-4B0A-8EAB-EE2097EBCFFE}" ShortID="890227895">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="77818"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Hallway_Plum_96bpm_Empt" ID="{BECF6EDA-9085-45B9-A385-9E2475CDC10C}" ShortID="442772329">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Hallway_Plum_96bpm_Empt" ID="{0FDFAB44-044A-48A3-BAB4-98644FED9328}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Hallway_Plum_96bpm_Empt.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="656857161"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{278C060F-28D0-41E1-A16A-06BFCFBCF5E5}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{84E503EE-F364-4015-8E45-C49E5BE0C18C}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Hallway_Plum_96bpm_Empt" ID="{09B53368-CE9A-4840-8383-A3C91B80184D}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="77818"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Hallway_Plum_96bpm_Empt" ID="{0FDFAB44-044A-48A3-BAB4-98644FED9328}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{F283827A-7963-4894-9480-D51BCCCD62A9}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{6D94D81D-B1EB-46EF-BE22-BF060A65E4D8}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="75000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{65C549BB-D5DF-4FB9-A3B0-3E7A14481B37}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{48497F53-CF66-4A34-9C61-3A589867DCF1}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{1FF380B1-F27D-4E7B-9D74-F92D80A371A3}" ShortID="72681886">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{F2155251-D7C0-4C82-B159-5E8D997F1129}" ShortID="866284888">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Hallway_Plum_96bpm_Empt" ID="{F20A97BE-71D7-4B0A-8EAB-EE2097EBCFFE}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{81392B6D-39E9-4894-83FE-1D13957C4261}" ShortID="1003320935">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{E9894F89-43A6-4B18-9B7C-33845EA4D244}" ShortID="475408834">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Palette_Hallway_Plum_96bpm_Uke" ID="{F3895406-0D6D-4950-8763-0C72BDA4F6F3}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Naproom_Plum" ID="{71A8DC5D-A2BC-4E32-925F-974B32C2DDE5}" ShortID="726900387">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="80"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Palette_Naproom_Plum_80bpm_Empt" ID="{92E93031-5ABF-4A3B-AD87-70BD6634A246}" ShortID="134115470">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="50511.3333333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Plum_80bpm_Empt" ID="{9473F757-773C-4671-B156-D022341087F5}" ShortID="904347234">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Plum_80bpm_Empt" ID="{4CDBC056-F289-440F-AE4D-BE2B9B35C644}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Plum_80bpm_Empt.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="328390531"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{6F501893-6AA2-45A9-9E2D-3C97B5A0D4A0}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{A245D034-0701-4DA3-96CD-4B0AD8AB1CD1}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Plum_80bpm_Empt" ID="{1E9D57E4-7254-48F4-820F-6CDC01B13048}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="50511.3333333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Plum_80bpm_Empt" ID="{4CDBC056-F289-440F-AE4D-BE2B9B35C644}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{93160D26-6EFE-4668-8DBB-FF7295F59F37}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{8F555C3B-3592-4C24-A9E4-1984224CC8A3}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Naproom_Plum_80bpm_Full" ID="{C353D7EF-402E-48F3-9E99-ED70540E46E2}" ShortID="337167449">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="51876.6666666667"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Plum_80bpm_Full" ID="{7032549F-2928-4807-BC40-A4CCEF4AED02}" ShortID="605803287">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Plum_80bpm_Full" ID="{16A49A40-6C60-4B62-B421-A0B5C6BB3764}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Plum_80bpm_Full.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="869157803"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{73B9EF6D-8ADE-46EE-8984-C6F99BE5867C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{FD406DE2-CB90-4B89-B370-15671758D747}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Plum_80bpm_Full" ID="{81E09981-B967-4670-AA4C-4339B7EA1BB8}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="51876.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Plum_80bpm_Full" ID="{16A49A40-6C60-4B62-B421-A0B5C6BB3764}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{A1C97A33-A0C0-4DB7-8C8C-A64E20D6F757}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{7FF28ED7-F6C2-4496-A9BD-2BE82EF697DB}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Naproom_Plum_80bpm_Piano" ID="{D16E0069-C90D-44BF-A482-89F5E17BFA05}" ShortID="90529347">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="50511.3333333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Plum_80bpm_Piano" ID="{0EFF2763-F905-45B8-AF43-CEB9A5AABB87}" ShortID="913871282">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Plum_80bpm_Piano" ID="{F391677F-0A14-4A4C-80E9-155CCC1CD286}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Plum_80bpm_Piano.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="933604111"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{C4748BA8-3673-4FBD-B9F3-F6DB5005DE0A}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{5DDC4FCC-BC4E-45E4-A263-CF0F2A28ABF0}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Plum_80bpm_Piano" ID="{40B3C9F1-CD4B-42F8-9928-98BE6015295B}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="50511.3333333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Plum_80bpm_Piano" ID="{F391677F-0A14-4A4C-80E9-155CCC1CD286}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{B769BEF9-A2A3-44AC-8E62-153680427CF5}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{888A3A14-3146-4900-8516-E0CAA1EA6B33}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Palette_Naproom_Plum_80bpm_Uke" ID="{4A9CDBEC-E619-4EC8-A28D-DF87EAB7C6B4}" ShortID="828820712">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="50511.3333333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Palette_Naproom_Plum_80bpm_Uke" ID="{FC67F1CF-51DB-4C31-AD4A-C71FC6F7787D}" ShortID="326238775">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Palette_Naproom_Plum_80bpm_Uke" ID="{FCB699E5-7192-4587-A72B-E0111D3EB4D2}">
+													<Language>SFX</Language>
+													<AudioFile>Palette_Naproom_Plum_80bpm_Uke.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="780312459"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{D3C510A5-C6D2-44DB-9F8E-5D141AF351F2}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{9081E51D-E28D-400E-B9F2-5092341D406C}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Palette_Naproom_Plum_80bpm_Uke" ID="{B8B05E66-9828-40AF-ACC8-4030A1FABF47}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="50511.3333333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Palette_Naproom_Plum_80bpm_Uke" ID="{FCB699E5-7192-4587-A72B-E0111D3EB4D2}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{6FFB7343-D71D-40FD-969C-66F8E033606E}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{34F7D42E-8F14-4027-8E3B-4AB31F2DBC13}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="48000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{16C308E4-445F-49B2-9449-76970085D0D9}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{B145AA08-1333-426A-866B-2D4D8C4C70A5}">
+											<TransitionInfo/>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{DC0A38D7-8896-481A-8F0D-86A6E0DE46E9}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="Palette_Naproom_Plum_80bpm_Piano" ID="{D16E0069-C90D-44BF-A482-89F5E17BFA05}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="Palette_Naproom_Plum_80bpm_Uke" ID="{4A9CDBEC-E619-4EC8-A28D-DF87EAB7C6B4}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<DestinationFadeIn>
+													<MusicFade Name="Destination Fade-in" ID="{80F8F3E6-93BB-426E-9D8E-E729BE3939CA}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="1"/>
+															<Property Name="FadeOffset" Type="Real64" Value="-4"/>
+															<Property Name="FadeTime" Type="Real64" Value="5"/>
+														</PropertyList>
+													</MusicFade>
+												</DestinationFadeIn>
+											</TransitionInfo>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{D3F4F8ED-A106-483F-993E-80E3819BFA46}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="Palette_Naproom_Plum_80bpm_Full" ID="{C353D7EF-402E-48F3-9E99-ED70540E46E2}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="Palette_Naproom_Plum_80bpm_Piano" ID="{D16E0069-C90D-44BF-A482-89F5E17BFA05}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<DestinationFadeIn>
+													<MusicFade Name="Destination Fade-in" ID="{7628D10D-0E26-48A9-B1AB-6F402C663EDC}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="1"/>
+															<Property Name="FadeOffset" Type="Real64" Value="-4"/>
+															<Property Name="FadeTime" Type="Real64" Value="5"/>
+														</PropertyList>
+													</MusicFade>
+												</DestinationFadeIn>
+											</TransitionInfo>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{980D5F43-FC7C-4B97-90D8-F036ACE84747}" ShortID="236874139">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{2D27C34C-12DF-4342-9B34-898B0F764BC0}" ShortID="272845418">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Naproom_Plum_80bpm_Empt" ID="{92E93031-5ABF-4A3B-AD87-70BD6634A246}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{6FD6D400-39E8-4B79-9EDA-C620F8E4748E}" ShortID="723128017">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Naproom_Plum_80bpm_Uke" ID="{4A9CDBEC-E619-4EC8-A28D-DF87EAB7C6B4}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{44CC6004-72CC-4F2D-BD7E-94D6E913E471}" ShortID="332320321">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Palette_Naproom_Plum_80bpm_Piano" ID="{D16E0069-C90D-44BF-A482-89F5E17BFA05}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{32CDAE64-BA55-4F64-8132-B275FC1128F3}" ShortID="914777776">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{0AF546F5-E5B2-428F-92C0-A2B987906C6E}" ShortID="70232397">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Palette_Naproom_Plum_80bpm_Full" ID="{C353D7EF-402E-48F3-9E99-ED70540E46E2}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Toyroom_Plum" ID="{3AD236CB-A5AD-446F-AD6B-286C5674BA4F}" ShortID="605054809">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4BBC91DB-480D-4180-8787-0BFCADFDFD8D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B9CDF147-9AB1-4790-919B-B7680F979B20}"/>
+								</Reference>
+							</ReferenceList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{FBADE965-3AB0-4DE5-BFDB-3D5574AB9BC4}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{E25CECFE-C41E-46E9-958A-6FF4D4D93863}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{B3CD07C4-8214-407C-8DCD-AB6BC85F2DCF}" ShortID="484244358"/>
+							</Playlist>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{248B0395-E357-4A16-A126-3F097A3243AE}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{30E14C9F-B491-4EAF-9865-ECC51F821D15}">
+									<PropertyList>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+									</PropertyList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{3320CD39-4196-46C9-8DB6-0F7A7913B111}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="3"/>
+													<Property Name="FadeOffset" Type="Real64" Value="0.5"/>
+													<Property Name="FadeTime" Type="Real64" Value="4"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{518A096A-5976-45B6-950A-6FC56531717C}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="3"/>
+													<Property Name="FadeOffset" Type="Real64" Value="-0.5"/>
+													<Property Name="FadeTime" Type="Real64" Value="4"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ObjectLists/>
+					<ArgumentList>
+						<ArgumentRef Name="Music_Reigons" ID="{2EDDFED2-B12D-4213-8C65-F6D9432B509F}"/>
+						<ArgumentRef Name="Leo_or_Plum" ID="{3C41296F-28EA-4554-9F8F-D95C93DC9627}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Music_Reigons" ID="{2EDDFED2-B12D-4213-8C65-F6D9432B509F}"/>
+								<PathElementRef Name="Leo_or_Plum" ID="{3C41296F-28EA-4554-9F8F-D95C93DC9627}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Hallway_Plum" ID="{1CE6C0BA-14B2-4E33-B4AF-D40BF143F199}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Classroom" ID="{B0B76009-1431-4171-A465-F6CACF80BDCB}"/>
+								<PathElementRef Name="Leo" ID="{93CF3336-CBDE-48AB-911D-04D4F89B53E6}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Classroom_Leo" ID="{FE68BFE1-AEAC-4136-A472-81A95165C00C}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Classroom" ID="{B0B76009-1431-4171-A465-F6CACF80BDCB}"/>
+								<PathElementRef Name="Plum" ID="{82F230F1-989F-4CA9-A50A-9951F7750FE2}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Classroom_Plum" ID="{C506E8B4-2A81-4E22-B72C-9320A94A7271}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Hallway" ID="{22DFFF0E-9CF1-4D9E-BF63-872C933C76BB}"/>
+								<PathElementRef Name="Leo" ID="{93CF3336-CBDE-48AB-911D-04D4F89B53E6}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Hallway_Leo" ID="{35CACFB5-6A68-4521-BF34-A90C3426E388}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Hallway" ID="{22DFFF0E-9CF1-4D9E-BF63-872C933C76BB}"/>
+								<PathElementRef Name="Plum" ID="{82F230F1-989F-4CA9-A50A-9951F7750FE2}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Hallway_Plum" ID="{1CE6C0BA-14B2-4E33-B4AF-D40BF143F199}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Naproom" ID="{1FB303E9-3F5E-4F71-8F29-3C21E1A106DA}"/>
+								<PathElementRef Name="Leo" ID="{93CF3336-CBDE-48AB-911D-04D4F89B53E6}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Naproom_Leo" ID="{C951399A-457B-44E4-83E6-A2F3E32297DC}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Naproom" ID="{1FB303E9-3F5E-4F71-8F29-3C21E1A106DA}"/>
+								<PathElementRef Name="Plum" ID="{82F230F1-989F-4CA9-A50A-9951F7750FE2}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Naproom_Plum" ID="{71A8DC5D-A2BC-4E32-925F-974B32C2DDE5}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Toyroom" ID="{6A9A5072-696D-484D-B5FA-6F6B5DE71ED0}"/>
+								<PathElementRef Name="Leo" ID="{93CF3336-CBDE-48AB-911D-04D4F89B53E6}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Toyroom_Leo" ID="{E1FA18A8-6D5B-4DA4-9ECE-BF1F3D9B811B}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Toyroom" ID="{6A9A5072-696D-484D-B5FA-6F6B5DE71ED0}"/>
+								<PathElementRef Name="Plum" ID="{82F230F1-989F-4CA9-A50A-9951F7750FE2}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Toyroom_Plum" ID="{3AD236CB-A5AD-446F-AD6B-286C5674BA4F}" WorkUnitID="{ECFAC855-5016-418D-BB02-52BE8F58B3A4}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

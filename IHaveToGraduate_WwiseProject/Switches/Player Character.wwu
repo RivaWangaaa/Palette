@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E23F4C75-2A6D-43BC-80DD-01508251C782}" SchemaVersion="103">
+	<Switches>
+		<WorkUnit Name="Player Character" ID="{E23F4C75-2A6D-43BC-80DD-01508251C782}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Leo_or_Plum" ID="{3C41296F-28EA-4554-9F8F-D95C93DC9627}">
+					<ChildrenList>
+						<Switch Name="Leo" ID="{93CF3336-CBDE-48AB-911D-04D4F89B53E6}"/>
+						<Switch Name="Plum" ID="{82F230F1-989F-4CA9-A50A-9951F7750FE2}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
