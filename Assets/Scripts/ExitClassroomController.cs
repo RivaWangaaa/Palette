@@ -24,6 +24,7 @@ public class ExitClassroomController : MonoBehaviour
     public Flowchart forbidToExitFlowchat;
     public Flowchart permitToExitFlowchat;
     public Flowchart tryToEnterFlowchat;
+    public Flowchart forceToBackFlowchat;
 
     [Header("bools for different chats")]
     public bool isSomeoneOutThere;
@@ -44,6 +45,7 @@ public class ExitClassroomController : MonoBehaviour
         {
             onEnterClassroom();
             tryToEnterFlowchat.gameObject.SetActive(false);
+            forceToBackFlowchat.gameObject.SetActive(true);
             //forbidToExitFlowchat.gameObject.SetActive(true);
         }
     }

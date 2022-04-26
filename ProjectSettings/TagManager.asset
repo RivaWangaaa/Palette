@@ -53,6 +53,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Janitor
+    uniqueID: 779564709
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
