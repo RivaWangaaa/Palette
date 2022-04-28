@@ -17,6 +17,7 @@ public class NPCManager : MonoBehaviour
 
     //like hints, should be replaced by scriptable objects or dictionary
     public List<GameObject> NPCs;
+    public List<GameObject> NPCs_ArtCharacters;
     public List<bool> isHintCollected;
 
     public bool isHavingConversation;
@@ -129,5 +130,20 @@ public class NPCManager : MonoBehaviour
         ActivatedGiftItem.observationLines.SetBooleanVariable("CanBeCollected",true);
         ActivatedGiftItem.canBeCollected = true;
         GameManager.instance.IncreaseCandy(-5);
+    }
+
+    public void SetAllCharactersActive(bool isActive)
+    {
+        foreach (var characterArts in NPCs_ArtCharacters)
+        {
+            if (isActive)
+            {
+                characterArts.SetActive(true);
+            }
+            else
+            {
+                characterArts.SetActive(false);
+            }
+        }
     }
 }

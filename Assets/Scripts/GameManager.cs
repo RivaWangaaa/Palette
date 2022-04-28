@@ -249,6 +249,8 @@ public class GameManager : MonoBehaviour
         plum.GetComponent<CharacterController>().enabled = true;
         classroomDoor.SetActive(true);
         
+        NPCManager.instance.NPCs[6].SetActive(false);
+        
         Debug.Log("Loop Reset!");
 
     }

@@ -33,7 +33,7 @@ public class CommonConversation : MonoBehaviour
         if (gameObject.CompareTag("commonConversationLong"))
         {
             if (Vector3.Distance(GameManager.instance.currentControllingPlayer.transform.position,
-                    gameObject.transform.position) >= 3 && GameManager.instance.currentControllingPlayer.name == "Player1")
+                    gameObject.transform.position) >= 3)
             {
                 GetComponent<BoxCollider>().enabled = true;
             }
@@ -72,6 +72,8 @@ public class CommonConversation : MonoBehaviour
         UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
         flowchartReference.gameObject.SetActive(true);
         GameManager.instance.EnterConversationMode();
+        flowchartReference.SetStringVariable("currentPlayer", 
+            GameManager.instance.currentControllingPlayer.name);
     }
 
     public void EndInteract()

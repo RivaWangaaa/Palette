@@ -216,8 +216,6 @@ public class Player : MonoBehaviour
                     isWithinTalkDistance(eavesdropCharacter);
                     if (!eavesdropCharacter.GetComponent<NPC>().isWithInTalkDistance)
                     {
-                        //eavesdropingObject = eavesdropCharacter;
-                        eavesdropCharacter.GetComponent<NPC>().eavesdropIcon.SetActive(true);
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                         if (Input.GetKeyDown(KeyCode.E))
                         {

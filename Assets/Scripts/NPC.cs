@@ -19,9 +19,6 @@ public class NPC : MonoBehaviour
 
     public SpriteRenderer pose;
 
-    public GameObject talkIcon;
-    public GameObject eavesdropIcon;
-
     public List<GameObject> hintsInDrawBook;
     public List<HintGroup> hintGroupInDrawBook;
 
@@ -32,15 +29,14 @@ public class NPC : MonoBehaviour
 
     public bool shouldMoveThisEvent;
 
-    public int conversationTimeCost;
-    public int eavesdropTimeCost;
-
     public bool isAngry;
 
     public Animator conversationModeCharacter;
 
     public GameObject tutorialBlock;
     public Transform childSeat;
+
+    public bool isAdult;
 
     private void Update()
     {
@@ -80,6 +76,11 @@ public class NPC : MonoBehaviour
     public void OnInteract(GameObject currentPlayer)
     {
         ShowAnimation();
+        if (!isAdult)
+        {
+            NPCManager.instance.SetAllCharactersActive(false);
+        }
+
         //active the fungus on NPC
         flowchat.gameObject.SetActive(true);
         UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
@@ -129,6 +130,10 @@ public class NPC : MonoBehaviour
     public void EndInteract()
     {
         ShowAnimation();
+        if (!isAdult)
+        {
+            NPCManager.instance.SetAllCharactersActive(true);
+        }
         GameManager.instance.ExitConversationMode();
         if (conversationModeCharacter != null)
         {
