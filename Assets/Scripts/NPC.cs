@@ -84,6 +84,7 @@ public class NPC : MonoBehaviour
         //active the fungus on NPC
         flowchat.gameObject.SetActive(true);
         UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
+        UIManager.instance.DialogBackground.gameObject.SetActive(true);
         StartPlayAnimation();
         //every flowchart for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
@@ -97,6 +98,7 @@ public class NPC : MonoBehaviour
 
         //lock player's camera when having a conversation
         GameManager.instance.EnterConversationMode();
+        UIManager.instance.MainSceneUI.SetActive(false);
     }
 
     public void StartPlayAnimation()
@@ -107,6 +109,7 @@ public class NPC : MonoBehaviour
         }
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("StartDialog");
         UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
+        UIManager.instance.DialogBackground.SetTrigger("StartDialog");
     }
 
     public void HideAnimation()
@@ -135,12 +138,15 @@ public class NPC : MonoBehaviour
             NPCManager.instance.SetAllCharactersActive(true);
         }
         GameManager.instance.ExitConversationMode();
+        UIManager.instance.MainSceneUI.SetActive(true);
+        UIManager.instance.SayDialog_Common.SetBool("IsStoppedInMiddle",false);
         if (conversationModeCharacter != null)
         {
             conversationModeCharacter.SetTrigger("EndDialog");
         }
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
         UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
+        UIManager.instance.DialogBackground.SetTrigger("EndDialog");
         flowchat.gameObject.SetActive(false);
         TriggerTutorial();
         
@@ -152,10 +158,6 @@ public class NPC : MonoBehaviour
             GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping = false;
             flowchat.SetBooleanVariable("IsEavesdropping", false);
             //GameManager.instance.IncreaseTime(eavesdropTimeCost);
-        }
-        else
-        {
-            //GameManager.instance.IncreaseTime(conversationTimeCost);
         }
     }
 

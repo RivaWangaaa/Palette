@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DialogBackground
+  m_Controller: {fileID: 9100000, guid: 96f5f306863453c4f9bb880a159fec85, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 40adac4c77a3f4543896d63c69e048ff, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: eb436bc1448964175b2f8d37ed59a668, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bcd6a9c750ea18d46a22bff35ad4d2bb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6d6bd3d33016d4482b58f44a57c450cd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 177ced60d4cd11142858c9a813eb8791, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1f4145e34de964305b76f4d947b43df3, type: 2}

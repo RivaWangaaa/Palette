@@ -50,6 +50,8 @@ public class CommonConversation : MonoBehaviour
         eavesdropCharacterLeft.SetTrigger("StartDialog");
         eavesdropCharacterRight.SetTrigger("StartDialog");
         UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
+        UIManager.instance.MainSceneUI.SetActive(false);
+        UIManager.instance.DialogBackground.SetTrigger("StartDialog");
     }
     
     public void ShowAnimation()
@@ -93,6 +95,8 @@ public class CommonConversation : MonoBehaviour
         eavesdropCharacterLeft.SetTrigger("EndDialog");
         eavesdropCharacterRight.SetTrigger("EndDialog");
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
+        UIManager.instance.DialogBackground.SetTrigger("EndDialog");
+        UIManager.instance.MainSceneUI.SetActive(true);
         
         //update lead in smart tree
         if (leadInSmartTree != null)

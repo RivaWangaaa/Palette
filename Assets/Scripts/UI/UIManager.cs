@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
     public GameObject test0210GameOverPanel;
 
     public Animator SayDialog_Common;
+    public Animator DialogBackground;
+    public SayDialog GenericSayDialog;
 
     public GameObject currentShowingHintGroupDetail;
 
@@ -64,6 +66,8 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SayDialog_Common.keepAnimatorControllerStateOnDisable = true;
     }
 
     //attached to the 'DrawBook' Button on the PausePanel
