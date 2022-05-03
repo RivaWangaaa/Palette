@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -30,6 +31,15 @@ public class GameManager : MonoBehaviour
     public GameObject loop1Tutorial;
     public GameObject classroomDoor;
     public GameObject plum;
+
+    public Character Leo;
+    public Character Plum;
+    public Character Snowie;
+    public SayDialog FunctionUI;
+    public SayDialog LeoDialog;
+    public SayDialog PlumDialog;
+    public SayDialog SnowieDialog;
+    
     
     void Awake()
     {
@@ -119,11 +129,6 @@ public class GameManager : MonoBehaviour
         currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<MouseLook>().sensitivityY = 8;
         currentControllingPlayer.transform.GetChild(0).gameObject.GetComponent<LockMouse>().LockCursor(true);
         NPCManager.instance.isHavingConversation = false;
-    }
-    //this method is used when player is having a conversation with a NPC
-    public void InConversation()
-    {
-
     }
 
     public void Pause()
@@ -253,5 +258,21 @@ public class GameManager : MonoBehaviour
         
         Debug.Log("Loop Reset!");
 
+    }
+
+    public void CharacterDialogBoxActive(bool flag)
+    {
+        if (!flag)
+        {
+            Leo.setSayDialog = FunctionUI;
+            Plum.setSayDialog = FunctionUI;
+            Snowie.SetSayDialog = FunctionUI;
+        }
+        else
+        {
+            Leo.setSayDialog = LeoDialog;
+            Plum.setSayDialog = PlumDialog;
+            Snowie.SetSayDialog = SnowieDialog;
+        }
     }
 }

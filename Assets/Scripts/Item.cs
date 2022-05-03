@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
         //set variable in flowchart
         observationLines.SetStringVariable("currentPlayer", 
             GameManager.instance.currentControllingPlayer.name);
+        GameManager.instance.CharacterDialogBoxActive(false);
     }
     
     public virtual void EndInteract()
@@ -33,6 +34,7 @@ public class Item : MonoBehaviour
             popUpImage.SetActive(false);
         }
         GameManager.instance.ExitConversationMode();
+        GameManager.instance.CharacterDialogBoxActive(true);
     }
 
     public virtual void OnCollected()

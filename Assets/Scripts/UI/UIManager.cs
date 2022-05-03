@@ -66,8 +66,6 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        SayDialog_Common.keepAnimatorControllerStateOnDisable = true;
     }
 
     //attached to the 'DrawBook' Button on the PausePanel

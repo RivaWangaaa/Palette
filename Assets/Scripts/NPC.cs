@@ -86,6 +86,7 @@ public class NPC : MonoBehaviour
         UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
         UIManager.instance.DialogBackground.gameObject.SetActive(true);
         StartPlayAnimation();
+        
         //every flowchart for NPC has a string variable to help NPC know who they are talking to
         flowchat.SetStringVariable("currentPlayer", currentPlayer.name);
         flowchat.SetIntegerVariable("CandyCount", GameManager.instance.playerCandyCount);
@@ -103,13 +104,17 @@ public class NPC : MonoBehaviour
 
     public void StartPlayAnimation()
     {
+        UIManager.instance.SayDialog_Common.keepAnimatorControllerStateOnDisable = true;
         if (conversationModeCharacter != null)
         {
             conversationModeCharacter.SetTrigger("StartDialog");
         }
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("StartDialog");
-        UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
-        UIManager.instance.DialogBackground.SetTrigger("StartDialog");
+        if (!isAdult)
+        {
+            UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
+            UIManager.instance.DialogBackground.SetTrigger("StartDialog");
+        }
     }
 
     public void HideAnimation()
@@ -132,25 +137,34 @@ public class NPC : MonoBehaviour
 
     public void EndInteract()
     {
+        //show animated characters in Generic Dialog UI
         ShowAnimation();
+        //If not talking with Adult 
         if (!isAdult)
         {
+            //show all characters in Scene
             NPCManager.instance.SetAllCharactersActive(true);
+            //Trigger UI end dialog
+            UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
+            UIManager.instance.DialogBackground.SetTrigger("EndDialog");
+            
         }
-        GameManager.instance.ExitConversationMode();
-        UIManager.instance.MainSceneUI.SetActive(true);
-        UIManager.instance.SayDialog_Common.SetBool("IsStoppedInMiddle",false);
+        //Trigger characters Animations
         if (conversationModeCharacter != null)
         {
             conversationModeCharacter.SetTrigger("EndDialog");
         }
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
-        UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
-        UIManager.instance.DialogBackground.SetTrigger("EndDialog");
+        //Unfreeze all mouse input and keyboard input, exit conversation Mode
+        GameManager.instance.ExitConversationMode();
+        //Activate MainScene UI
+        UIManager.instance.MainSceneUI.SetActive(true);
+        //Set stopped in middle to default state
+        UIManager.instance.SayDialog_Common.SetBool("IsStoppedInMiddle",false);
+
         flowchat.gameObject.SetActive(false);
         TriggerTutorial();
-        
-        
+        UIManager.instance.SayDialog_Common.keepAnimatorControllerStateOnDisable = false;
         //Debug.Log("end interaction");
         if (GameManager.instance.currentControllingPlayer.GetComponent<Player>().isEavesdroping)
         {
