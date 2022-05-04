@@ -52,6 +52,7 @@ public class CommonConversation : MonoBehaviour
         UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
         UIManager.instance.MainSceneUI.SetActive(false);
         UIManager.instance.DialogBackground.SetTrigger("StartDialog");
+        UIManager.instance.SayDialog_Common.keepAnimatorControllerStateOnDisable = true;
     }
     
     public void ShowAnimation()

@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     public Character Leo;
     public Character Plum;
     public Character Snowie;
+    public SayDialog FunctionUI_Leo;
+    public SayDialog FunctionUI_Plum;
+    public SayDialog FunctionUI_Snowie;
     public SayDialog FunctionUI;
     public SayDialog LeoDialog;
     public SayDialog PlumDialog;
@@ -264,15 +267,15 @@ public class GameManager : MonoBehaviour
     {
         if (!flag)
         {
-            Leo.setSayDialog = FunctionUI;
-            Plum.setSayDialog = FunctionUI;
-            Snowie.SetSayDialog = FunctionUI;
+            Leo.setSayDialog = FunctionUI_Leo;
+            Plum.setSayDialog = FunctionUI_Plum;
+            Snowie.setSayDialog = FunctionUI_Snowie;
         }
         else
         {
             Leo.setSayDialog = LeoDialog;
             Plum.setSayDialog = PlumDialog;
-            Snowie.SetSayDialog = SnowieDialog;
+            Snowie.setSayDialog = SnowieDialog;
         }
     }
 }
