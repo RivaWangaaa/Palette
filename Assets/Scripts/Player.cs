@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
                     Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic8_Move);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        Debug.Log("this is a gift");
+                        //Debug.Log("this is a gift");
                         currentGameobject.GetComponent<GiftItem>().OnInteract();
                     }
                 }
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
                 if (currentGameobject.tag == "character")
                 {
                     isWithinTalkDistance(currentGameobject);
-                    Debug.Log("detect talkable player");
+                    //Debug.Log("detect talkable player");
                     if(currentGameobject.GetComponent<NPC>().isWithInTalkDistance)
                     {
                         //Debug.Log("can talk");
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
                     UIManager.instance.eavesdropIcon.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        Debug.Log("join");
+                        //Debug.Log("join");
                         currentGameobject.GetComponent<CommonConversation>().OnInteract();
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic4_Listen);
                     }
@@ -188,7 +188,7 @@ public class Player : MonoBehaviour
             {
                 pointingObject = currentGameobject;
             }
-            Debug.Log("clear icon");
+            //Debug.Log("clear icon");
             ClearIcon(pointingObject);
             pointingObject = currentGameobject;
         }
@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
                         Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                         if (Input.GetKeyDown(KeyCode.E))
                         {
-                            Debug.Log("eavesdrop");
+                            //Debug.Log("eavesdrop");
                             isEavesdroping = true;
                             eavesdropCharacter.GetComponent<NPC>().OnInteract(gameObject);
                         }
@@ -225,8 +225,8 @@ public class Player : MonoBehaviour
                     Tutorials.instance.SwitchAnotherPic(Tutorials.instance.pic3_Eavesdrop);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        Debug.Log("eavesdrop Conversation");
-                        Debug.Log(eavesdropCharacter.GetComponent<CommonConversation>().flowchartReference.name);
+                        //Debug.Log("eavesdrop Conversation");
+                        //Debug.Log(eavesdropCharacter.GetComponent<CommonConversation>().flowchartReference.name);
                         eavesdropCharacter.GetComponent<CommonConversation>().OnInteract();
                     }
                 }

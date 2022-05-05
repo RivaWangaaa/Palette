@@ -268,6 +268,7 @@ public class GameManager : MonoBehaviour
         if (!flag)
         {
             //change SayDialog to FunctionUI
+            Debug.Log("switch to Function UI");
             foreach (var npc in NPCManager.instance.NPCs)
             {
                 NPC thisNPC = npc.GetComponent<NPC>();
@@ -283,6 +284,7 @@ public class GameManager : MonoBehaviour
         else
         {
             //change SayDialog to DialogUI
+            Debug.Log("switch to Dialog UI");
             foreach (var npc in NPCManager.instance.NPCs)
             {
                 NPC thisNPC = npc.GetComponent<NPC>();
