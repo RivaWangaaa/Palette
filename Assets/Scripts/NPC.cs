@@ -7,9 +7,7 @@ public class NPC : MonoBehaviour
 {
     public bool isCollected;
     public Flowchart flowchat;
-
-    //time NPC stops at each waypoint
-    public float maxStopTime = 2f;
+    
     public List<Transform> wayPoints;
 
     //used to store how long NPC is standing
@@ -37,6 +35,10 @@ public class NPC : MonoBehaviour
     public Transform childSeat;
 
     public bool isAdult;
+
+    public Character character;
+    public SayDialog characterDialogUI;
+    public SayDialog characterFunctionalUI;
 
     private void Update()
     {

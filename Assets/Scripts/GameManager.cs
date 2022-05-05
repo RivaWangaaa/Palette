@@ -32,17 +32,17 @@ public class GameManager : MonoBehaviour
     public GameObject classroomDoor;
     public GameObject plum;
 
-    public Character Leo;
-    public Character Plum;
+    [Header("Character Dialog Related")]
     public Character Snowie;
-    public SayDialog FunctionUI_Leo;
-    public SayDialog FunctionUI_Plum;
-    public SayDialog FunctionUI_Snowie;
-    public SayDialog FunctionUI;
-    public SayDialog LeoDialog;
-    public SayDialog PlumDialog;
-    public SayDialog SnowieDialog;
-    
+    public SayDialog Snowie_DialogUI;
+    public SayDialog Snowie_FunctionUI;
+    public Character Plum;
+    public SayDialog Plum_DialogUI;
+    public SayDialog Plum_FunctionUI;
+    public Character Leo;
+    public SayDialog Leo_DialogUI;
+    public SayDialog Leo_FunctionUI;
+
     
     void Awake()
     {
@@ -267,15 +267,33 @@ public class GameManager : MonoBehaviour
     {
         if (!flag)
         {
-            Leo.setSayDialog = FunctionUI_Leo;
-            Plum.setSayDialog = FunctionUI_Plum;
-            Snowie.setSayDialog = FunctionUI_Snowie;
+            //change SayDialog to FunctionUI
+            foreach (var npc in NPCManager.instance.NPCs)
+            {
+                NPC thisNPC = npc.GetComponent<NPC>();
+                if (thisNPC.characterFunctionalUI != null && thisNPC.character != null) 
+                {
+                    thisNPC.character.setSayDialog = thisNPC.characterFunctionalUI;
+                }
+            }
+            Snowie.setSayDialog = Snowie_FunctionUI;
+            Leo.setSayDialog = Leo_FunctionUI;
+            Plum.setSayDialog = Plum_FunctionUI;
         }
         else
         {
-            Leo.setSayDialog = LeoDialog;
-            Plum.setSayDialog = PlumDialog;
-            Snowie.setSayDialog = SnowieDialog;
+            //change SayDialog to DialogUI
+            foreach (var npc in NPCManager.instance.NPCs)
+            {
+                NPC thisNPC = npc.GetComponent<NPC>();
+                if (thisNPC.characterDialogUI != null && thisNPC.character != null)
+                {
+                    thisNPC.character.setSayDialog = thisNPC.characterDialogUI;
+                }
+            }
+            Snowie.setSayDialog = Snowie_DialogUI;
+            Leo.setSayDialog = Leo_DialogUI;
+            Plum.setSayDialog = Plum_DialogUI;
         }
     }
 }

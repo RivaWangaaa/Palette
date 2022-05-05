@@ -8,12 +8,6 @@ public class Player : MonoBehaviour
     public float interactDistance;
     public float eavesdropDistance;
 
-    public static int npcHintCollect = 0;
-    public static int npcHintTotal = 6;
-    
-    public static int itemHintCollect = 0;
-    public static int itemHintTotal = 4;
-
     public Transform chairPosition;
     private Transform cameraTransform;
     private GameObject currentGameobject;
@@ -29,13 +23,6 @@ public class Player : MonoBehaviour
 
     public int playerIndex;
     public Animator ConversationModeCharacter;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Yanxi: Make the start PC (Jamie) able to see right objects.
-        //HintManager.instance.RefreshHintWhenSwitchingPlayer(gameObject);
-    }
 
     // Update is called once per frame
     void Update()

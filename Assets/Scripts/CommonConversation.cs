@@ -71,12 +71,15 @@ public class CommonConversation : MonoBehaviour
     
     public void OnInteract()
     {
+        //show dialog characters' animated Portraits
         ShowAnimation();
         UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
         flowchartReference.gameObject.SetActive(true);
         GameManager.instance.EnterConversationMode();
         flowchartReference.SetStringVariable("currentPlayer", 
             GameManager.instance.currentControllingPlayer.name);
+        GameManager.instance.CharacterDialogBoxActive(true);
+        NPCManager.instance.SetAllCharactersActive(false);
     }
 
     public void EndInteract()
@@ -84,10 +87,7 @@ public class CommonConversation : MonoBehaviour
         ShowAnimation();
         flowchartReference.gameObject.SetActive(false);
         GameManager.instance.ExitConversationMode();
-        
-        //add time
-        GameManager.instance.IncreaseTime(timeCost);
-        
+
         if (needAnEndEvent)
         {
             NPCManager.instance.SetWayPointsByEvent(endEvent);
@@ -98,13 +98,15 @@ public class CommonConversation : MonoBehaviour
         GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
         UIManager.instance.DialogBackground.SetTrigger("EndDialog");
         UIManager.instance.MainSceneUI.SetActive(true);
-        
+        GameManager.instance.CharacterDialogBoxActive(false);
         //update lead in smart tree
         if (leadInSmartTree != null)
         {
             leadInSmartTree.isHintCollected = true;
         }
         SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
+        
+        NPCManager.instance.SetAllCharactersActive(true);
     }
 
     public void OnHearingNoteSystem()
