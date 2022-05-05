@@ -105,15 +105,15 @@ public class NPC : MonoBehaviour
     public void StartPlayAnimation()
     {
         UIManager.instance.SayDialog_Common.keepAnimatorControllerStateOnDisable = true;
-        if (conversationModeCharacter != null)
-        {
-            conversationModeCharacter.SetTrigger("StartDialog");
-        }
-        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("StartDialog");
         if (!isAdult)
         {
             UIManager.instance.SayDialog_Common.SetTrigger("StartDialog");
             UIManager.instance.DialogBackground.SetTrigger("StartDialog");
+            GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("StartDialog");
+            if (conversationModeCharacter != null)
+            {
+                conversationModeCharacter.SetTrigger("StartDialog");
+            }
         }
     }
 
@@ -147,14 +147,14 @@ public class NPC : MonoBehaviour
             //Trigger UI end dialog
             UIManager.instance.SayDialog_Common.SetTrigger("EndDialog");
             UIManager.instance.DialogBackground.SetTrigger("EndDialog");
-            
+            //Trigger characters Animations
+            if (conversationModeCharacter != null)
+            {
+                conversationModeCharacter.SetTrigger("EndDialog");
+            }
+            GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
         }
-        //Trigger characters Animations
-        if (conversationModeCharacter != null)
-        {
-            conversationModeCharacter.SetTrigger("EndDialog");
-        }
-        GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
+
         //Unfreeze all mouse input and keyboard input, exit conversation Mode
         GameManager.instance.ExitConversationMode();
         //Activate MainScene UI
