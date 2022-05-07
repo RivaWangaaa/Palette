@@ -83,6 +83,10 @@ public class NPC : MonoBehaviour
             NPCManager.instance.SetAllCharactersActive(false);
             GameManager.instance.CharacterDialogBoxActive(true);
         }
+        else
+        {
+            GameManager.instance.CharacterDialogBoxActive(true);
+        }
 
         //active the fungus on NPC
         flowchat.gameObject.SetActive(true);

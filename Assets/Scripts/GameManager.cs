@@ -248,8 +248,8 @@ public class GameManager : MonoBehaviour
         
         //debug use only
         //disable loop0 flora dialog branch for loop1
-        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isSecondTimeAskLove",false);
-        NPCManager.instance.NPCs[1].GetComponent<NPC>().flowchat.SetBooleanVariable("isFirstTimeAskLove",false);
+        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop0isSecondTimeAskLove",false);
+        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop0isFirstTimeAskLove",false);
         
         //something other reset unsorted
         currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
