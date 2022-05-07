@@ -245,12 +245,7 @@ public class GameManager : MonoBehaviour
             GetComponent<DrawBookPage>().clueGroupsInThisPage[1].titleRevealed.SetActive(true);
         UIManager.instance.drawbookStories[0].drawbookStoryPages[0].
             GetComponent<DrawBookPage>().clueGroupsInThisPage[1].titleUnRevealed.SetActive(false);
-        
-        //debug use only
-        //disable loop0 flora dialog branch for loop1
-        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop0isSecondTimeAskLove",false);
-        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop0isFirstTimeAskLove",false);
-        
+
         //something other reset unsorted
         currentControllingPlayer.transform.GetChild(0).gameObject.SetActive(true);
         loop1Tutorial.SetActive(true);
@@ -258,6 +253,12 @@ public class GameManager : MonoBehaviour
         classroomDoor.SetActive(true);
         
         NPCManager.instance.NPCs[6].SetActive(false);
+        
+        //disable all popup colliders
+        foreach (var popupCollider in HintManager.instance.PopupColliders)
+        {
+            popupCollider.SetActive(false);
+        }
         
         Debug.Log("Loop Reset!");
 

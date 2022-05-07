@@ -86,6 +86,12 @@ public class DeveloperCheatingController : MonoBehaviour
     public void LoopReset()
     {
         GameManager.instance.LoopReset();
+        
+        //disable loop0 flora dialog branch for loop1
+        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop0isSecondTimeAskLove",false);
+        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("Loop0isFirstTimeAskLove",false);
+        //enable go out classroom function
+        FlowchartVariablesManager.instance.GetComponent<Flowchart>().SetBooleanVariable("AbleToGetOutClassroom",true);
     }
     
 }

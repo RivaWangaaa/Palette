@@ -13,6 +13,7 @@ public class HintManager : MonoBehaviour
     //this should be replaced with Dictionary in the future
     public List<GameObject> observableObject;
     public List<bool> isHintCollected;
+    public List<GameObject> PopupColliders;
 
     public List<GiftItem> giftObjects;
 
