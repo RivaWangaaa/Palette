@@ -169,6 +169,11 @@ public class NPC : MonoBehaviour
         //Set stopped in middle to default state
         UIManager.instance.SayDialog_Common.SetBool("IsStoppedInMiddle",false);
 
+        foreach (var sayDialog in UIManager.instance.SayDialogs)
+        {
+            sayDialog.SetActive(false);
+        }
+        
         flowchat.gameObject.SetActive(false);
         TriggerTutorial();
         UIManager.instance.SayDialog_Common.keepAnimatorControllerStateOnDisable = false;

@@ -52,6 +52,9 @@ public class UIManager : MonoBehaviour
     public GameObject[] profileBookPages;
     public GameObject whiteboard;
     
+    [Header("Say Dialogs")]
+    public GameObject[] SayDialogs;
+    
     public BoxCollider drawbookCollider;
     
     void Awake()
