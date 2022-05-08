@@ -85,7 +85,7 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            GameManager.instance.CharacterDialogBoxActive(true);
+            GameManager.instance.CharacterDialogBoxActive(false);
         }
 
         //active the fungus on NPC
