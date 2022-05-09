@@ -27,7 +27,7 @@ public class ClueGroup : MonoBehaviour
             clueClearPhoto.SetActive(true);
             foreach (var hintGroup in hintsInThisGroup)
             {
-                hintGroup.gameObject.GetComponent<Image>().raycastTarget = false;
+                //hintGroup.gameObject.GetComponent<Image>().raycastTarget = false;
             }
         }
     }

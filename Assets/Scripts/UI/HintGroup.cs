@@ -13,7 +13,7 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public string details;
     
     public GameObject hintGroupDetail;
-
+    
     public void GetSubHints()
     {
         if (revrealedIcon.activeSelf == false)
@@ -26,7 +26,6 @@ public class HintGroup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             Debug.Log("you already get the hint");
         }
-        
     }
 
     public void RevealThisHint()

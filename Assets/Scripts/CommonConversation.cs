@@ -104,7 +104,7 @@ public class CommonConversation : MonoBehaviour
         {
             leadInSmartTree.isHintCollected = true;
         }
-        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
+        //SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
         
         NPCManager.instance.SetAllCharactersActive(true);
     }

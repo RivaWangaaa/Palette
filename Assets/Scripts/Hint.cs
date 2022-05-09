@@ -172,7 +172,7 @@ public class Hint : Item
         }
         //update lead in smart tree
         leadInSmartTree.isHintCollected = true;
-        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
+        //SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
     //loop1_Midterm_Hairpin
     public void OnObserveFloraPersonalStuff()
@@ -188,7 +188,7 @@ public class Hint : Item
         }
         //update lead in smart tree
         leadInSmartTree.isHintCollected = true;
-        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
+        //SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
     
     //loop1_Midterm_FloraPic
@@ -204,7 +204,7 @@ public class Hint : Item
         }
         //update lead in smart tree
         leadInSmartTree.isHintCollected = true;
-        SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
+        //SmartTree.instance.UpdateIndexOfLeadsPoolInOrder();
     }
 
     //loop1_EOY_SecretEntrance
