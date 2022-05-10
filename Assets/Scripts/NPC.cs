@@ -35,6 +35,7 @@ public class NPC : MonoBehaviour
     public Transform childSeat;
 
     public bool isAdult;
+    public AnimatedAdults adultsHead;
 
     public Character character;
     public SayDialog characterDialogUI;
@@ -85,6 +86,7 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            //adultsHead.HeadLerpTrigger(true);
             GameManager.instance.CharacterDialogBoxActive(false);
         }
 
@@ -160,6 +162,10 @@ public class NPC : MonoBehaviour
                 conversationModeCharacter.SetTrigger("EndDialog");
             }
             GameManager.instance.currentControllingPlayerConversationModeCharacter.SetTrigger("EndDialog");
+        }
+        else
+        {
+            //adultsHead.HeadLerpTrigger(false);
         }
 
         //Unfreeze all mouse input and keyboard input, exit conversation Mode
