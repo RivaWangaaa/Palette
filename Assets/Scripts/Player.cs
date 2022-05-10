@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public int playerIndex;
     public Animator ConversationModeCharacter;
 
+    public Transform adultHeadBendingPoint;
+
     // Update is called once per frame
     void Update()
     {
