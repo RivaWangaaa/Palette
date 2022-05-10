@@ -86,7 +86,10 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            //adultsHead.HeadLerpTrigger(true);
+            if (adultsHead != null)
+            {
+                adultsHead.HeadLerpTrigger(true);
+            }
             GameManager.instance.CharacterDialogBoxActive(false);
         }
 
@@ -165,7 +168,10 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            //adultsHead.HeadLerpTrigger(false);
+            if (adultsHead != null)
+            {
+                adultsHead.HeadLerpTrigger(false);
+            }
         }
 
         //Unfreeze all mouse input and keyboard input, exit conversation Mode
