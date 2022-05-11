@@ -83,6 +83,8 @@ public class NPC : MonoBehaviour
         {
             NPCManager.instance.SetAllCharactersActive(false);
             GameManager.instance.CharacterDialogBoxActive(true);
+            UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
+            UIManager.instance.DialogBackground.gameObject.SetActive(true);
         }
         else
         {
@@ -95,8 +97,7 @@ public class NPC : MonoBehaviour
 
         //active the fungus on NPC
         flowchat.gameObject.SetActive(true);
-        UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
-        UIManager.instance.DialogBackground.gameObject.SetActive(true);
+
         StartPlayAnimation();
         
         //every flowchart for NPC has a string variable to help NPC know who they are talking to
