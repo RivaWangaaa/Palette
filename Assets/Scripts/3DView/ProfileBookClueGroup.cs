@@ -24,6 +24,7 @@ public class ProfileBookClueGroup : MonoBehaviour
     
     public void unlockAfter()
     {
+        unlockBefore();
         afterTakeaways.SetActive(true);
         isAfterUnlocked = true;
     }

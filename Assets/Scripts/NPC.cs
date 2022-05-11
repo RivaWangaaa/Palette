@@ -83,17 +83,21 @@ public class NPC : MonoBehaviour
         {
             NPCManager.instance.SetAllCharactersActive(false);
             GameManager.instance.CharacterDialogBoxActive(true);
+            UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
+            UIManager.instance.DialogBackground.gameObject.SetActive(true);
         }
         else
         {
-            //adultsHead.HeadLerpTrigger(true);
+            if (adultsHead != null)
+            {
+                adultsHead.HeadLerpTrigger(true);
+            }
             GameManager.instance.CharacterDialogBoxActive(false);
         }
 
         //active the fungus on NPC
         flowchat.gameObject.SetActive(true);
-        UIManager.instance.SayDialog_Common.gameObject.SetActive(true);
-        UIManager.instance.DialogBackground.gameObject.SetActive(true);
+
         StartPlayAnimation();
         
         //every flowchart for NPC has a string variable to help NPC know who they are talking to
@@ -165,7 +169,10 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            //adultsHead.HeadLerpTrigger(false);
+            if (adultsHead != null)
+            {
+                adultsHead.HeadLerpTrigger(false);
+            }
         }
 
         //Unfreeze all mouse input and keyboard input, exit conversation Mode
